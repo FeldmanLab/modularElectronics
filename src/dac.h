@@ -40,8 +40,8 @@ class Dac {
   float SetVoltage(float voltage);
   void UpdateAnalogOutputs(void);
   bool Begin(void);  // SPI initialization
-  virtual void VoltageToBytes(float voltage) = 0;
-  virtual float BytesToVoltage(byte msg[DATA_LEN]) = 0;
+  void VoltageToBytes(float voltage);
+  float BytesToVoltage(byte msg[DATA_LEN]);
  protected:
   byte msg_[DATA_LEN];  // Dynamic allocation of bytes to send to dac chip
 };
