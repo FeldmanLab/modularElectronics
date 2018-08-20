@@ -14,26 +14,19 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#include "src/AD5764.h"
-AD5764 dac1(4, 4, 6, 1);
-//include "src/dac.h"
-//Dac dac1(4, 4, 6);
+#ifndef AD5764_h_
+#define AD5764_h_
 
-void setup() {
-  Serial.begin(115200);
-  dac1.Begin();
-}
+#include "dac.h"
 
-void loop() {
-  Serial.flush();
-  if(Serial.available()) {
-    String inbyte = "";
-    char resp;
-    float v;
-    resp = Serial.read();
-    inbyte += resp;
-    dac1.UpdateAnalogOutputs();
-    v = dac1.SetVoltage(inbyte.toFloat());
-    Serial.println(v);
-  }
-}
+class AD5764: public Dac {
+ private:
+  uint8_t channel_;
+  double full_scale_;
+ public:
+  AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
+         uint8_t ldac_pin, uint8_t channel, double full_scale=10.0);
+  virtual void VoltageToBytes(float voltage);
+  virtual float BytesToVoltage(byte msg[kdata_len_]);
+};
+#endif
