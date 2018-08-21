@@ -1,0 +1,63 @@
+\hypertarget{classAD5764}{}\section{A\+D5764 Class Reference}
+\label{classAD5764}\index{A\+D5764@{A\+D5764}}
+
+
+{\ttfamily \#include $<$A\+D5764.\+h$>$}
+
+Inheritance diagram for A\+D5764\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAD5764}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAD5764_a391940b2f0a4f34384ae47dd3e3cc13a}{A\+D5764}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t ldac\+\_\+pin, uint8\+\_\+t channel, double full\+\_\+scale=10.\+0)
+\item 
+virtual void \mbox{\hyperlink{classAD5764_aae10d34276fdfcb3542e39bccd2f20f6}{Voltage\+To\+Bytes}} (float voltage)
+\item 
+virtual float \mbox{\hyperlink{classAD5764_a8f2845c7dd6b8984e7b85c35e50bbb66}{Bytes\+To\+Voltage}} (byte msg\mbox{[}\mbox{\hyperlink{classDac_af3de0bf669183e66ebf916f8c685fe6b}{kdata\+\_\+len\+\_\+}}\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classAD5764}{A\+D5764}} class 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAD5764_a391940b2f0a4f34384ae47dd3e3cc13a}\label{classAD5764_a391940b2f0a4f34384ae47dd3e3cc13a}} 
+\index{A\+D5764@{A\+D5764}!A\+D5764@{A\+D5764}}
+\index{A\+D5764@{A\+D5764}!A\+D5764@{A\+D5764}}
+\subsubsection{\texorpdfstring{A\+D5764()}{AD5764()}}
+{\footnotesize\ttfamily A\+D5764\+::\+A\+D5764 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{ldac\+\_\+pin,  }\item[{uint8\+\_\+t}]{channel,  }\item[{double}]{full\+\_\+scale = {\ttfamily 10.0} }\end{DoxyParamCaption})}
+
+Constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAD5764_a8f2845c7dd6b8984e7b85c35e50bbb66}\label{classAD5764_a8f2845c7dd6b8984e7b85c35e50bbb66}} 
+\index{A\+D5764@{A\+D5764}!Bytes\+To\+Voltage@{Bytes\+To\+Voltage}}
+\index{Bytes\+To\+Voltage@{Bytes\+To\+Voltage}!A\+D5764@{A\+D5764}}
+\subsubsection{\texorpdfstring{Bytes\+To\+Voltage()}{BytesToVoltage()}}
+{\footnotesize\ttfamily float A\+D5764\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{byte}]{msg\mbox{[}kdata\+\_\+len\+\_\+\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Uses chip specifications (e.\+g. bit resolution, registers, range) to join a a three-\/byte message a maps it to a voltage. Each D\+AC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
+
+Implements \mbox{\hyperlink{classDac_a1dc9be97cb41ddacbd8dde0c5d4243b4}{Dac}}.
+
+\mbox{\Hypertarget{classAD5764_aae10d34276fdfcb3542e39bccd2f20f6}\label{classAD5764_aae10d34276fdfcb3542e39bccd2f20f6}} 
+\index{A\+D5764@{A\+D5764}!Voltage\+To\+Bytes@{Voltage\+To\+Bytes}}
+\index{Voltage\+To\+Bytes@{Voltage\+To\+Bytes}!A\+D5764@{A\+D5764}}
+\subsubsection{\texorpdfstring{Voltage\+To\+Bytes()}{VoltageToBytes()}}
+{\footnotesize\ttfamily void A\+D5764\+::\+Voltage\+To\+Bytes (\begin{DoxyParamCaption}\item[{float}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Uses chip specifications (e.\+g. bit resolution, registers, range) to generate a a three-\/byte message to msg\+\_\+, which is sent via S\+PI Each D\+AC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
+
+Implements \mbox{\hyperlink{classDac_ac21022b2b921437418004af9ae7de8ae}{Dac}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/A\+D5764.\+h\item 
+src/A\+D5764.\+cpp\end{DoxyCompactItemize}

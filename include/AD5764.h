@@ -19,11 +19,17 @@
 
 #include "dac.h"
 
+///
+/// AD5764 class
+///
 class AD5764: public Dac {
  private:
   uint8_t channel_;
   double full_scale_;
  public:
+  ///
+  /// Constructor
+  ///
   AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
          uint8_t ldac_pin, uint8_t channel, double full_scale=10.0);
   virtual void VoltageToBytes(float voltage);
