@@ -60,3 +60,22 @@ float Dac::SetVoltage(float voltage) {
   // resolution
   return BytesToVoltage(msg_);
 }
+
+float Dac::GetVoltage(void) {
+  byte received_bytes[kdata_len_];  // Storage for readback bytes 
+  VoltageToBytes(0);
+  msg_[0] = msg_[0] | 0x80;  // Set MSB to 1, which reads the register
+  // SPI data transfer
+  digitalWrite(sync_pin_, LOW);  // Dac starts listening
+  // Sending bytes
+  for (uint8_t i = 0; i < kdata_len_; i++) {
+    SPI.transfer(spi_bus_config_pin_, msg_[i]);
+  }
+  digitalWrite(sync_pin_, HIGH);  // End of readback command
+  digitalWrite(sync_pin_, LOW);  // Dac starts readback
+  for (uint8_t i = 0; i < kdata_len_; i++) {
+    received_bytes[i] = SPI.transfer(spi_bus_config_pin_, 0);
+  }
+  digitalWrite(sync_pin_, HIGH);  // Dac readkack finished
+  return BytesToVoltage(received_bytes);
+}

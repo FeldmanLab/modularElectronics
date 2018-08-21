@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#include "src/AD5764.h"
+#include "include/AD5764.h"
 AD5764 dac1(4, 4, 6, 1);
 //include "src/dac.h"
 //Dac dac1(4, 4, 6);
