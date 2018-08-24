@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['setvoltage',['SetVoltage',['../classDac.html#a71ede236baa8fc67d18db38629e6c225',1,'Dac']]]
+  ['readme',['README',['../md_README.html',1,'']]],
+  ['readdataregistermessage',['ReadDataRegisterMessage',['../classAdcSpi.html#acd92eec341ed010e5b7569ffcbba811d',1,'AdcSpi']]],
+  ['readvoltage',['ReadVoltage',['../classAdcSpi.html#aa245df90e70654aabc64f88107ccd804',1,'AdcSpi']]]
 ];

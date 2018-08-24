@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['setvoltage',['SetVoltage',['../classDac.html#a71ede236baa8fc67d18db38629e6c225',1,'Dac']]]
+  ['getvoltage',['GetVoltage',['../classDac.html#afad6313ba5c58c10efde3849c7f89d2e',1,'Dac']]]
 ];

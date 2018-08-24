@@ -51,7 +51,7 @@ Implements \mbox{\hyperlink{classDac_a1dc9be97cb41ddacbd8dde0c5d4243b4}{Dac}}.
 \subsubsection{\texorpdfstring{Voltage\+To\+Bytes()}{VoltageToBytes()}}
 {\footnotesize\ttfamily void A\+D5764\+::\+Voltage\+To\+Bytes (\begin{DoxyParamCaption}\item[{float}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Uses chip specifications (e.\+g. bit resolution, registers, range) to generate a a three-\/byte message to msg\+\_\+, which is sent via S\+PI Each D\+AC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
+Uses chip specifications (e.\+g. bit resolution, registers, range) to generate a a three-\/byte message msg\+\_\+ that writes to the dac register. Each D\+AC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
 
 Implements \mbox{\hyperlink{classDac_ac21022b2b921437418004af9ae7de8ae}{Dac}}.
 

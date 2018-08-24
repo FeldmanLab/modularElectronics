@@ -1,0 +1,80 @@
+\hypertarget{classAdcSpi}{}\section{Adc\+Spi Class Reference}
+\label{classAdcSpi}\index{Adc\+Spi@{Adc\+Spi}}
+
+
+{\ttfamily \#include $<$adc.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAdcSpi_a5b3afab7dc4a788e1caf6a1277b67df9}{Adc\+Spi}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t data\+\_\+ready\+\_\+pin, uint8\+\_\+t clock\+\_\+divider=7, Bit\+Order bit\+\_\+order=M\+S\+B\+F\+I\+R\+ST, uint8\+\_\+t spi\+\_\+mode=S\+P\+I\+\_\+\+M\+O\+D\+E3)
+\item 
+bool \mbox{\hyperlink{classAdcSpi_aa8f8f27578dd85cfcdbc9439bbce66cb}{Begin}} (void)
+\item 
+float \mbox{\hyperlink{classAdcSpi_aa245df90e70654aabc64f88107ccd804}{Read\+Voltage}} (uint8\+\_\+t channel=0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual float \mbox{\hyperlink{classAdcSpi_aa9970471c6fc505e4b91ac6985ac1489}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} message)=0
+\item 
+virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} \mbox{\hyperlink{classAdcSpi_ac6a6421e3045c986c6997019a04d11ea}{Single\+Conversion\+Mode\+Message}} (uint8\+\_\+t channel=0)=0
+\item 
+virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} \mbox{\hyperlink{classAdcSpi_acd92eec341ed010e5b7569ffcbba811d}{Read\+Data\+Register\+Message}} (uint8\+\_\+t channel=0)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Adc class 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAdcSpi_a5b3afab7dc4a788e1caf6a1277b67df9}\label{classAdcSpi_a5b3afab7dc4a788e1caf6a1277b67df9}} 
+\index{Adc\+Spi@{Adc\+Spi}!Adc\+Spi@{Adc\+Spi}}
+\index{Adc\+Spi@{Adc\+Spi}!Adc\+Spi@{Adc\+Spi}}
+\subsubsection{\texorpdfstring{Adc\+Spi()}{AdcSpi()}}
+{\footnotesize\ttfamily Adc\+Spi\+::\+Adc\+Spi (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{data\+\_\+ready\+\_\+pin,  }\item[{uint8\+\_\+t}]{clock\+\_\+divider = {\ttfamily 7},  }\item[{Bit\+Order}]{bit\+\_\+order = {\ttfamily MSBFIRST},  }\item[{uint8\+\_\+t}]{spi\+\_\+mode = {\ttfamily SPI\+\_\+MODE3} }\end{DoxyParamCaption})}
+
+Constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAdcSpi_aa8f8f27578dd85cfcdbc9439bbce66cb}\label{classAdcSpi_aa8f8f27578dd85cfcdbc9439bbce66cb}} 
+\index{Adc\+Spi@{Adc\+Spi}!Begin@{Begin}}
+\index{Begin@{Begin}!Adc\+Spi@{Adc\+Spi}}
+\subsubsection{\texorpdfstring{Begin()}{Begin()}}
+{\footnotesize\ttfamily bool Adc\+Spi\+::\+Begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Configures pins for S\+PI and initializes S\+PI communication. \mbox{\Hypertarget{classAdcSpi_aa9970471c6fc505e4b91ac6985ac1489}\label{classAdcSpi_aa9970471c6fc505e4b91ac6985ac1489}} 
+\index{Adc\+Spi@{Adc\+Spi}!Bytes\+To\+Voltage@{Bytes\+To\+Voltage}}
+\index{Bytes\+To\+Voltage@{Bytes\+To\+Voltage}!Adc\+Spi@{Adc\+Spi}}
+\subsubsection{\texorpdfstring{Bytes\+To\+Voltage()}{BytesToVoltage()}}
+{\footnotesize\ttfamily virtual float Adc\+Spi\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAdcSpi_1_1Message}{Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Uses chip specifications (e.\+g. bit resolution, registers, range) to convert a \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} to voltage. Each A\+DC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. \mbox{\Hypertarget{classAdcSpi_acd92eec341ed010e5b7569ffcbba811d}\label{classAdcSpi_acd92eec341ed010e5b7569ffcbba811d}} 
+\index{Adc\+Spi@{Adc\+Spi}!Read\+Data\+Register\+Message@{Read\+Data\+Register\+Message}}
+\index{Read\+Data\+Register\+Message@{Read\+Data\+Register\+Message}!Adc\+Spi@{Adc\+Spi}}
+\subsubsection{\texorpdfstring{Read\+Data\+Register\+Message()}{ReadDataRegisterMessage()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} Adc\+Spi\+::\+Read\+Data\+Register\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Returns \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} object to read the data register. \mbox{\Hypertarget{classAdcSpi_aa245df90e70654aabc64f88107ccd804}\label{classAdcSpi_aa245df90e70654aabc64f88107ccd804}} 
+\index{Adc\+Spi@{Adc\+Spi}!Read\+Voltage@{Read\+Voltage}}
+\index{Read\+Voltage@{Read\+Voltage}!Adc\+Spi@{Adc\+Spi}}
+\subsubsection{\texorpdfstring{Read\+Voltage()}{ReadVoltage()}}
+{\footnotesize\ttfamily float Adc\+Spi\+::\+Read\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Sets a voltage to \mbox{\hyperlink{classDac}{Dac}} object via S\+PI. The message msg\+\_\+ is generated by calling Voltage\+To\+Bytes(), which is specific to each chip. \mbox{\Hypertarget{classAdcSpi_ac6a6421e3045c986c6997019a04d11ea}\label{classAdcSpi_ac6a6421e3045c986c6997019a04d11ea}} 
+\index{Adc\+Spi@{Adc\+Spi}!Single\+Conversion\+Mode\+Message@{Single\+Conversion\+Mode\+Message}}
+\index{Single\+Conversion\+Mode\+Message@{Single\+Conversion\+Mode\+Message}!Adc\+Spi@{Adc\+Spi}}
+\subsubsection{\texorpdfstring{Single\+Conversion\+Mode\+Message()}{SingleConversionModeMessage()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} Adc\+Spi\+::\+Single\+Conversion\+Mode\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Returns \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} object to start single conversion mode. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/adc.\+h\item 
+src/adc.\+cpp\end{DoxyCompactItemize}

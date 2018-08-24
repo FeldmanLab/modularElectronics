@@ -31,7 +31,7 @@ class Dac {
   // sync_pin_ identifies the dac chip; each chip has a unique sync_pin_.
   // spi_bus_config_pin_ identifies the bus configurations.
   // More than one dac can share the same bus if they use the same spi configs.
-  uint8_t sync_pin_, spi_bus_config_pin_, ldac_pin_, spi_mode_;  // See above
+  uint8_t sync_pin_, spi_bus_config_pin_, ldac_pin_, spi_mode_;
   uint8_t clock_divider_;  // For due frequency = 84 MHz / clock_divider_
   BitOrder bit_order_;  // MSBFIRST or LSBFIRST
  public:

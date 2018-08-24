@@ -88,12 +88,14 @@ Inheritance diagram for Dac:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae74afbc4c82a8acbd8c74dcf4ea046ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ae74afbc4c82a8acbd8c74dcf4ea046ba">Dac</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE1)</td></tr>
 <tr class="separator:ae74afbc4c82a8acbd8c74dcf4ea046ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88e0048e59c0633b72769ddb8337e49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ad88e0048e59c0633b72769ddb8337e49">Begin</a> (void)</td></tr>
+<tr class="separator:ad88e0048e59c0633b72769ddb8337e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71ede236baa8fc67d18db38629e6c225"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a71ede236baa8fc67d18db38629e6c225">SetVoltage</a> (float voltage)</td></tr>
 <tr class="separator:a71ede236baa8fc67d18db38629e6c225"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafef1707ec33a2166a69e9b646cd471b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#aafef1707ec33a2166a69e9b646cd471b">UpdateAnalogOutputs</a> (void)</td></tr>
 <tr class="separator:aafef1707ec33a2166a69e9b646cd471b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad88e0048e59c0633b72769ddb8337e49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ad88e0048e59c0633b72769ddb8337e49">Begin</a> (void)</td></tr>
-<tr class="separator:ad88e0048e59c0633b72769ddb8337e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afad6313ba5c58c10efde3849c7f89d2e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#afad6313ba5c58c10efde3849c7f89d2e">GetVoltage</a> (void)</td></tr>
+<tr class="separator:afad6313ba5c58c10efde3849c7f89d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -217,6 +219,25 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="afad6313ba5c58c10efde3849c7f89d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afad6313ba5c58c10efde3849c7f89d2e">&#9670;&nbsp;</a></span>GetVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Dac::GetVoltage </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the voltage setted to dac register. </p>
+
+</div>
+</div>
 <a id="a71ede236baa8fc67d18db38629e6c225"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a71ede236baa8fc67d18db38629e6c225">&#9670;&nbsp;</a></span>SetVoltage()</h2>
 
@@ -278,7 +299,7 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Uses chip specifications (e.g. bit resolution, registers, range) to generate a a three-byte message to msg_, which is sent via SPI Each DAC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p>
+<p>Uses chip specifications (e.g. bit resolution, registers, range) to generate a a three-byte message msg_ that writes to the dac register. Each DAC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p>
 
 <p>Implemented in <a class="el" href="classAD5764.html#aae10d34276fdfcb3542e39bccd2f20f6">AD5764</a>.</p>
 

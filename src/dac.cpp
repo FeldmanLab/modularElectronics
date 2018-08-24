@@ -18,8 +18,8 @@
 #include "../include/dac.h"
 
 Dac::Dac(uint8_t sync_pin, uint8_t spi_bus_config_pin,
-                   uint8_t ldac_pin, uint8_t clock_divider,
-                   BitOrder bit_order, uint8_t spi_mode)
+	 uint8_t ldac_pin, uint8_t clock_divider,
+         BitOrder bit_order, uint8_t spi_mode)
     : sync_pin_(sync_pin), spi_bus_config_pin_(spi_bus_config_pin),
       ldac_pin_(ldac_pin), clock_divider_(clock_divider),
       bit_order_(bit_order), spi_mode_(spi_mode) {
@@ -76,6 +76,6 @@ float Dac::GetVoltage(void) {
   for (uint8_t i = 0; i < kdata_len_; i++) {
     received_bytes[i] = SPI.transfer(spi_bus_config_pin_, 0);
   }
-  digitalWrite(sync_pin_, HIGH);  // Dac readkack finished
+  digitalWrite(sync_pin_, HIGH);  // Dac readback finished
   return BytesToVoltage(received_bytes);
 }
