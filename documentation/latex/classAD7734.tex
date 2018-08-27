@@ -1,0 +1,77 @@
+\hypertarget{classAD7734}{}\section{A\+D7734 Class Reference}
+\label{classAD7734}\index{A\+D7734@{A\+D7734}}
+
+
+{\ttfamily \#include $<$A\+D7734.\+h$>$}
+
+Inheritance diagram for A\+D7734\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAD7734}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAD7734_a2bf3cea4357919fda364b8121cd6af4f}{A\+D7734}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t data\+\_\+ready\+\_\+pin, uint8\+\_\+t slot\+\_\+number)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual float \mbox{\hyperlink{classAD7734_afe43654ed83d2af599bea00b93cedc28}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} message)
+\item 
+virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} \mbox{\hyperlink{classAD7734_a6ac58d1c41ad0562329a932d464bfce1}{Single\+Conversion\+Mode\+Message}} (uint8\+\_\+t channel)
+\item 
+virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} \mbox{\hyperlink{classAD7734_a2bfd6161eedac320b5b77beb6f209517}{Read\+Data\+Register\+Message}} (uint8\+\_\+t channel)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classAD7734}{A\+D7734}} class 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAD7734_a2bf3cea4357919fda364b8121cd6af4f}\label{classAD7734_a2bf3cea4357919fda364b8121cd6af4f}} 
+\index{A\+D7734@{A\+D7734}!A\+D7734@{A\+D7734}}
+\index{A\+D7734@{A\+D7734}!A\+D7734@{A\+D7734}}
+\subsubsection{\texorpdfstring{A\+D7734()}{AD7734()}}
+{\footnotesize\ttfamily A\+D7734\+::\+A\+D7734 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{data\+\_\+ready\+\_\+pin,  }\item[{uint8\+\_\+t}]{slot\+\_\+number }\end{DoxyParamCaption})}
+
+Constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAD7734_afe43654ed83d2af599bea00b93cedc28}\label{classAD7734_afe43654ed83d2af599bea00b93cedc28}} 
+\index{A\+D7734@{A\+D7734}!Bytes\+To\+Voltage@{Bytes\+To\+Voltage}}
+\index{Bytes\+To\+Voltage@{Bytes\+To\+Voltage}!A\+D7734@{A\+D7734}}
+\subsubsection{\texorpdfstring{Bytes\+To\+Voltage()}{BytesToVoltage()}}
+{\footnotesize\ttfamily float A\+D7734\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAdcSpi_1_1Message}{Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Uses chip specifications (e.\+g. bit resolution, registers, range) to convert a Message to voltage. Each A\+DC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
+
+Implements \mbox{\hyperlink{classAdcSpi_aa9970471c6fc505e4b91ac6985ac1489}{Adc\+Spi}}.
+
+\mbox{\Hypertarget{classAD7734_a2bfd6161eedac320b5b77beb6f209517}\label{classAD7734_a2bfd6161eedac320b5b77beb6f209517}} 
+\index{A\+D7734@{A\+D7734}!Read\+Data\+Register\+Message@{Read\+Data\+Register\+Message}}
+\index{Read\+Data\+Register\+Message@{Read\+Data\+Register\+Message}!A\+D7734@{A\+D7734}}
+\subsubsection{\texorpdfstring{Read\+Data\+Register\+Message()}{ReadDataRegisterMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAdcSpi_1_1Message}{A\+D7734\+::\+Message}} A\+D7734\+::\+Read\+Data\+Register\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns Message object to read the data register. 
+
+Implements \mbox{\hyperlink{classAdcSpi_acd92eec341ed010e5b7569ffcbba811d}{Adc\+Spi}}.
+
+\mbox{\Hypertarget{classAD7734_a6ac58d1c41ad0562329a932d464bfce1}\label{classAD7734_a6ac58d1c41ad0562329a932d464bfce1}} 
+\index{A\+D7734@{A\+D7734}!Single\+Conversion\+Mode\+Message@{Single\+Conversion\+Mode\+Message}}
+\index{Single\+Conversion\+Mode\+Message@{Single\+Conversion\+Mode\+Message}!A\+D7734@{A\+D7734}}
+\subsubsection{\texorpdfstring{Single\+Conversion\+Mode\+Message()}{SingleConversionModeMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAdcSpi_1_1Message}{A\+D7734\+::\+Message}} A\+D7734\+::\+Single\+Conversion\+Mode\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns Message object to start single conversion mode. 
+
+Implements \mbox{\hyperlink{classAdcSpi_ac6a6421e3045c986c6997019a04d11ea}{Adc\+Spi}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/A\+D7734.\+h\item 
+src/A\+D7734.\+cpp\end{DoxyCompactItemize}
