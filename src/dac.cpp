@@ -46,8 +46,8 @@ void Dac::UpdateAnalogOutputs(void) {
   digitalWrite(ldac_pin_, LOW);
   digitalWrite(ldac_pin_, HIGH);}
 
-float Dac::SetVoltage(float voltage) {
-  VoltageToBytes(voltage);
+float Dac::SetVoltage(uint8_t channel, float voltage) {
+  VoltageToBytes(channel, voltage);
   // SPI data transfer
   digitalWrite(sync_pin_, LOW);  // Dac starts listening
   // Sending bytes
@@ -61,9 +61,9 @@ float Dac::SetVoltage(float voltage) {
   return BytesToVoltage(msg_);
 }
 
-float Dac::GetVoltage(void) {
+float Dac::GetVoltage(uint8_t channel) {
   byte received_bytes[kdata_len_];  // Storage for readback bytes 
-  VoltageToBytes(0);
+  VoltageToBytes(channel, 0);
   msg_[0] = msg_[0] | 0x80;  // Set MSB to 1, which reads the register
   // SPI data transfer
   digitalWrite(sync_pin_, LOW);  // Dac starts listening

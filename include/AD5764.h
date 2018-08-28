@@ -24,15 +24,15 @@
 ///
 class AD5764: public Dac {
  private:
-  uint8_t channel_;
+  uint8_t slot_number_;
   double full_scale_;
  public:
   ///
   /// Constructor
   ///
   AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
-         uint8_t ldac_pin, uint8_t channel, double full_scale=10.0);
-  virtual void VoltageToBytes(float voltage);
+         uint8_t ldac_pin, uint8_t slot_number, double full_scale=10.0);
+  virtual void VoltageToBytes(uint8_t channel, float voltage);
   virtual float BytesToVoltage(byte msg[kdata_len_]);
 };
 #endif

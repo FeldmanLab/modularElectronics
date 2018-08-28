@@ -17,12 +17,12 @@
 #include "../include/AD5764.h"
 
 AD5764::AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
-	       uint8_t ldac_pin, uint8_t channel, double full_scale)
+	       uint8_t ldac_pin, uint8_t slot_number, double full_scale)
   :Dac(sync_pin, spi_bus_config_pin, ldac_pin),
-   channel_(channel), full_scale_(full_scale) {
+   slot_number_(slot_number), full_scale_(full_scale) {
 }
   
-void AD5764::VoltageToBytes(float voltage) {
+void AD5764::VoltageToBytes(uint8_t channel, float voltage) {
   // The conversion below is for two's complement
   uint32_t decimal;
   if (voltage < 0) {
@@ -31,7 +31,7 @@ void AD5764::VoltageToBytes(float voltage) {
     decimal = voltage*32767/full_scale_;
   }
   // Check datasheet for details
-  msg_[0] = 0x10 + channel_;  // 0x10 writes to dac register
+  msg_[0] = 0x10 + channel;  // 0x10 writes to dac register
   msg_[1] = ((byte)((decimal >> 0x8) & 0xFF));
   msg_[2] = ((byte)(decimal & 0xFF));
 }
