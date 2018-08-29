@@ -22,7 +22,7 @@ AD7734::AD7734(uint8_t sync_pin, uint8_t spi_bus_config_pin,
    slot_number_(slot_number) {
 }
 
-float AD7734::BytesToVoltage(Message message) {
+float AD7734::BytesToVoltage(spi_utils::Message message) {
   byte byte1 = message.msg[2];
   byte byte2 = message.msg[3];
 
@@ -31,8 +31,8 @@ float AD7734::BytesToVoltage(Message message) {
   return decimal * 20.0 / 65536 - 10.0;
 }
 
-AD7734::Message AD7734::SingleConversionModeMessage(uint8_t channel) {
-  Message msg;
+spi_utils::Message AD7734::SingleConversionModeMessage(uint8_t channel) {
+  spi_utils::Message msg;
   msg.block_size = 1;
   msg.n_blocks = 2;
   msg.msg[0] = 0x38 + channel;
@@ -40,8 +40,8 @@ AD7734::Message AD7734::SingleConversionModeMessage(uint8_t channel) {
   return msg;
 }
 
-AD7734::Message AD7734::ReadDataRegisterMessage(uint8_t channel) {
-  Message msg;
+spi_utils::Message AD7734::ReadDataRegisterMessage(uint8_t channel) {
+  spi_utils::Message msg;
   msg.block_size = 1;
   msg.n_blocks = 4;
   msg.msg[0] = 0x48 + channel;

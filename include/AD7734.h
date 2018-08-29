@@ -33,8 +33,8 @@ class AD7734: public AdcSpi {
   AD7734(uint8_t sync_pin, uint8_t spi_bus_config_pin,
          uint8_t data_ready_pin, uint8_t slot_number);
  protected:
-  virtual float BytesToVoltage(Message message);
-  virtual Message SingleConversionModeMessage(uint8_t channel);
-  virtual Message ReadDataRegisterMessage(uint8_t channel);
+  virtual float BytesToVoltage(spi_utils::Message message);
+  virtual spi_utils::Message SingleConversionModeMessage(uint8_t channel);
+  virtual spi_utils::Message ReadDataRegisterMessage(uint8_t channel);
 };
 #endif

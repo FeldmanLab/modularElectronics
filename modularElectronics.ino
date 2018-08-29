@@ -33,7 +33,7 @@ void loop() {
     resp = Serial.read();
     inbyte += resp;
     dac1.UpdateAnalogOutputs();
-    v = dac1.SetVoltage(inbyte.toFloat());
+    v = dac1.SetVoltage(0,inbyte.toFloat());
     Serial.println(v);
   }
 }

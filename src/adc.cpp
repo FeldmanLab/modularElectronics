@@ -40,7 +40,7 @@ bool AdcSpi::Begin(void) {
 }
 
 float AdcSpi::ReadVoltage(uint8_t channel) {
-  Message msg;
+  spi_utils::Message msg;
   msg = SingleConversionModeMessage(channel);
   // Start single conversion mode
   for (uint8_t block = 0; block < msg.n_blocks; block++) {
