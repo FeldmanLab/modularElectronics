@@ -13,9 +13,9 @@ Inheritance diagram for A\+D5764\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAD5764_a391940b2f0a4f34384ae47dd3e3cc13a}{A\+D5764}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t ldac\+\_\+pin, uint8\+\_\+t channel, double full\+\_\+scale=10.\+0)
+\mbox{\hyperlink{classAD5764_a3a5228318a1962905e7748f62269bc26}{A\+D5764}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t ldac\+\_\+pin, uint8\+\_\+t slot\+\_\+number, double full\+\_\+scale=10.\+0)
 \item 
-virtual void \mbox{\hyperlink{classAD5764_aae10d34276fdfcb3542e39bccd2f20f6}{Voltage\+To\+Bytes}} (float voltage)
+virtual void \mbox{\hyperlink{classAD5764_a85fac1341f18b4a7014da415b421cd03}{Voltage\+To\+Bytes}} (uint8\+\_\+t channel, float voltage)
 \item 
 virtual float \mbox{\hyperlink{classAD5764_a8f2845c7dd6b8984e7b85c35e50bbb66}{Bytes\+To\+Voltage}} (byte msg\mbox{[}\mbox{\hyperlink{classDac_af3de0bf669183e66ebf916f8c685fe6b}{kdata\+\_\+len\+\_\+}}\mbox{]})
 \end{DoxyCompactItemize}
@@ -26,11 +26,11 @@ virtual float \mbox{\hyperlink{classAD5764_a8f2845c7dd6b8984e7b85c35e50bbb66}{By
 \mbox{\hyperlink{classAD5764}{A\+D5764}} class 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAD5764_a391940b2f0a4f34384ae47dd3e3cc13a}\label{classAD5764_a391940b2f0a4f34384ae47dd3e3cc13a}} 
+\mbox{\Hypertarget{classAD5764_a3a5228318a1962905e7748f62269bc26}\label{classAD5764_a3a5228318a1962905e7748f62269bc26}} 
 \index{A\+D5764@{A\+D5764}!A\+D5764@{A\+D5764}}
 \index{A\+D5764@{A\+D5764}!A\+D5764@{A\+D5764}}
 \subsubsection{\texorpdfstring{A\+D5764()}{AD5764()}}
-{\footnotesize\ttfamily A\+D5764\+::\+A\+D5764 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{ldac\+\_\+pin,  }\item[{uint8\+\_\+t}]{channel,  }\item[{double}]{full\+\_\+scale = {\ttfamily 10.0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily A\+D5764\+::\+A\+D5764 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{ldac\+\_\+pin,  }\item[{uint8\+\_\+t}]{slot\+\_\+number,  }\item[{double}]{full\+\_\+scale = {\ttfamily 10.0} }\end{DoxyParamCaption})}
 
 Constructor 
 
@@ -45,15 +45,15 @@ Uses chip specifications (e.\+g. bit resolution, registers, range) to join a a t
 
 Implements \mbox{\hyperlink{classDac_a1dc9be97cb41ddacbd8dde0c5d4243b4}{Dac}}.
 
-\mbox{\Hypertarget{classAD5764_aae10d34276fdfcb3542e39bccd2f20f6}\label{classAD5764_aae10d34276fdfcb3542e39bccd2f20f6}} 
+\mbox{\Hypertarget{classAD5764_a85fac1341f18b4a7014da415b421cd03}\label{classAD5764_a85fac1341f18b4a7014da415b421cd03}} 
 \index{A\+D5764@{A\+D5764}!Voltage\+To\+Bytes@{Voltage\+To\+Bytes}}
 \index{Voltage\+To\+Bytes@{Voltage\+To\+Bytes}!A\+D5764@{A\+D5764}}
 \subsubsection{\texorpdfstring{Voltage\+To\+Bytes()}{VoltageToBytes()}}
-{\footnotesize\ttfamily void A\+D5764\+::\+Voltage\+To\+Bytes (\begin{DoxyParamCaption}\item[{float}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void A\+D5764\+::\+Voltage\+To\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{float}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Uses chip specifications (e.\+g. bit resolution, registers, range) to generate a a three-\/byte message msg\+\_\+ that writes to the dac register. Each D\+AC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
 
-Implements \mbox{\hyperlink{classDac_ac21022b2b921437418004af9ae7de8ae}{Dac}}.
+Implements \mbox{\hyperlink{classDac_af5e882c87d38e1580d1b046ffd9effa0}{Dac}}.
 
 
 

@@ -63,7 +63,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classAdcSpi-members.html">List of all members</a>  </div>
@@ -83,11 +82,6 @@ Inheritance diagram for AdcSpi:</div>
 </map>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAdcSpi_1_1Message.html">Message</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b3afab7dc4a788e1caf6a1277b67df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a5b3afab7dc4a788e1caf6a1277b67df9">AdcSpi</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t data_ready_pin, uint8_t clock_divider=7, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE3)</td></tr>
@@ -99,12 +93,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aa9970471c6fc505e4b91ac6985ac1489"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#aa9970471c6fc505e4b91ac6985ac1489">BytesToVoltage</a> (<a class="el" href="structAdcSpi_1_1Message.html">Message</a> message)=0</td></tr>
-<tr class="separator:aa9970471c6fc505e4b91ac6985ac1489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6a6421e3045c986c6997019a04d11ea"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structAdcSpi_1_1Message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#ac6a6421e3045c986c6997019a04d11ea">SingleConversionModeMessage</a> (uint8_t channel=0)=0</td></tr>
-<tr class="separator:ac6a6421e3045c986c6997019a04d11ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd92eec341ed010e5b7569ffcbba811d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structAdcSpi_1_1Message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#acd92eec341ed010e5b7569ffcbba811d">ReadDataRegisterMessage</a> (uint8_t channel=0)=0</td></tr>
-<tr class="separator:acd92eec341ed010e5b7569ffcbba811d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a778d7c86b37cebe4444ec5284f2ea9b7"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a778d7c86b37cebe4444ec5284f2ea9b7">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)=0</td></tr>
+<tr class="separator:a778d7c86b37cebe4444ec5284f2ea9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a369da36232861640a113792d2398ce44"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a369da36232861640a113792d2398ce44">SingleConversionModeMessage</a> (uint8_t channel=0)=0</td></tr>
+<tr class="separator:a369da36232861640a113792d2398ce44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3578f18e1976d9e2b075a3fbdc003517"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a3578f18e1976d9e2b075a3fbdc003517">ReadDataRegisterMessage</a> (uint8_t channel=0)=0</td></tr>
+<tr class="separator:a3578f18e1976d9e2b075a3fbdc003517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Adc class </p>
@@ -182,8 +176,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa9970471c6fc505e4b91ac6985ac1489"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9970471c6fc505e4b91ac6985ac1489">&#9670;&nbsp;</a></span>BytesToVoltage()</h2>
+<a id="a778d7c86b37cebe4444ec5284f2ea9b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a778d7c86b37cebe4444ec5284f2ea9b7">&#9670;&nbsp;</a></span>BytesToVoltage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +188,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual float AdcSpi::BytesToVoltage </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structAdcSpi_1_1Message.html">Message</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
           <td></td>
         </tr>
@@ -205,14 +199,14 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Uses chip specifications (e.g. bit resolution, registers, range) to convert a <a class="el" href="structAdcSpi_1_1Message.html">Message</a> to voltage. Each ADC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p>
+<p>Uses chip specifications (e.g. bit resolution, registers, range) to convert a Message to voltage. Each ADC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p>
 
-<p>Implemented in <a class="el" href="classAD7734.html#afe43654ed83d2af599bea00b93cedc28">AD7734</a>.</p>
+<p>Implemented in <a class="el" href="classAD7734.html#a76b600d52392dbfe2d053e166af41018">AD7734</a>.</p>
 
 </div>
 </div>
-<a id="acd92eec341ed010e5b7569ffcbba811d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd92eec341ed010e5b7569ffcbba811d">&#9670;&nbsp;</a></span>ReadDataRegisterMessage()</h2>
+<a id="a3578f18e1976d9e2b075a3fbdc003517"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3578f18e1976d9e2b075a3fbdc003517">&#9670;&nbsp;</a></span>ReadDataRegisterMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,7 +215,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="structAdcSpi_1_1Message.html">Message</a> AdcSpi::ReadDataRegisterMessage </td>
+          <td class="memname">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> AdcSpi::ReadDataRegisterMessage </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>channel</em> = <code>0</code></td><td>)</td>
@@ -234,9 +228,9 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns <a class="el" href="structAdcSpi_1_1Message.html">Message</a> object to read the data register. </p>
+<p>Returns Message object to read the data register. </p>
 
-<p>Implemented in <a class="el" href="classAD7734.html#a2bfd6161eedac320b5b77beb6f209517">AD7734</a>.</p>
+<p>Implemented in <a class="el" href="classAD7734.html#a6fa5e7c2bd8cde50dccb328d36f12516">AD7734</a>.</p>
 
 </div>
 </div>
@@ -259,8 +253,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac6a6421e3045c986c6997019a04d11ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6a6421e3045c986c6997019a04d11ea">&#9670;&nbsp;</a></span>SingleConversionModeMessage()</h2>
+<a id="a369da36232861640a113792d2398ce44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369da36232861640a113792d2398ce44">&#9670;&nbsp;</a></span>SingleConversionModeMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +263,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="structAdcSpi_1_1Message.html">Message</a> AdcSpi::SingleConversionModeMessage </td>
+          <td class="memname">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> AdcSpi::SingleConversionModeMessage </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>channel</em> = <code>0</code></td><td>)</td>
@@ -282,9 +276,9 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns <a class="el" href="structAdcSpi_1_1Message.html">Message</a> object to start single conversion mode. </p>
+<p>Returns Message object to start single conversion mode. </p>
 
-<p>Implemented in <a class="el" href="classAD7734.html#a6ac58d1c41ad0562329a932d464bfce1">AD7734</a>.</p>
+<p>Implemented in <a class="el" href="classAD7734.html#af677fbfbae0ec1c78b453ceb4a6736ec">AD7734</a>.</p>
 
 </div>
 </div>

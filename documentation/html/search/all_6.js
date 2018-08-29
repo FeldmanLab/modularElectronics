@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['n_5fblocks',['n_blocks',['../structAdcSpi_1_1Message.html#a7f1b15e4a568314fee4210faaed79a62',1,'AdcSpi::Message']]]
+  ['n_5fblocks',['n_blocks',['../structspi__utils_1_1Message.html#a00d125aa721450f39c7ae0310090af65',1,'spi_utils::Message']]]
 ];

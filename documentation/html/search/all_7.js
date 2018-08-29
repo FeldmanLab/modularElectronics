@@ -1,6 +1,6 @@
 var searchData=
 [
   ['readme',['README',['../md_README.html',1,'']]],
-  ['readdataregistermessage',['ReadDataRegisterMessage',['../classAD7734.html#a2bfd6161eedac320b5b77beb6f209517',1,'AD7734::ReadDataRegisterMessage()'],['../classAdcSpi.html#acd92eec341ed010e5b7569ffcbba811d',1,'AdcSpi::ReadDataRegisterMessage()']]],
+  ['readdataregistermessage',['ReadDataRegisterMessage',['../classAD7734.html#a6fa5e7c2bd8cde50dccb328d36f12516',1,'AD7734::ReadDataRegisterMessage()'],['../classAdcSpi.html#a3578f18e1976d9e2b075a3fbdc003517',1,'AdcSpi::ReadDataRegisterMessage()']]],
   ['readvoltage',['ReadVoltage',['../classAdcSpi.html#aa245df90e70654aabc64f88107ccd804',1,'AdcSpi']]]
 ];

@@ -10,11 +10,6 @@ Inheritance diagram for Adc\+Spi\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{classAdcSpi}
 \end{center}
 \end{figure}
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}}
-\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,11 +22,11 @@ float \mbox{\hyperlink{classAdcSpi_aa245df90e70654aabc64f88107ccd804}{Read\+Volt
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual float \mbox{\hyperlink{classAdcSpi_aa9970471c6fc505e4b91ac6985ac1489}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} message)=0
+virtual float \mbox{\hyperlink{classAdcSpi_a778d7c86b37cebe4444ec5284f2ea9b7}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} message)=0
 \item 
-virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} \mbox{\hyperlink{classAdcSpi_ac6a6421e3045c986c6997019a04d11ea}{Single\+Conversion\+Mode\+Message}} (uint8\+\_\+t channel=0)=0
+virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classAdcSpi_a369da36232861640a113792d2398ce44}{Single\+Conversion\+Mode\+Message}} (uint8\+\_\+t channel=0)=0
 \item 
-virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} \mbox{\hyperlink{classAdcSpi_acd92eec341ed010e5b7569ffcbba811d}{Read\+Data\+Register\+Message}} (uint8\+\_\+t channel=0)=0
+virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classAdcSpi_a3578f18e1976d9e2b075a3fbdc003517}{Read\+Data\+Register\+Message}} (uint8\+\_\+t channel=0)=0
 \end{DoxyCompactItemize}
 
 
@@ -54,25 +49,25 @@ Constructor
 \subsubsection{\texorpdfstring{Begin()}{Begin()}}
 {\footnotesize\ttfamily bool Adc\+Spi\+::\+Begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-Configures pins for S\+PI and initializes S\+PI communication. \mbox{\Hypertarget{classAdcSpi_aa9970471c6fc505e4b91ac6985ac1489}\label{classAdcSpi_aa9970471c6fc505e4b91ac6985ac1489}} 
+Configures pins for S\+PI and initializes S\+PI communication. \mbox{\Hypertarget{classAdcSpi_a778d7c86b37cebe4444ec5284f2ea9b7}\label{classAdcSpi_a778d7c86b37cebe4444ec5284f2ea9b7}} 
 \index{Adc\+Spi@{Adc\+Spi}!Bytes\+To\+Voltage@{Bytes\+To\+Voltage}}
 \index{Bytes\+To\+Voltage@{Bytes\+To\+Voltage}!Adc\+Spi@{Adc\+Spi}}
 \subsubsection{\texorpdfstring{Bytes\+To\+Voltage()}{BytesToVoltage()}}
-{\footnotesize\ttfamily virtual float Adc\+Spi\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAdcSpi_1_1Message}{Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual float Adc\+Spi\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
-Uses chip specifications (e.\+g. bit resolution, registers, range) to convert a \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} to voltage. Each A\+DC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
+Uses chip specifications (e.\+g. bit resolution, registers, range) to convert a Message to voltage. Each A\+DC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
 
-Implemented in \mbox{\hyperlink{classAD7734_afe43654ed83d2af599bea00b93cedc28}{A\+D7734}}.
+Implemented in \mbox{\hyperlink{classAD7734_a76b600d52392dbfe2d053e166af41018}{A\+D7734}}.
 
-\mbox{\Hypertarget{classAdcSpi_acd92eec341ed010e5b7569ffcbba811d}\label{classAdcSpi_acd92eec341ed010e5b7569ffcbba811d}} 
+\mbox{\Hypertarget{classAdcSpi_a3578f18e1976d9e2b075a3fbdc003517}\label{classAdcSpi_a3578f18e1976d9e2b075a3fbdc003517}} 
 \index{Adc\+Spi@{Adc\+Spi}!Read\+Data\+Register\+Message@{Read\+Data\+Register\+Message}}
 \index{Read\+Data\+Register\+Message@{Read\+Data\+Register\+Message}!Adc\+Spi@{Adc\+Spi}}
 \subsubsection{\texorpdfstring{Read\+Data\+Register\+Message()}{ReadDataRegisterMessage()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} Adc\+Spi\+::\+Read\+Data\+Register\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} Adc\+Spi\+::\+Read\+Data\+Register\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
-Returns \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} object to read the data register. 
+Returns Message object to read the data register. 
 
-Implemented in \mbox{\hyperlink{classAD7734_a2bfd6161eedac320b5b77beb6f209517}{A\+D7734}}.
+Implemented in \mbox{\hyperlink{classAD7734_a6fa5e7c2bd8cde50dccb328d36f12516}{A\+D7734}}.
 
 \mbox{\Hypertarget{classAdcSpi_aa245df90e70654aabc64f88107ccd804}\label{classAdcSpi_aa245df90e70654aabc64f88107ccd804}} 
 \index{Adc\+Spi@{Adc\+Spi}!Read\+Voltage@{Read\+Voltage}}
@@ -80,15 +75,15 @@ Implemented in \mbox{\hyperlink{classAD7734_a2bfd6161eedac320b5b77beb6f209517}{A
 \subsubsection{\texorpdfstring{Read\+Voltage()}{ReadVoltage()}}
 {\footnotesize\ttfamily float Adc\+Spi\+::\+Read\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})}
 
-Sets a voltage to \mbox{\hyperlink{classDac}{Dac}} object via S\+PI. The message msg\+\_\+ is generated by calling Voltage\+To\+Bytes(), which is specific to each chip. \mbox{\Hypertarget{classAdcSpi_ac6a6421e3045c986c6997019a04d11ea}\label{classAdcSpi_ac6a6421e3045c986c6997019a04d11ea}} 
+Sets a voltage to \mbox{\hyperlink{classDac}{Dac}} object via S\+PI. The message msg\+\_\+ is generated by calling Voltage\+To\+Bytes(), which is specific to each chip. \mbox{\Hypertarget{classAdcSpi_a369da36232861640a113792d2398ce44}\label{classAdcSpi_a369da36232861640a113792d2398ce44}} 
 \index{Adc\+Spi@{Adc\+Spi}!Single\+Conversion\+Mode\+Message@{Single\+Conversion\+Mode\+Message}}
 \index{Single\+Conversion\+Mode\+Message@{Single\+Conversion\+Mode\+Message}!Adc\+Spi@{Adc\+Spi}}
 \subsubsection{\texorpdfstring{Single\+Conversion\+Mode\+Message()}{SingleConversionModeMessage()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} Adc\+Spi\+::\+Single\+Conversion\+Mode\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} Adc\+Spi\+::\+Single\+Conversion\+Mode\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
-Returns \mbox{\hyperlink{structAdcSpi_1_1Message}{Message}} object to start single conversion mode. 
+Returns Message object to start single conversion mode. 
 
-Implemented in \mbox{\hyperlink{classAD7734_a6ac58d1c41ad0562329a932d464bfce1}{A\+D7734}}.
+Implemented in \mbox{\hyperlink{classAD7734_af677fbfbae0ec1c78b453ceb4a6736ec}{A\+D7734}}.
 
 
 
