@@ -32,7 +32,7 @@ class AD5764: public Dac {
   ///
   AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
          uint8_t ldac_pin, uint8_t slot_number, double full_scale=10.0);
-  virtual void VoltageToBytes(uint8_t channel, float voltage);
-  virtual float BytesToVoltage(byte msg[kdata_len_]);
+  virtual float BytesToVoltage(spi_utils::Message message);
+  virtual spi_utils::Message SetVoltageMessage(uint8_t channel, double voltage);
 };
 #endif

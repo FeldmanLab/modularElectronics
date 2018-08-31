@@ -15,9 +15,9 @@ Inheritance diagram for A\+D5764\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classAD5764_a3a5228318a1962905e7748f62269bc26}{A\+D5764}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t ldac\+\_\+pin, uint8\+\_\+t slot\+\_\+number, double full\+\_\+scale=10.\+0)
 \item 
-virtual void \mbox{\hyperlink{classAD5764_a85fac1341f18b4a7014da415b421cd03}{Voltage\+To\+Bytes}} (uint8\+\_\+t channel, float voltage)
+virtual float \mbox{\hyperlink{classAD5764_ab2c3e35cc2dba24a54e4facf2910d6d7}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} message)
 \item 
-virtual float \mbox{\hyperlink{classAD5764_a8f2845c7dd6b8984e7b85c35e50bbb66}{Bytes\+To\+Voltage}} (byte msg\mbox{[}\mbox{\hyperlink{classDac_af3de0bf669183e66ebf916f8c685fe6b}{kdata\+\_\+len\+\_\+}}\mbox{]})
+virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}{Set\+Voltage\+Message}} (uint8\+\_\+t channel, double voltage)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -35,25 +35,25 @@ virtual float \mbox{\hyperlink{classAD5764_a8f2845c7dd6b8984e7b85c35e50bbb66}{By
 Constructor 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classAD5764_a8f2845c7dd6b8984e7b85c35e50bbb66}\label{classAD5764_a8f2845c7dd6b8984e7b85c35e50bbb66}} 
+\mbox{\Hypertarget{classAD5764_ab2c3e35cc2dba24a54e4facf2910d6d7}\label{classAD5764_ab2c3e35cc2dba24a54e4facf2910d6d7}} 
 \index{A\+D5764@{A\+D5764}!Bytes\+To\+Voltage@{Bytes\+To\+Voltage}}
 \index{Bytes\+To\+Voltage@{Bytes\+To\+Voltage}!A\+D5764@{A\+D5764}}
 \subsubsection{\texorpdfstring{Bytes\+To\+Voltage()}{BytesToVoltage()}}
-{\footnotesize\ttfamily float A\+D5764\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{byte}]{msg\mbox{[}kdata\+\_\+len\+\_\+\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily float A\+D5764\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Uses chip specifications (e.\+g. bit resolution, registers, range) to join a a three-\/byte message a maps it to a voltage. Each D\+AC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
 
-Implements \mbox{\hyperlink{classDac_a1dc9be97cb41ddacbd8dde0c5d4243b4}{Dac}}.
+Implements \mbox{\hyperlink{classDac_a506a65776c631fb3abc6609e58046655}{Dac}}.
 
-\mbox{\Hypertarget{classAD5764_a85fac1341f18b4a7014da415b421cd03}\label{classAD5764_a85fac1341f18b4a7014da415b421cd03}} 
-\index{A\+D5764@{A\+D5764}!Voltage\+To\+Bytes@{Voltage\+To\+Bytes}}
-\index{Voltage\+To\+Bytes@{Voltage\+To\+Bytes}!A\+D5764@{A\+D5764}}
-\subsubsection{\texorpdfstring{Voltage\+To\+Bytes()}{VoltageToBytes()}}
-{\footnotesize\ttfamily void A\+D5764\+::\+Voltage\+To\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{float}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}\label{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}} 
+\index{A\+D5764@{A\+D5764}!Set\+Voltage\+Message@{Set\+Voltage\+Message}}
+\index{Set\+Voltage\+Message@{Set\+Voltage\+Message}!A\+D5764@{A\+D5764}}
+\subsubsection{\texorpdfstring{Set\+Voltage\+Message()}{SetVoltageMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} A\+D5764\+::\+Set\+Voltage\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{double}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Uses chip specifications (e.\+g. bit resolution, registers, range) to generate a a three-\/byte message msg\+\_\+ that writes to the dac register. Each D\+AC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
+Returns Message object to write data register. 
 
-Implements \mbox{\hyperlink{classDac_af5e882c87d38e1580d1b046ffd9effa0}{Dac}}.
+Implements \mbox{\hyperlink{classDac_a87132e3c19313742d92f57d9b792e0e0}{Dac}}.
 
 
 

@@ -46,36 +46,41 @@ void Dac::UpdateAnalogOutputs(void) {
   digitalWrite(ldac_pin_, LOW);
   digitalWrite(ldac_pin_, HIGH);}
 
-float Dac::SetVoltage(uint8_t channel, float voltage) {
-  VoltageToBytes(channel, voltage);
+float Dac::SetVoltage(uint8_t channel, double voltage) {
+  spi_utils::Message msg;
+  msg = SetVoltageMessage(channel, voltage);
   // SPI data transfer
-  digitalWrite(sync_pin_, LOW);  // Dac starts listening
-  // Sending bytes
-  for (uint8_t i = 0; i < kdata_len_; i++) {
-    SPI.transfer(spi_bus_config_pin_, msg_[i]);
+  for (uint8_t block = 0; block < msg.n_blocks; block++) {
+    digitalWrite(sync_pin_, LOW);
+    for (uint8_t db = 0; db < msg.block_size; db++) {
+      SPI.transfer(spi_bus_config_pin_, msg.msg[block*msg.block_size+db]);
+    }
+    digitalWrite(sync_pin_, HIGH);
   }
-  digitalWrite(sync_pin_, HIGH);  // Dac register updated
   UpdateAnalogOutputs();  // Analog output updated
   // Updated voltage may be different than voltage parameter because of
   // resolution
-  return BytesToVoltage(msg_);
+  return BytesToVoltage(msg);
 }
 
 float Dac::GetVoltage(uint8_t channel) {
-  byte received_bytes[kdata_len_];  // Storage for readback bytes 
-  VoltageToBytes(channel, 0);
-  msg_[0] = msg_[0] | 0x80;  // Set MSB to 1, which reads the register
+  spi_utils::Message msg;
+  msg = SetVoltageMessage(channel, 0);
+  msg.msg[0] = msg.msg[0] | 0x80;  // Set MSB to 1, which reads the register
   // SPI data transfer
-  digitalWrite(sync_pin_, LOW);  // Dac starts listening
-  // Sending bytes
-  for (uint8_t i = 0; i < kdata_len_; i++) {
-    SPI.transfer(spi_bus_config_pin_, msg_[i]);
+  for (uint8_t block = 0; block < msg.n_blocks; block++) {
+    digitalWrite(sync_pin_, LOW);
+    for (uint8_t db = 0; db < msg.block_size; db++) {
+      SPI.transfer(spi_bus_config_pin_, msg.msg[block*msg.block_size+db]);
+    }
+    digitalWrite(sync_pin_, HIGH);
   }
-  digitalWrite(sync_pin_, HIGH);  // End of readback command
-  digitalWrite(sync_pin_, LOW);  // Dac starts readback
-  for (uint8_t i = 0; i < kdata_len_; i++) {
-    received_bytes[i] = SPI.transfer(spi_bus_config_pin_, 0);
+  for (uint8_t block = 0; block < msg.n_blocks; block++) {
+    digitalWrite(sync_pin_, LOW);
+    for (uint8_t db = 0; db < msg.block_size; db++) {
+      msg.msg[block*msg.block_size+db]=SPI.transfer(spi_bus_config_pin_, 0);
+    }
+    digitalWrite(sync_pin_, HIGH);
   }
-  digitalWrite(sync_pin_, HIGH);  // Dac readback finished
-  return BytesToVoltage(received_bytes);
+  return BytesToVoltage(msg);
 }

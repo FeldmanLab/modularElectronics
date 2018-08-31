@@ -57,7 +57,7 @@ float AdcSpi::ReadVoltage(uint8_t channel) {
   for (uint8_t block = 0; block < msg.n_blocks; block++) {
     digitalWrite(sync_pin_, LOW);
     for (uint8_t db = 0; db < msg.block_size; db++) {
-      msg.msg[block*msg.block_size]=SPI.transfer(spi_bus_config_pin_, msg.msg[block*msg.block_size+db]);
+      msg.msg[block*msg.block_size+db]=SPI.transfer(spi_bus_config_pin_, msg.msg[block*msg.block_size+db]);
     }
     digitalWrite(sync_pin_, HIGH);
   }
