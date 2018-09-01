@@ -14,14 +14,20 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#include "include/AD5764.h"
-AD5764 dac1(4, 4, 6, 1);
+// #include "include/AD5764.h"
+#include "include/AD7734.h"
+
+// AD5764 dac1(4, 52, 6, 1);
+AD7734 adc1(52, 4, 48, 1);
 //include "src/dac.h"
 //Dac dac1(4, 4, 6);
 
 void setup() {
   Serial.begin(115200);
-  dac1.Begin();
+  //dac1.Begin();
+  adc1.Begin();
+  pinMode(44, OUTPUT);
+  digitalWrite(44, HIGH);
 }
 
 void loop() {
@@ -32,8 +38,8 @@ void loop() {
     float v;
     resp = Serial.read();
     inbyte += resp;
-    dac1.UpdateAnalogOutputs();
-    v = dac1.SetVoltage(0,inbyte.toFloat());
+    //v = dac1.SetVoltage(0,inbyte.toFloat());
+    v = adc1.ReadVoltage(inbyte.toInt());
     Serial.println(v);
   }
 }

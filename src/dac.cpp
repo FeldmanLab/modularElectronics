@@ -35,9 +35,9 @@ bool Dac::Begin(void) {
   digitalWrite(ldac_pin_, HIGH);
   // Initializing and configuring SPI
   SPI.begin(spi_bus_config_pin_);
-  SPI.setBitOrder(bit_order_);
-  SPI.setClockDivider(clock_divider_);
-  SPI.setDataMode(spi_mode_);
+  SPI.setBitOrder(spi_bus_config_pin_, bit_order_);
+  SPI.setClockDivider(spi_bus_config_pin_, clock_divider_);
+  SPI.setDataMode(spi_bus_config_pin_, spi_mode_);
   return true;
 }
 
@@ -50,6 +50,7 @@ float Dac::SetVoltage(uint8_t channel, double voltage) {
   spi_utils::Message msg;
   msg = SetVoltageMessage(channel, voltage);
   // SPI data transfer
+  SPI.transfer(spi_bus_config_pin_, 0); // Sets CLK and MOSI to proper level
   for (uint8_t block = 0; block < msg.n_blocks; block++) {
     digitalWrite(sync_pin_, LOW);
     for (uint8_t db = 0; db < msg.block_size; db++) {
@@ -68,6 +69,7 @@ float Dac::GetVoltage(uint8_t channel) {
   msg = SetVoltageMessage(channel, 0);
   msg.msg[0] = msg.msg[0] | 0x80;  // Set MSB to 1, which reads the register
   // SPI data transfer
+  SPI.transfer(spi_bus_config_pin_, 0); // Sets CLK and MOSI to proper level
   for (uint8_t block = 0; block < msg.n_blocks; block++) {
     digitalWrite(sync_pin_, LOW);
     for (uint8_t db = 0; db < msg.block_size; db++) {

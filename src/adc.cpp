@@ -33,9 +33,9 @@ bool AdcSpi::Begin(void) {
   digitalWrite(sync_pin_, HIGH);
   // Initializing and configuring SPI
   SPI.begin(spi_bus_config_pin_);
-  SPI.setBitOrder(bit_order_);
-  SPI.setClockDivider(clock_divider_);
-  SPI.setDataMode(spi_mode_);
+  SPI.setBitOrder(spi_bus_config_pin_, bit_order_);
+  SPI.setClockDivider(spi_bus_config_pin_, clock_divider_);
+  SPI.setDataMode(spi_bus_config_pin_, spi_mode_);
   return true;
 }
 
@@ -43,6 +43,7 @@ float AdcSpi::ReadVoltage(uint8_t channel) {
   spi_utils::Message msg;
   msg = SingleConversionModeMessage(channel);
   // Start single conversion mode
+  SPI.transfer(spi_bus_config_pin_, 0); // Sets CLK and MOSI to proper level
   for (uint8_t block = 0; block < msg.n_blocks; block++) {
     digitalWrite(sync_pin_, LOW);
     for (uint8_t db = 0; db < msg.block_size; db++) {
@@ -50,7 +51,7 @@ float AdcSpi::ReadVoltage(uint8_t channel) {
     }
     digitalWrite(sync_pin_, HIGH);
   }
-  // Wait for conversion to finish
+  // Wait for conversion to finish;
   while (digitalRead(data_ready_pin_) == HIGH) {}
   msg = ReadDataRegisterMessage(channel);
   // Start data register readback
