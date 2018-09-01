@@ -1,0 +1,63 @@
+\hypertarget{classAD5764}{}\section{A\+D5764 Class Reference}
+\label{classAD5764}\index{A\+D5764@{A\+D5764}}
+
+
+{\ttfamily \#include $<$A\+D5764.\+h$>$}
+
+Inheritance diagram for A\+D5764\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAD5764}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAD5764_a3a5228318a1962905e7748f62269bc26}{A\+D5764}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t ldac\+\_\+pin, uint8\+\_\+t slot\+\_\+number, double full\+\_\+scale=10.\+0)
+\item 
+virtual float \mbox{\hyperlink{classAD5764_ab2c3e35cc2dba24a54e4facf2910d6d7}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} message)
+\item 
+virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}{Set\+Voltage\+Message}} (uint8\+\_\+t channel, double voltage)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classAD5764}{A\+D5764}} class 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAD5764_a3a5228318a1962905e7748f62269bc26}\label{classAD5764_a3a5228318a1962905e7748f62269bc26}} 
+\index{A\+D5764@{A\+D5764}!A\+D5764@{A\+D5764}}
+\index{A\+D5764@{A\+D5764}!A\+D5764@{A\+D5764}}
+\subsubsection{\texorpdfstring{A\+D5764()}{AD5764()}}
+{\footnotesize\ttfamily A\+D5764\+::\+A\+D5764 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{ldac\+\_\+pin,  }\item[{uint8\+\_\+t}]{slot\+\_\+number,  }\item[{double}]{full\+\_\+scale = {\ttfamily 10.0} }\end{DoxyParamCaption})}
+
+Constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAD5764_ab2c3e35cc2dba24a54e4facf2910d6d7}\label{classAD5764_ab2c3e35cc2dba24a54e4facf2910d6d7}} 
+\index{A\+D5764@{A\+D5764}!Bytes\+To\+Voltage@{Bytes\+To\+Voltage}}
+\index{Bytes\+To\+Voltage@{Bytes\+To\+Voltage}!A\+D5764@{A\+D5764}}
+\subsubsection{\texorpdfstring{Bytes\+To\+Voltage()}{BytesToVoltage()}}
+{\footnotesize\ttfamily float A\+D5764\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Uses chip specifications (e.\+g. bit resolution, registers, range) to join a a three-\/byte message a maps it to a voltage. Each D\+AC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
+
+Implements \mbox{\hyperlink{classDac_a506a65776c631fb3abc6609e58046655}{Dac}}.
+
+\mbox{\Hypertarget{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}\label{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}} 
+\index{A\+D5764@{A\+D5764}!Set\+Voltage\+Message@{Set\+Voltage\+Message}}
+\index{Set\+Voltage\+Message@{Set\+Voltage\+Message}!A\+D5764@{A\+D5764}}
+\subsubsection{\texorpdfstring{Set\+Voltage\+Message()}{SetVoltageMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} A\+D5764\+::\+Set\+Voltage\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{double}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns Message object to write data register. 
+
+Implements \mbox{\hyperlink{classDac_a87132e3c19313742d92f57d9b792e0e0}{Dac}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/A\+D5764.\+h\item 
+src/A\+D5764.\+cpp\end{DoxyCompactItemize}
