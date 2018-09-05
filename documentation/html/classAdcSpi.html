@@ -84,27 +84,32 @@ Inheritance diagram for AdcSpi:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5b3afab7dc4a788e1caf6a1277b67df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a5b3afab7dc4a788e1caf6a1277b67df9">AdcSpi</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t data_ready_pin, uint8_t clock_divider=7, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE3)</td></tr>
-<tr class="separator:a5b3afab7dc4a788e1caf6a1277b67df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c66ca397c2a9d0a7c475ee551b3c388"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a3c66ca397c2a9d0a7c475ee551b3c388">AdcSpi</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t data_ready_pin, uint8_t bit_resolution, uint8_t clock_divider=7, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE3)</td></tr>
+<tr class="separator:a3c66ca397c2a9d0a7c475ee551b3c388"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8f8f27578dd85cfcdbc9439bbce66cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#aa8f8f27578dd85cfcdbc9439bbce66cb">Begin</a> (void)</td></tr>
 <tr class="separator:aa8f8f27578dd85cfcdbc9439bbce66cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa245df90e70654aabc64f88107ccd804"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#aa245df90e70654aabc64f88107ccd804">ReadVoltage</a> (uint8_t channel=0)</td></tr>
-<tr class="separator:aa245df90e70654aabc64f88107ccd804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace8264acfedb357986afa5f611eff3ee"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#ace8264acfedb357986afa5f611eff3ee">ReadVoltage</a> (uint8_t channel=0)</td></tr>
+<tr class="separator:ace8264acfedb357986afa5f611eff3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d2ab924ad4de5b91713a22189f2ad0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#ac9d2ab924ad4de5b91713a22189f2ad0">ReadVoltage</a> (uint8_t channel, byte previous_meas[], bool send)</td></tr>
+<tr class="separator:ac9d2ab924ad4de5b91713a22189f2ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a778d7c86b37cebe4444ec5284f2ea9b7"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a778d7c86b37cebe4444ec5284f2ea9b7">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)=0</td></tr>
-<tr class="separator:a778d7c86b37cebe4444ec5284f2ea9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a1deb55a9f0e71a405ca47a41f3804"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a25a1deb55a9f0e71a405ca47a41f3804">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)=0</td></tr>
+<tr class="separator:a25a1deb55a9f0e71a405ca47a41f3804"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a369da36232861640a113792d2398ce44"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a369da36232861640a113792d2398ce44">SingleConversionModeMessage</a> (uint8_t channel=0)=0</td></tr>
 <tr class="separator:a369da36232861640a113792d2398ce44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3578f18e1976d9e2b075a3fbdc003517"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a3578f18e1976d9e2b075a3fbdc003517">ReadDataRegisterMessage</a> (uint8_t channel=0)=0</td></tr>
 <tr class="separator:a3578f18e1976d9e2b075a3fbdc003517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Adc class </p>
+<div class="textblock"><p><a class="el" href="classAdcSpi.html">AdcSpi</a> class </p><dl class="section author"><dt>Author</dt><dd>Carlos Kometter </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2018 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5b3afab7dc4a788e1caf6a1277b67df9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b3afab7dc4a788e1caf6a1277b67df9">&#9670;&nbsp;</a></span>AdcSpi()</h2>
+<a id="a3c66ca397c2a9d0a7c475ee551b3c388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c66ca397c2a9d0a7c475ee551b3c388">&#9670;&nbsp;</a></span>AdcSpi()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,6 +136,12 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>bit_resolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>clock_divider</em> = <code>7</code>, </td>
         </tr>
         <tr>
@@ -152,7 +163,28 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor </p>
+<p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sync_pin</td><td>The sync or chip select of the adc chip. Different than spi_bus_config_pin </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">spi_bus_config_pin</td><td>The pin that identifies the bus. More than one adc can share the same pin. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_ready_pin</td><td>This pin tells whether the adc has finished measuring a voltage. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bit_resolution</td><td>The bit resolution of the adc (eg. 16 for <a class="el" href="classAD7734.html">AD7734</a>). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clock_divider</td><td>Sets the spi frequency. spi_freq = clock_freq (84 MHz for arduino due) / clock_divider (default: 7) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bit_order</td><td>Possible values:<ul>
+<li>MSBFIRST Most significant bit first. (default)</li>
+<li>LSBFIRST Least significant bit first.</li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">spi_mode</td><td>Possible values:<ul>
+<li>SPI_MODE0</li>
+<li>SPI_MODE1</li>
+<li>SPI_MODE2</li>
+<li>SPI_MODE3 (default) </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -172,12 +204,12 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Configures pins for SPI and initializes SPI communication. </p>
+<p>Configures pins for SPI and initializes SPI communication. This function must be called before calling any other function. </p>
 
 </div>
 </div>
-<a id="a778d7c86b37cebe4444ec5284f2ea9b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a778d7c86b37cebe4444ec5284f2ea9b7">&#9670;&nbsp;</a></span>BytesToVoltage()</h2>
+<a id="a25a1deb55a9f0e71a405ca47a41f3804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25a1deb55a9f0e71a405ca47a41f3804">&#9670;&nbsp;</a></span>BytesToVoltage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +218,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual float AdcSpi::BytesToVoltage </td>
+          <td class="memname">virtual double AdcSpi::BytesToVoltage </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -199,9 +231,15 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Uses chip specifications (e.g. bit resolution, registers, range) to convert a Message to voltage. Each ADC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p>
+<p>Uses chip specifications (e.g. bit resolution, registers, range) to convert a set of bytes stored in a Message object to voltage. Each ADC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Message object which stores the bytes for conversion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The measured voltage. </dd></dl>
 
-<p>Implemented in <a class="el" href="classAD7734.html#a76b600d52392dbfe2d053e166af41018">AD7734</a>.</p>
+<p>Implemented in <a class="el" href="classAD7734.html#aa13b49141e69a45508998004a208afdc">AD7734</a>.</p>
 
 </div>
 </div>
@@ -228,20 +266,26 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns Message object to read the data register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The channel to be read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Message object to read the data register. </dd></dl>
 
 <p>Implemented in <a class="el" href="classAD7734.html#a6fa5e7c2bd8cde50dccb328d36f12516">AD7734</a>.</p>
 
 </div>
 </div>
-<a id="aa245df90e70654aabc64f88107ccd804"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa245df90e70654aabc64f88107ccd804">&#9670;&nbsp;</a></span>ReadVoltage()</h2>
+<a id="ace8264acfedb357986afa5f611eff3ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace8264acfedb357986afa5f611eff3ee">&#9670;&nbsp;</a></span>ReadVoltage() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float AdcSpi::ReadVoltage </td>
+          <td class="memname">double AdcSpi::ReadVoltage </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>channel</em> = <code>0</code></td><td>)</td>
@@ -249,7 +293,61 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets a voltage to <a class="el" href="classDac.html">Dac</a> object via SPI. The message msg_ is generated by calling VoltageToBytes(), which is specific to each chip. </p>
+<p>Read the voltage at one of the analog inputs of the adc. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The analog input to be read. (default: 0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The voltage at the analog input. </dd></dl>
+
+</div>
+</div>
+<a id="ac9d2ab924ad4de5b91713a22189f2ad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d2ab924ad4de5b91713a22189f2ad0">&#9670;&nbsp;</a></span>ReadVoltage() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t AdcSpi::ReadVoltage </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>previous_meas</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>send</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</p>
+<p>This function takes of the dead time the adc is converting (meausering) a new voltage. During this dead time the arduino sends the previous measurement via serial. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The analog input to be read. (default: 0) </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">previous_meas[]</td><td>stores values of previous measurement to be sent vias spi. After the adc finishes converting the new voltage, it stores the new values. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">send</td><td>Possible values:<ul>
+<li>true Content of previous_meas[] is sent via serial while the adc is converting current voltage.</li>
+<li>false Content of previous_meas[] is non sent via serial while the adc is converting current voltage. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The voltage at the analog input. </dd></dl>
 
 </div>
 </div>
@@ -276,7 +374,13 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns Message object to start single conversion mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The channel to start single conversion mode on dump mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Message object to start single conversion mode on dump mode. </dd></dl>
 
 <p>Implemented in <a class="el" href="classAD7734.html#af677fbfbae0ec1c78b453ceb4a6736ec">AD7734</a>.</p>
 

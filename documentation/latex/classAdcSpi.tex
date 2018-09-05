@@ -13,16 +13,18 @@ Inheritance diagram for Adc\+Spi\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAdcSpi_a5b3afab7dc4a788e1caf6a1277b67df9}{Adc\+Spi}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t data\+\_\+ready\+\_\+pin, uint8\+\_\+t clock\+\_\+divider=7, Bit\+Order bit\+\_\+order=M\+S\+B\+F\+I\+R\+ST, uint8\+\_\+t spi\+\_\+mode=S\+P\+I\+\_\+\+M\+O\+D\+E3)
+\mbox{\hyperlink{classAdcSpi_a3c66ca397c2a9d0a7c475ee551b3c388}{Adc\+Spi}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t data\+\_\+ready\+\_\+pin, uint8\+\_\+t bit\+\_\+resolution, uint8\+\_\+t clock\+\_\+divider=7, Bit\+Order bit\+\_\+order=M\+S\+B\+F\+I\+R\+ST, uint8\+\_\+t spi\+\_\+mode=S\+P\+I\+\_\+\+M\+O\+D\+E3)
 \item 
 bool \mbox{\hyperlink{classAdcSpi_aa8f8f27578dd85cfcdbc9439bbce66cb}{Begin}} (void)
 \item 
-float \mbox{\hyperlink{classAdcSpi_aa245df90e70654aabc64f88107ccd804}{Read\+Voltage}} (uint8\+\_\+t channel=0)
+double \mbox{\hyperlink{classAdcSpi_ace8264acfedb357986afa5f611eff3ee}{Read\+Voltage}} (uint8\+\_\+t channel=0)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classAdcSpi_ac9d2ab924ad4de5b91713a22189f2ad0}{Read\+Voltage}} (uint8\+\_\+t channel, byte previous\+\_\+meas\mbox{[}$\,$\mbox{]}, bool send)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual float \mbox{\hyperlink{classAdcSpi_a778d7c86b37cebe4444ec5284f2ea9b7}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} message)=0
+virtual double \mbox{\hyperlink{classAdcSpi_a25a1deb55a9f0e71a405ca47a41f3804}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} message)=0
 \item 
 virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classAdcSpi_a369da36232861640a113792d2398ce44}{Single\+Conversion\+Mode\+Message}} (uint8\+\_\+t channel=0)=0
 \item 
@@ -31,16 +33,55 @@ virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Messag
 
 
 \subsection{Detailed Description}
-Adc class 
+\mbox{\hyperlink{classAdcSpi}{Adc\+Spi}} class \begin{DoxyAuthor}{Author}
+Carlos Kometter 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License. 
+\end{DoxyCopyright}
+
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAdcSpi_a5b3afab7dc4a788e1caf6a1277b67df9}\label{classAdcSpi_a5b3afab7dc4a788e1caf6a1277b67df9}} 
+\mbox{\Hypertarget{classAdcSpi_a3c66ca397c2a9d0a7c475ee551b3c388}\label{classAdcSpi_a3c66ca397c2a9d0a7c475ee551b3c388}} 
 \index{Adc\+Spi@{Adc\+Spi}!Adc\+Spi@{Adc\+Spi}}
 \index{Adc\+Spi@{Adc\+Spi}!Adc\+Spi@{Adc\+Spi}}
 \subsubsection{\texorpdfstring{Adc\+Spi()}{AdcSpi()}}
-{\footnotesize\ttfamily Adc\+Spi\+::\+Adc\+Spi (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{data\+\_\+ready\+\_\+pin,  }\item[{uint8\+\_\+t}]{clock\+\_\+divider = {\ttfamily 7},  }\item[{Bit\+Order}]{bit\+\_\+order = {\ttfamily MSBFIRST},  }\item[{uint8\+\_\+t}]{spi\+\_\+mode = {\ttfamily SPI\+\_\+MODE3} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Adc\+Spi\+::\+Adc\+Spi (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{data\+\_\+ready\+\_\+pin,  }\item[{uint8\+\_\+t}]{bit\+\_\+resolution,  }\item[{uint8\+\_\+t}]{clock\+\_\+divider = {\ttfamily 7},  }\item[{Bit\+Order}]{bit\+\_\+order = {\ttfamily MSBFIRST},  }\item[{uint8\+\_\+t}]{spi\+\_\+mode = {\ttfamily SPI\+\_\+MODE3} }\end{DoxyParamCaption})}
 
 Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sync\+\_\+pin} & The sync or chip select of the adc chip. Different than spi\+\_\+bus\+\_\+config\+\_\+pin \\
+\hline
+\mbox{\tt in}  & {\em spi\+\_\+bus\+\_\+config\+\_\+pin} & The pin that identifies the bus. More than one adc can share the same pin. \\
+\hline
+\mbox{\tt in}  & {\em data\+\_\+ready\+\_\+pin} & This pin tells whether the adc has finished measuring a voltage. \\
+\hline
+\mbox{\tt in}  & {\em bit\+\_\+resolution} & The bit resolution of the adc (eg. 16 for \mbox{\hyperlink{classAD7734}{A\+D7734}}). \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+divider} & Sets the spi frequency. spi\+\_\+freq = clock\+\_\+freq (84 M\+Hz for arduino due) / clock\+\_\+divider (default\+: 7) \\
+\hline
+\mbox{\tt in}  & {\em bit\+\_\+order} & Possible values\+:
+\begin{DoxyItemize}
+\item M\+S\+B\+F\+I\+R\+ST Most significant bit first. (default)
+\item L\+S\+B\+F\+I\+R\+ST Least significant bit first.
+\end{DoxyItemize}\\
+\hline
+\mbox{\tt in}  & {\em spi\+\_\+mode} & Possible values\+:
+\begin{DoxyItemize}
+\item S\+P\+I\+\_\+\+M\+O\+D\+E0
+\item S\+P\+I\+\_\+\+M\+O\+D\+E1
+\item S\+P\+I\+\_\+\+M\+O\+D\+E2
+\item S\+P\+I\+\_\+\+M\+O\+D\+E3 (default) 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classAdcSpi_aa8f8f27578dd85cfcdbc9439bbce66cb}\label{classAdcSpi_aa8f8f27578dd85cfcdbc9439bbce66cb}} 
@@ -49,15 +90,23 @@ Constructor
 \subsubsection{\texorpdfstring{Begin()}{Begin()}}
 {\footnotesize\ttfamily bool Adc\+Spi\+::\+Begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-Configures pins for S\+PI and initializes S\+PI communication. \mbox{\Hypertarget{classAdcSpi_a778d7c86b37cebe4444ec5284f2ea9b7}\label{classAdcSpi_a778d7c86b37cebe4444ec5284f2ea9b7}} 
+Configures pins for S\+PI and initializes S\+PI communication. This function must be called before calling any other function. \mbox{\Hypertarget{classAdcSpi_a25a1deb55a9f0e71a405ca47a41f3804}\label{classAdcSpi_a25a1deb55a9f0e71a405ca47a41f3804}} 
 \index{Adc\+Spi@{Adc\+Spi}!Bytes\+To\+Voltage@{Bytes\+To\+Voltage}}
 \index{Bytes\+To\+Voltage@{Bytes\+To\+Voltage}!Adc\+Spi@{Adc\+Spi}}
 \subsubsection{\texorpdfstring{Bytes\+To\+Voltage()}{BytesToVoltage()}}
-{\footnotesize\ttfamily virtual float Adc\+Spi\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual double Adc\+Spi\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
-Uses chip specifications (e.\+g. bit resolution, registers, range) to convert a Message to voltage. Each A\+DC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
+Uses chip specifications (e.\+g. bit resolution, registers, range) to convert a set of bytes stored in a Message object to voltage. Each A\+DC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em message} & Message object which stores the bytes for conversion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The measured voltage. 
+\end{DoxyReturn}
 
-Implemented in \mbox{\hyperlink{classAD7734_a76b600d52392dbfe2d053e166af41018}{A\+D7734}}.
+
+Implemented in \mbox{\hyperlink{classAD7734_aa13b49141e69a45508998004a208afdc}{A\+D7734}}.
 
 \mbox{\Hypertarget{classAdcSpi_a3578f18e1976d9e2b075a3fbdc003517}\label{classAdcSpi_a3578f18e1976d9e2b075a3fbdc003517}} 
 \index{Adc\+Spi@{Adc\+Spi}!Read\+Data\+Register\+Message@{Read\+Data\+Register\+Message}}
@@ -65,23 +114,71 @@ Implemented in \mbox{\hyperlink{classAD7734_a76b600d52392dbfe2d053e166af41018}{A
 \subsubsection{\texorpdfstring{Read\+Data\+Register\+Message()}{ReadDataRegisterMessage()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} Adc\+Spi\+::\+Read\+Data\+Register\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
-Returns Message object to read the data register. 
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & The channel to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Message object to read the data register. 
+\end{DoxyReturn}
+
 
 Implemented in \mbox{\hyperlink{classAD7734_a6fa5e7c2bd8cde50dccb328d36f12516}{A\+D7734}}.
 
-\mbox{\Hypertarget{classAdcSpi_aa245df90e70654aabc64f88107ccd804}\label{classAdcSpi_aa245df90e70654aabc64f88107ccd804}} 
+\mbox{\Hypertarget{classAdcSpi_ace8264acfedb357986afa5f611eff3ee}\label{classAdcSpi_ace8264acfedb357986afa5f611eff3ee}} 
 \index{Adc\+Spi@{Adc\+Spi}!Read\+Voltage@{Read\+Voltage}}
 \index{Read\+Voltage@{Read\+Voltage}!Adc\+Spi@{Adc\+Spi}}
-\subsubsection{\texorpdfstring{Read\+Voltage()}{ReadVoltage()}}
-{\footnotesize\ttfamily float Adc\+Spi\+::\+Read\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Read\+Voltage()}{ReadVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Adc\+Spi\+::\+Read\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})}
 
-Sets a voltage to \mbox{\hyperlink{classDac}{Dac}} object via S\+PI. The message msg\+\_\+ is generated by calling Voltage\+To\+Bytes(), which is specific to each chip. \mbox{\Hypertarget{classAdcSpi_a369da36232861640a113792d2398ce44}\label{classAdcSpi_a369da36232861640a113792d2398ce44}} 
+Read the voltage at one of the analog inputs of the adc. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & The analog input to be read. (default\+: 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The voltage at the analog input. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAdcSpi_ac9d2ab924ad4de5b91713a22189f2ad0}\label{classAdcSpi_ac9d2ab924ad4de5b91713a22189f2ad0}} 
+\index{Adc\+Spi@{Adc\+Spi}!Read\+Voltage@{Read\+Voltage}}
+\index{Read\+Voltage@{Read\+Voltage}!Adc\+Spi@{Adc\+Spi}}
+\subsubsection{\texorpdfstring{Read\+Voltage()}{ReadVoltage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t Adc\+Spi\+::\+Read\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{byte}]{previous\+\_\+meas\mbox{[}$\,$\mbox{]},  }\item[{bool}]{send }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+This function takes of the dead time the adc is converting (meausering) a new voltage. During this dead time the arduino sends the previous measurement via serial. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & The analog input to be read. (default\+: 0) \\
+\hline
+\mbox{\tt in,out}  & {\em previous\+\_\+meas\mbox{[}$\,$\mbox{]}} & stores values of previous measurement to be sent vias spi. After the adc finishes converting the new voltage, it stores the new values. \\
+\hline
+\mbox{\tt in}  & {\em send} & Possible values\+:
+\begin{DoxyItemize}
+\item true Content of previous\+\_\+meas\mbox{[}\mbox{]} is sent via serial while the adc is converting current voltage.
+\item false Content of previous\+\_\+meas\mbox{[}\mbox{]} is non sent via serial while the adc is converting current voltage. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The voltage at the analog input. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAdcSpi_a369da36232861640a113792d2398ce44}\label{classAdcSpi_a369da36232861640a113792d2398ce44}} 
 \index{Adc\+Spi@{Adc\+Spi}!Single\+Conversion\+Mode\+Message@{Single\+Conversion\+Mode\+Message}}
 \index{Single\+Conversion\+Mode\+Message@{Single\+Conversion\+Mode\+Message}!Adc\+Spi@{Adc\+Spi}}
 \subsubsection{\texorpdfstring{Single\+Conversion\+Mode\+Message()}{SingleConversionModeMessage()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} Adc\+Spi\+::\+Single\+Conversion\+Mode\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
-Returns Message object to start single conversion mode. 
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em channel} & The channel to start single conversion mode on dump mode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Message object to start single conversion mode on dump mode. 
+\end{DoxyReturn}
+
 
 Implemented in \mbox{\hyperlink{classAD7734_af677fbfbae0ec1c78b453ceb4a6736ec}{A\+D7734}}.
 

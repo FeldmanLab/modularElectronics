@@ -18,11 +18,13 @@
 #include "../include/dac.h"
 
 Dac::Dac(uint8_t sync_pin, uint8_t spi_bus_config_pin,
-	 uint8_t ldac_pin, uint8_t clock_divider,
-         BitOrder bit_order, uint8_t spi_mode)
+	 uint8_t ldac_pin, uint8_t bit_resolution,
+	 uint8_t clock_divider, BitOrder bit_order,
+	 uint8_t spi_mode)
     : sync_pin_(sync_pin), spi_bus_config_pin_(spi_bus_config_pin),
-      ldac_pin_(ldac_pin), clock_divider_(clock_divider),
-      bit_order_(bit_order), spi_mode_(spi_mode) {
+      ldac_pin_(ldac_pin), bit_resolution_(bit_resolution),
+      clock_divider_(clock_divider), bit_order_(bit_order),
+      spi_mode_(spi_mode) {
 }
 
 //Configures pins for SPI and initializes SPI
@@ -46,7 +48,8 @@ void Dac::UpdateAnalogOutputs(void) {
   digitalWrite(ldac_pin_, LOW);
   digitalWrite(ldac_pin_, HIGH);}
 
-float Dac::SetVoltage(uint8_t channel, double voltage) {
+double Dac::SetVoltage(uint8_t channel, double voltage,
+		       bool update_outputs) {
   spi_utils::Message msg;
   msg = SetVoltageMessage(channel, voltage);
   // SPI data transfer
@@ -58,13 +61,15 @@ float Dac::SetVoltage(uint8_t channel, double voltage) {
     }
     digitalWrite(sync_pin_, HIGH);
   }
-  UpdateAnalogOutputs();  // Analog output updated
+  if (update_outputs) {
+    UpdateAnalogOutputs();  // Analog output updated
+  }
   // Updated voltage may be different than voltage parameter because of
   // resolution
   return BytesToVoltage(msg);
 }
 
-float Dac::GetVoltage(uint8_t channel) {
+double Dac::GetVoltage(uint8_t channel) {
   spi_utils::Message msg;
   msg = SetVoltageMessage(channel, 0);
   msg.msg[0] = msg.msg[0] | 0x80;  // Set MSB to 1, which reads the register
@@ -77,6 +82,7 @@ float Dac::GetVoltage(uint8_t channel) {
     }
     digitalWrite(sync_pin_, HIGH);
   }
+  // Reads data register
   for (uint8_t block = 0; block < msg.n_blocks; block++) {
     digitalWrite(sync_pin_, LOW);
     for (uint8_t db = 0; db < msg.block_size; db++) {

@@ -22,7 +22,7 @@ AD5764::AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
    slot_number_(slot_number), full_scale_(full_scale) {
 }
 
-float AD5764::BytesToVoltage(spi_utils::Message message) {
+double AD5764::BytesToVoltage(spi_utils::Message message) {
   byte byte1 = message.msg[1];
   byte byte2 = message.msg[2];
   // The conversion below is for two's complement
@@ -48,8 +48,8 @@ spi_utils::Message AD5764::SetVoltageMessage(uint8_t channel, double voltage) {
     decimal = voltage*32767/full_scale_;
   }
   // Check datasheet for details
-  msg.msg[0] = 0x10 + channel;  // 0x10 writes to dac register
-  msg.msg[1] = ((byte)((decimal >> 0x8) & 0xFF));
-  msg.msg[2] = ((byte)(decimal & 0xFF));
+  msg.msg[0] = 0x10 + channel;  // Writes to dac register
+  msg.msg[1] = ((byte)((decimal >> 0x8) & 0xFF));  // Writes first byte
+  msg.msg[2] = ((byte)(decimal & 0xFF));  // Writes second byte
   return msg;
 }

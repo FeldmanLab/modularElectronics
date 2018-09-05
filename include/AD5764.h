@@ -21,6 +21,10 @@
 
 ///
 /// AD5764 class
+/// \author Carlos Kometter
+/// \version 0.1
+/// \date 2018
+/// \copyright GNU Public License.
 ///
 class AD5764: public Dac {
  private:
@@ -29,10 +33,15 @@ class AD5764: public Dac {
  public:
   ///
   /// Constructor
+  /// \param[in] sync_pin The sync or chip select of the dac chip. Different than spi_bus_config_pin.
+  /// \param[in] spi_bus_config_pin The pin that identifies the bus. More than one dac can share the same pin.
+  /// \param[in] ldac_pin The ldac pin used to update the analog outputs.
+  /// \param[in] slot_number This number is used to identify the chip or board. (default: 0) 
+  /// \param[in] full_scale The full scale of the dac voltage in V units. (default: 10) 
   ///
   AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
-         uint8_t ldac_pin, uint8_t slot_number, double full_scale=10.0);
-  virtual float BytesToVoltage(spi_utils::Message message);
+         uint8_t ldac_pin, uint8_t slot_number=0, double full_scale=10.0);
+  virtual double BytesToVoltage(spi_utils::Message message);
   virtual spi_utils::Message SetVoltageMessage(uint8_t channel, double voltage);
 };
 #endif

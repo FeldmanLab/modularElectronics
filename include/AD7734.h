@@ -21,6 +21,10 @@
 
 ///
 /// AD7734 class
+/// \author Carlos Kometter
+/// \version 0.1
+/// \date 2018
+/// \copyright GNU Public License.
 ///
 class AD7734: public AdcSpi {
  private:
@@ -29,11 +33,15 @@ class AD7734: public AdcSpi {
  public:
   ///
   /// Constructor
+  /// \param[in] sync_pin The sync or chip select of the adc chip. Different than spi_bus_config_pin
+  /// \param[in] spi_bus_config_pin The pin that identifies the bus. More than one adc can share the same pin.
+  /// \param[in] data_ready_pin This pin tells whether the adc has finished measuring a voltage.
+  /// \param[in] slot_number This number is used to identify the chip or board. (default: 0)
   ///
   AD7734(uint8_t sync_pin, uint8_t spi_bus_config_pin,
          uint8_t data_ready_pin, uint8_t slot_number);
  protected:
-  virtual float BytesToVoltage(spi_utils::Message message);
+  virtual double BytesToVoltage(spi_utils::Message message);
   virtual spi_utils::Message SingleConversionModeMessage(uint8_t channel);
   virtual spi_utils::Message ReadDataRegisterMessage(uint8_t channel);
 };

@@ -84,29 +84,34 @@ Inheritance diagram for Dac:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae74afbc4c82a8acbd8c74dcf4ea046ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ae74afbc4c82a8acbd8c74dcf4ea046ba">Dac</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE1)</td></tr>
-<tr class="separator:ae74afbc4c82a8acbd8c74dcf4ea046ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b0ea171bf0dfad95427e9751b6e191"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a43b0ea171bf0dfad95427e9751b6e191">Dac</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t bit_resolution, uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE1)</td></tr>
+<tr class="separator:a43b0ea171bf0dfad95427e9751b6e191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad88e0048e59c0633b72769ddb8337e49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ad88e0048e59c0633b72769ddb8337e49">Begin</a> (void)</td></tr>
 <tr class="separator:ad88e0048e59c0633b72769ddb8337e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a905acd38131fe25a04aeace0bcf1ba30"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a905acd38131fe25a04aeace0bcf1ba30">SetVoltage</a> (uint8_t channel, double voltage)</td></tr>
-<tr class="separator:a905acd38131fe25a04aeace0bcf1ba30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f0e36184b9b529de04136c36a3a51b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ab2f0e36184b9b529de04136c36a3a51b">SetVoltage</a> (uint8_t channel, double voltage, bool update_outputs=true)</td></tr>
+<tr class="separator:ab2f0e36184b9b529de04136c36a3a51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafef1707ec33a2166a69e9b646cd471b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#aafef1707ec33a2166a69e9b646cd471b">UpdateAnalogOutputs</a> (void)</td></tr>
 <tr class="separator:aafef1707ec33a2166a69e9b646cd471b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55688546d527c42ebf48a12204e69731"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a55688546d527c42ebf48a12204e69731">GetVoltage</a> (uint8_t channel)</td></tr>
-<tr class="separator:a55688546d527c42ebf48a12204e69731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51bf5450f03f39a0357398af69f1705"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ad51bf5450f03f39a0357398af69f1705">GetVoltage</a> (uint8_t channel)</td></tr>
+<tr class="separator:ad51bf5450f03f39a0357398af69f1705"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a506a65776c631fb3abc6609e58046655"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a506a65776c631fb3abc6609e58046655">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)=0</td></tr>
-<tr class="separator:a506a65776c631fb3abc6609e58046655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df39dc8c6e5b50afd07b6dd8a6b9300"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a1df39dc8c6e5b50afd07b6dd8a6b9300">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)=0</td></tr>
+<tr class="separator:a1df39dc8c6e5b50afd07b6dd8a6b9300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87132e3c19313742d92f57d9b792e0e0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a87132e3c19313742d92f57d9b792e0e0">SetVoltageMessage</a> (uint8_t channel, double voltage)=0</td></tr>
 <tr class="separator:a87132e3c19313742d92f57d9b792e0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classDac.html">Dac</a> class </p>
+<div class="textblock"><p><a class="el" href="classDac.html">Dac</a> class </p><dl class="section author"><dt>Author</dt><dd>Carlos Kometter </dd>
+<dd>
+Sasha Zibrov </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2018 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae74afbc4c82a8acbd8c74dcf4ea046ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae74afbc4c82a8acbd8c74dcf4ea046ba">&#9670;&nbsp;</a></span>Dac()</h2>
+<a id="a43b0ea171bf0dfad95427e9751b6e191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b0ea171bf0dfad95427e9751b6e191">&#9670;&nbsp;</a></span>Dac()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,6 +138,12 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>bit_resolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>clock_divider</em> = <code>4</code>, </td>
         </tr>
         <tr>
@@ -154,7 +165,28 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor </p>
+<p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sync_pin</td><td>The sync or chip select of the dac chip. Different than spi_bus_config_pin </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">spi_bus_config_pin</td><td>The pin that identifies the bus. More than one dac can share the same pin. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ldac_pin</td><td>The ldac pin used to update the analog outputs. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bit_resolution</td><td>The bit resolution of the dac (eg. 20 for AD5791). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clock_divider</td><td>Sets the spi frequency. spi_freq = clock_freq (84 MHz for arduino due) / clock_divider (default: 4) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bit_order</td><td>Possible values:<ul>
+<li>MSBFIRST Most significant bit first. (default)</li>
+<li>LSBFIRST Least significant bit first.</li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">spi_mode</td><td>Possible values:<ul>
+<li>SPI_MODE0</li>
+<li>SPI_MODE1 (default)</li>
+<li>SPI_MODE2</li>
+<li>SPI_MODE3 </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -174,12 +206,12 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Configures pins for SPI and initializes SPI communication. </p>
+<p>Configures pins for SPI and initializes SPI communication. This function must be called before calling any other function. </p>
 
 </div>
 </div>
-<a id="a506a65776c631fb3abc6609e58046655"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a506a65776c631fb3abc6609e58046655">&#9670;&nbsp;</a></span>BytesToVoltage()</h2>
+<a id="a1df39dc8c6e5b50afd07b6dd8a6b9300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1df39dc8c6e5b50afd07b6dd8a6b9300">&#9670;&nbsp;</a></span>BytesToVoltage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +220,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual float Dac::BytesToVoltage </td>
+          <td class="memname">virtual double Dac::BytesToVoltage </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -201,20 +233,26 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Uses chip specifications (e.g. bit resolution, registers, range) to join a a three-byte message a maps it to a voltage. Each DAC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p>
+<p>Uses chip specifications (e.g. bit resolution, registers, range) to convert a set of bytes stored in a Message object to voltage. Each DAC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Message object which stores the bytes for conversion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current voltage setted on the dac register. </dd></dl>
 
-<p>Implemented in <a class="el" href="classAD5764.html#ab2c3e35cc2dba24a54e4facf2910d6d7">AD5764</a>.</p>
+<p>Implemented in <a class="el" href="classAD5764.html#a729015992eda059ae615373d1db53823">AD5764</a>.</p>
 
 </div>
 </div>
-<a id="a55688546d527c42ebf48a12204e69731"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55688546d527c42ebf48a12204e69731">&#9670;&nbsp;</a></span>GetVoltage()</h2>
+<a id="ad51bf5450f03f39a0357398af69f1705"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad51bf5450f03f39a0357398af69f1705">&#9670;&nbsp;</a></span>GetVoltage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Dac::GetVoltage </td>
+          <td class="memname">double Dac::GetVoltage </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>channel</em></td><td>)</td>
@@ -222,18 +260,24 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets the voltage setted to dac register. </p>
+<p>Gets the voltage setted to dac register. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>Specifies the channel to query the voltage. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The voltage setted to dac register. </dd></dl>
 
 </div>
 </div>
-<a id="a905acd38131fe25a04aeace0bcf1ba30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a905acd38131fe25a04aeace0bcf1ba30">&#9670;&nbsp;</a></span>SetVoltage()</h2>
+<a id="ab2f0e36184b9b529de04136c36a3a51b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2f0e36184b9b529de04136c36a3a51b">&#9670;&nbsp;</a></span>SetVoltage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Dac::SetVoltage </td>
+          <td class="memname">double Dac::SetVoltage </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>channel</em>, </td>
@@ -242,7 +286,13 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>voltage</em>&#160;</td>
+          <td class="paramname"><em>voltage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update_outputs</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -251,7 +301,19 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets a voltage to <a class="el" href="classDac.html">Dac</a> object via SPI. The message msg_ is generated by calling VoltageToBytes(), which is specific to each chip. </p>
+<p>Sets a voltage to <a class="el" href="classDac.html">Dac</a> register via SPI. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The channel to be setted. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">voltage</td><td>The voltage to be setted to channel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">update_outputs</td><td>Possible value:<ul>
+<li>true The analog output is updated after setting the dac register.</li>
+<li>false The analog output is not updated after setting the dac regiser. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The voltage setted. </dd></dl>
 
 </div>
 </div>
@@ -288,7 +350,14 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns Message object to write data register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>Specifies the channel the Message will set the voltage to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">voltage</td><td>Specifies the voltage. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Message object to write data register. </dd></dl>
 
 <p>Implemented in <a class="el" href="classAD5764.html#a62887ed89fedc4db68f2a54324e1fac0">AD5764</a>.</p>
 

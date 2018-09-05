@@ -83,32 +83,35 @@ Inheritance diagram for AD5764:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3a5228318a1962905e7748f62269bc26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD5764.html#a3a5228318a1962905e7748f62269bc26">AD5764</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t slot_number, double full_scale=10.0)</td></tr>
-<tr class="separator:a3a5228318a1962905e7748f62269bc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2c3e35cc2dba24a54e4facf2910d6d7"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD5764.html#ab2c3e35cc2dba24a54e4facf2910d6d7">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)</td></tr>
-<tr class="separator:ab2c3e35cc2dba24a54e4facf2910d6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8644f724d2f0fbe25f4a181d2e315d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD5764.html#ab8644f724d2f0fbe25f4a181d2e315d6">AD5764</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t slot_number=0, double full_scale=10.0)</td></tr>
+<tr class="separator:ab8644f724d2f0fbe25f4a181d2e315d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a729015992eda059ae615373d1db53823"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD5764.html#a729015992eda059ae615373d1db53823">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)</td></tr>
+<tr class="separator:a729015992eda059ae615373d1db53823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62887ed89fedc4db68f2a54324e1fac0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD5764.html#a62887ed89fedc4db68f2a54324e1fac0">SetVoltageMessage</a> (uint8_t channel, double voltage)</td></tr>
 <tr class="separator:a62887ed89fedc4db68f2a54324e1fac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classDac"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classDac')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classDac.html">Dac</a></td></tr>
-<tr class="memitem:ae74afbc4c82a8acbd8c74dcf4ea046ba inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ae74afbc4c82a8acbd8c74dcf4ea046ba">Dac</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE1)</td></tr>
-<tr class="separator:ae74afbc4c82a8acbd8c74dcf4ea046ba inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b0ea171bf0dfad95427e9751b6e191 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a43b0ea171bf0dfad95427e9751b6e191">Dac</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t bit_resolution, uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE1)</td></tr>
+<tr class="separator:a43b0ea171bf0dfad95427e9751b6e191 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad88e0048e59c0633b72769ddb8337e49 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ad88e0048e59c0633b72769ddb8337e49">Begin</a> (void)</td></tr>
 <tr class="separator:ad88e0048e59c0633b72769ddb8337e49 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a905acd38131fe25a04aeace0bcf1ba30 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a905acd38131fe25a04aeace0bcf1ba30">SetVoltage</a> (uint8_t channel, double voltage)</td></tr>
-<tr class="separator:a905acd38131fe25a04aeace0bcf1ba30 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f0e36184b9b529de04136c36a3a51b inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ab2f0e36184b9b529de04136c36a3a51b">SetVoltage</a> (uint8_t channel, double voltage, bool update_outputs=true)</td></tr>
+<tr class="separator:ab2f0e36184b9b529de04136c36a3a51b inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafef1707ec33a2166a69e9b646cd471b inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#aafef1707ec33a2166a69e9b646cd471b">UpdateAnalogOutputs</a> (void)</td></tr>
 <tr class="separator:aafef1707ec33a2166a69e9b646cd471b inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55688546d527c42ebf48a12204e69731 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a55688546d527c42ebf48a12204e69731">GetVoltage</a> (uint8_t channel)</td></tr>
-<tr class="separator:a55688546d527c42ebf48a12204e69731 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51bf5450f03f39a0357398af69f1705 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ad51bf5450f03f39a0357398af69f1705">GetVoltage</a> (uint8_t channel)</td></tr>
+<tr class="separator:ad51bf5450f03f39a0357398af69f1705 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classAD5764.html">AD5764</a> class </p>
+<div class="textblock"><p><a class="el" href="classAD5764.html">AD5764</a> class </p><dl class="section author"><dt>Author</dt><dd>Carlos Kometter </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2018 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3a5228318a1962905e7748f62269bc26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a5228318a1962905e7748f62269bc26">&#9670;&nbsp;</a></span>AD5764()</h2>
+<a id="ab8644f724d2f0fbe25f4a181d2e315d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8644f724d2f0fbe25f4a181d2e315d6">&#9670;&nbsp;</a></span>AD5764()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,7 +138,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot_number</em>, </td>
+          <td class="paramname"><em>slot_number</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -150,13 +153,22 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor </p>
+<p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sync_pin</td><td>The sync or chip select of the dac chip. Different than spi_bus_config_pin. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">spi_bus_config_pin</td><td>The pin that identifies the bus. More than one dac can share the same pin. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ldac_pin</td><td>The ldac pin used to update the analog outputs. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slot_number</td><td>This number is used to identify the chip or board. (default: 0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">full_scale</td><td>The full scale of the dac voltage in V units. (default: 10) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab2c3e35cc2dba24a54e4facf2910d6d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2c3e35cc2dba24a54e4facf2910d6d7">&#9670;&nbsp;</a></span>BytesToVoltage()</h2>
+<a id="a729015992eda059ae615373d1db53823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729015992eda059ae615373d1db53823">&#9670;&nbsp;</a></span>BytesToVoltage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,7 +177,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float AD5764::BytesToVoltage </td>
+          <td class="memname">double AD5764::BytesToVoltage </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -178,9 +190,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Uses chip specifications (e.g. bit resolution, registers, range) to join a a three-byte message a maps it to a voltage. Each DAC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p>
+<p>Uses chip specifications (e.g. bit resolution, registers, range) to convert a set of bytes stored in a Message object to voltage. Each DAC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Message object which stores the bytes for conversion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current voltage setted on the dac register. </dd></dl>
 
-<p>Implements <a class="el" href="classDac.html#a506a65776c631fb3abc6609e58046655">Dac</a>.</p>
+<p>Implements <a class="el" href="classDac.html#a1df39dc8c6e5b50afd07b6dd8a6b9300">Dac</a>.</p>
 
 </div>
 </div>
@@ -217,7 +235,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns Message object to write data register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>Specifies the channel the Message will set the voltage to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">voltage</td><td>Specifies the voltage. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Message object to write data register. </dd></dl>
 
 <p>Implements <a class="el" href="classDac.html#a87132e3c19313742d92f57d9b792e0e0">Dac</a>.</p>
 

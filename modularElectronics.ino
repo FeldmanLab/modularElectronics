@@ -14,18 +14,21 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-// #include "include/AD5764.h"
+#include "include/AD5764.h"
 #include "include/AD7734.h"
+#include "include/dac_adc.h"
 
-// AD5764 dac1(4, 52, 6, 1);
-AD7734 adc1(52, 4, 48, 1);
+AD5764 dac1(4, 52, 6, 1);
+AD7734 adc1(52, 10, 48, 1);
+DacAdc dac_adc(dac1, adc1);
 //include "src/dac.h"
 //Dac dac1(4, 4, 6);
 
 void setup() {
   Serial.begin(115200);
   //dac1.Begin();
-  adc1.Begin();
+  //adc1.Begin();
+  dac_adc.Begin();
   pinMode(44, OUTPUT);
   digitalWrite(44, HIGH);
 }
@@ -35,11 +38,22 @@ void loop() {
   if(Serial.available()) {
     String inbyte = "";
     char resp;
-    float v;
+    uint8_t dac_channels[] = {0,1};
+    uint8_t adc_channels[] = {0,1};
+    double start_voltages[] = {0, -5};
+    double end_voltages[] = {5, 0};
+    uint32_t n_steps = 5;
+    uint32_t step_delay = 30;
+
+    //float v;
+    //float v2;
     resp = Serial.read();
     inbyte += resp;
     //v = dac1.SetVoltage(0,inbyte.toFloat());
-    v = adc1.ReadVoltage(inbyte.toInt());
-    Serial.println(v);
+    //v = adc1.ReadVoltage(inbyte.toInt());
+    dac_adc.BufferRamp(dac_channels, 2,
+		       adc_channels, 2,
+		       start_voltages, end_voltages,
+		       n_steps, step_delay);
   }
 }

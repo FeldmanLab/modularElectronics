@@ -18,11 +18,11 @@
 
 AD7734::AD7734(uint8_t sync_pin, uint8_t spi_bus_config_pin,
 	       uint8_t data_ready_pin, uint8_t slot_number)
-  :AdcSpi(sync_pin, spi_bus_config_pin, data_ready_pin),
+  :AdcSpi(sync_pin, spi_bus_config_pin, data_ready_pin, 16),
    slot_number_(slot_number) {
 }
 
-float AD7734::BytesToVoltage(spi_utils::Message message) {
+double AD7734::BytesToVoltage(spi_utils::Message message) {
   byte byte1 = message.msg[2];
   byte byte2 = message.msg[3];
 
@@ -35,8 +35,8 @@ spi_utils::Message AD7734::SingleConversionModeMessage(uint8_t channel) {
   spi_utils::Message msg;
   msg.block_size = 1;
   msg.n_blocks = 2;
-  msg.msg[0] = 0x38 + channel;
-  msg.msg[1] = 0x48;
+  msg.msg[0] = 0x38 + channel;  // Access Mode register on dump mode
+  msg.msg[1] = 0x48;  // Starts single conversion mode
   return msg;
 }
 
@@ -44,9 +44,9 @@ spi_utils::Message AD7734::ReadDataRegisterMessage(uint8_t channel) {
   spi_utils::Message msg;
   msg.block_size = 1;
   msg.n_blocks = 4;
-  msg.msg[0] = 0x48 + channel;
-  msg.msg[1] = 0;
-  msg.msg[2] = 0;
-  msg.msg[3] = 0;
+  msg.msg[0] = 0x48 + channel;  // Access data register on read mode
+  msg.msg[1] = 0;  // Status byte
+  msg.msg[2] = 0;  // First data byte
+  msg.msg[3] = 0;  // Second data byte
   return msg;
 }

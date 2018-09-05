@@ -19,10 +19,18 @@
 
 ///
 /// Utilites for spi communication
+/// \author Carlos Kometter
+/// \version 0.1
+/// \date 2018
+/// \copyright GNU Public License.
 ///
 namespace spi_utils {
   ///
   /// struct use as a SPI messsage
+  /// \author Carlos Kometter
+  /// \version 0.1
+  /// \date 2018
+  /// \copyright GNU Public License.
   ///
   struct Message {
     ///

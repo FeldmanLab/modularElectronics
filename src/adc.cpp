@@ -17,11 +17,13 @@
 #include "../include/adc.h"
 
 AdcSpi::AdcSpi(uint8_t sync_pin, uint8_t spi_bus_config_pin,
-	 uint8_t data_ready_pin, uint8_t clock_divider,
-	 BitOrder bit_order, uint8_t spi_mode)
-    : sync_pin_(sync_pin), spi_bus_config_pin_(spi_bus_config_pin),
-      data_ready_pin_(data_ready_pin), clock_divider_(clock_divider),
-      bit_order_(bit_order), spi_mode_(spi_mode) {
+	       uint8_t data_ready_pin, uint8_t bit_resolution,
+	       uint8_t clock_divider, BitOrder bit_order,
+	       uint8_t spi_mode)
+  : sync_pin_(sync_pin), spi_bus_config_pin_(spi_bus_config_pin),
+    data_ready_pin_(data_ready_pin), bit_resolution_(bit_resolution),
+    clock_divider_(clock_divider), bit_order_(bit_order),
+    spi_mode_(spi_mode) {
 }
 
 //Configures pins for SPI and initializes SPI
@@ -39,11 +41,11 @@ bool AdcSpi::Begin(void) {
   return true;
 }
 
-float AdcSpi::ReadVoltage(uint8_t channel) {
-  spi_utils::Message msg;
-  msg = SingleConversionModeMessage(channel);
-  // Start single conversion mode
+double AdcSpi::ReadVoltage(uint8_t channel) {
+  spi_utils::Message msg;  // Stores the message to send via spi
+  msg = SingleConversionModeMessage(channel);  // Gets the message to start single conversion
   SPI.transfer(spi_bus_config_pin_, 0); // Sets CLK and MOSI to proper level
+  // Starts single conversion mode
   for (uint8_t block = 0; block < msg.n_blocks; block++) {
     digitalWrite(sync_pin_, LOW);
     for (uint8_t db = 0; db < msg.block_size; db++) {
@@ -53,7 +55,8 @@ float AdcSpi::ReadVoltage(uint8_t channel) {
   }
   // Wait for conversion to finish;
   while (digitalRead(data_ready_pin_) == HIGH) {}
-  msg = ReadDataRegisterMessage(channel);
+  // Once adc finish converting, we read the measurement store on data register
+  msg = ReadDataRegisterMessage(channel);  // Gets the message to read data register
   // Start data register readback
   for (uint8_t block = 0; block < msg.n_blocks; block++) {
     digitalWrite(sync_pin_, LOW);
@@ -63,4 +66,53 @@ float AdcSpi::ReadVoltage(uint8_t channel) {
     digitalWrite(sync_pin_, HIGH);
   }
   return BytesToVoltage(msg);
+}
+
+uint8_t AdcSpi::ReadVoltage(uint8_t channel, byte previous_meas[], bool send) {
+  uint8_t n_previous_meas = (bit_resolution_ + 8 - 1)/ 8;  // Round up(bit_resolution_/8)
+  spi_utils::Message msg;  // Stores the message to send via spi
+  msg = SingleConversionModeMessage(channel);  // Gets the message to start single conversion
+  SPI.transfer(spi_bus_config_pin_, 0);  // Sets CLK and MOSI to proper level
+  // Starts single conversion mode
+  for (uint8_t block = 0; block < msg.n_blocks; block++) {
+    digitalWrite(sync_pin_, LOW);
+    for (uint8_t db = 0; db < msg.block_size; db++) {
+      SPI.transfer(spi_bus_config_pin_,
+		   msg.msg[block * msg.block_size + db]);
+    }
+    digitalWrite(sync_pin_, HIGH);
+  }
+  // If true, it sends previous_meas while adc is converting the voltage
+  if (send) {
+    for (uint8_t previous_meas_index = 0;
+	 previous_meas_index < n_previous_meas;
+	 previous_meas_index++) {
+      Serial.write(previous_meas[previous_meas_index]);
+    }
+  }
+  // Wait for conversion to finish;
+  while (digitalRead(data_ready_pin_) == HIGH) {}
+  // Once adc finish converting, we read the measurement store on data register
+  msg = ReadDataRegisterMessage(channel);  // Gets the message to read data register
+  // Starts data register readback
+  for (uint8_t block = 0; block < msg.n_blocks; block++) {
+    digitalWrite(sync_pin_, LOW);
+    for (uint8_t db = 0; db < msg.block_size; db++) {
+      msg.msg[block * msg.block_size + db]
+	= SPI.transfer(spi_bus_config_pin_,
+		       msg.msg[block * msg.block_size + db]);
+    }
+    digitalWrite(sync_pin_, HIGH);
+  }
+  // Writes the new measurement to previous_meas
+  for (uint8_t previous_meas_index = 0;
+       previous_meas_index < n_previous_meas;
+       previous_meas_index++) {
+    // The measurement is usually the last n_previous_meas bytes of the received bytes
+    // by the last readback
+    previous_meas[previous_meas_index]
+      = msg.msg[msg.n_blocks * msg.block_size
+		- n_previous_meas + previous_meas_index];
+  }
+  return n_previous_meas;  // Returns the size of previous_meas 
 }
