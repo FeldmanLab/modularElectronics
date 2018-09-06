@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['message',['Message',['../structspi__utils_1_1Message.html',1,'spi_utils']]],
-  ['msg',['msg',['../structspi__utils_1_1Message.html#aef999e9fd6fe0d4ab21aa2a6bf740f55',1,'spi_utils::Message']]]
+  ['kdata_5flen_5f',['kdata_len_',['../structspi__utils_1_1Message.html#a47848d542d0954679bad7a40dc5b0064',1,'spi_utils::Message']]]
 ];

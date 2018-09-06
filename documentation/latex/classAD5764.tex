@@ -15,9 +15,14 @@ Inheritance diagram for A\+D5764\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classAD5764_ab8644f724d2f0fbe25f4a181d2e315d6}{A\+D5764}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t ldac\+\_\+pin, uint8\+\_\+t slot\+\_\+number=0, double full\+\_\+scale=10.\+0)
 \item 
+\mbox{\Hypertarget{classAD5764_ab98c5418cf46198dd4b967e143896a3a}\label{classAD5764_ab98c5418cf46198dd4b967e143896a3a}} 
+uint8\+\_\+t {\bfseries Initialize} (void)
+\item 
 virtual double \mbox{\hyperlink{classAD5764_a729015992eda059ae615373d1db53823}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} message)
 \item 
 virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}{Set\+Voltage\+Message}} (uint8\+\_\+t channel, double voltage)
+\item 
+virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classAD5764_a02710f0508562f2a293dd6d706c0cc3c}{Initialize\+Message}} (void)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -77,6 +82,19 @@ The current voltage setted on the dac register.
 
 
 Implements \mbox{\hyperlink{classDac_a1df39dc8c6e5b50afd07b6dd8a6b9300}{Dac}}.
+
+\mbox{\Hypertarget{classAD5764_a02710f0508562f2a293dd6d706c0cc3c}\label{classAD5764_a02710f0508562f2a293dd6d706c0cc3c}} 
+\index{A\+D5764@{A\+D5764}!Initialize\+Message@{Initialize\+Message}}
+\index{Initialize\+Message@{Initialize\+Message}!A\+D5764@{A\+D5764}}
+\subsubsection{\texorpdfstring{Initialize\+Message()}{InitializeMessage()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} A\+D5764\+::\+Initialize\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+Message object to intialize \mbox{\hyperlink{classDac}{Dac}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classDac_aa34ddd250cf830bba220b86d462785b5}{Dac}}.
 
 \mbox{\Hypertarget{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}\label{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}} 
 \index{A\+D5764@{A\+D5764}!Set\+Voltage\+Message@{Set\+Voltage\+Message}}

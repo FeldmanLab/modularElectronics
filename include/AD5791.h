@@ -43,5 +43,6 @@ class AD5791: public Dac {
          uint8_t ldac_pin, uint8_t slot_number=0, double full_scale=10.0);
   virtual double BytesToVoltage(spi_utils::Message message);
   virtual spi_utils::Message SetVoltageMessage(uint8_t channel, double voltage);
+  virtual spi_utils::Message InitializeMessage(void);
 };
 #endif

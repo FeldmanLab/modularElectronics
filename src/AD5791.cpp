@@ -54,3 +54,13 @@ spi_utils::Message AD5791::SetVoltageMessage(uint8_t channel, double voltage) {
   msg.msg[2] = ((byte)(decimal & 0xFF));  // Writes second byte
   return msg;
 }
+
+spi_utils::Message AD5791::InitializeMessage(void) {
+  spi_utils::Message msg;
+  msg.block_size = 3;
+  msg.n_blocks = 1;
+  msg.msg[0] = 0x20;
+  msg.msg[1] = 0x0;
+  msg.msg[2] = 0x2;
+  return msg;
+}

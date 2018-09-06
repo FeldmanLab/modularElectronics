@@ -28,7 +28,7 @@ Dac::Dac(uint8_t sync_pin, uint8_t spi_bus_config_pin,
 }
 
 //Configures pins for SPI and initializes SPI
-bool Dac::Begin(void) {
+uint8_t Dac::Begin(void) {
   // Setting pin modes
   pinMode(sync_pin_, OUTPUT);
   pinMode(ldac_pin_, OUTPUT);
@@ -40,7 +40,22 @@ bool Dac::Begin(void) {
   SPI.setBitOrder(spi_bus_config_pin_, bit_order_);
   SPI.setClockDivider(spi_bus_config_pin_, clock_divider_);
   SPI.setDataMode(spi_bus_config_pin_, spi_mode_);
-  return true;
+  return 0;
+}
+
+uint8_t Dac::Initialize(void) {
+  spi_utils::Message msg;
+  msg = InitializeMessage();
+  // SPI data transfer
+  SPI.transfer(spi_bus_config_pin_, 0); // Sets CLK and MOSI to proper level
+  for (uint8_t block = 0; block < msg.n_blocks; block++) {
+    digitalWrite(sync_pin_, LOW);
+    for (uint8_t db = 0; db < msg.block_size; db++) {
+      SPI.transfer(spi_bus_config_pin_, msg.msg[block*msg.block_size+db]);
+    }
+    digitalWrite(sync_pin_, HIGH);
+  }
+  return 0;
 }
 
 // Toogles LDAC to update analog outputs.

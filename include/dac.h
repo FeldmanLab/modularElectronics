@@ -66,8 +66,14 @@ class Dac {
   ///
   /// Configures pins for SPI and initializes SPI communication.
   /// This function must be called before calling any other function.
+  /// \returns 0 if successful
   ///
-  bool Begin(void);
+  uint8_t Begin(void);
+  ///
+  /// Initializes Dac from tristate mode to normal mode.
+  /// \returns 0 if successful.
+  ///
+  uint8_t Initialize(void);
   ///
   /// Sets a voltage to Dac register via SPI.
   /// \param[in] channel The channel to be setted.
@@ -105,5 +111,9 @@ class Dac {
   /// \returns Message object to write data register.
   ///
   virtual spi_utils::Message SetVoltageMessage(uint8_t channel, double voltage) = 0;
+  ///
+  /// \returns Message object to intialize Dac.
+  ///
+  virtual spi_utils::Message InitializeMessage(void) = 0;
 };
 #endif

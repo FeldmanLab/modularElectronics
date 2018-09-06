@@ -85,15 +85,22 @@ Inheritance diagram for AD5764:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab8644f724d2f0fbe25f4a181d2e315d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD5764.html#ab8644f724d2f0fbe25f4a181d2e315d6">AD5764</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t slot_number=0, double full_scale=10.0)</td></tr>
 <tr class="separator:ab8644f724d2f0fbe25f4a181d2e315d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98c5418cf46198dd4b967e143896a3a"><td class="memItemLeft" align="right" valign="top"><a id="ab98c5418cf46198dd4b967e143896a3a"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (void)</td></tr>
+<tr class="separator:ab98c5418cf46198dd4b967e143896a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a729015992eda059ae615373d1db53823"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD5764.html#a729015992eda059ae615373d1db53823">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)</td></tr>
 <tr class="separator:a729015992eda059ae615373d1db53823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62887ed89fedc4db68f2a54324e1fac0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD5764.html#a62887ed89fedc4db68f2a54324e1fac0">SetVoltageMessage</a> (uint8_t channel, double voltage)</td></tr>
 <tr class="separator:a62887ed89fedc4db68f2a54324e1fac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02710f0508562f2a293dd6d706c0cc3c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD5764.html#a02710f0508562f2a293dd6d706c0cc3c">InitializeMessage</a> (void)</td></tr>
+<tr class="separator:a02710f0508562f2a293dd6d706c0cc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classDac"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classDac')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classDac.html">Dac</a></td></tr>
 <tr class="memitem:a43b0ea171bf0dfad95427e9751b6e191 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a43b0ea171bf0dfad95427e9751b6e191">Dac</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t bit_resolution, uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE1)</td></tr>
 <tr class="separator:a43b0ea171bf0dfad95427e9751b6e191 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad88e0048e59c0633b72769ddb8337e49 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ad88e0048e59c0633b72769ddb8337e49">Begin</a> (void)</td></tr>
-<tr class="separator:ad88e0048e59c0633b72769ddb8337e49 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a342bb811b205d50baacb3211e89ea062 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a342bb811b205d50baacb3211e89ea062">Begin</a> (void)</td></tr>
+<tr class="separator:a342bb811b205d50baacb3211e89ea062 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea1f5f36c9371ebc1527e848ce67e47a inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#aea1f5f36c9371ebc1527e848ce67e47a">Initialize</a> (void)</td></tr>
+<tr class="separator:aea1f5f36c9371ebc1527e848ce67e47a inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2f0e36184b9b529de04136c36a3a51b inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ab2f0e36184b9b529de04136c36a3a51b">SetVoltage</a> (uint8_t channel, double voltage, bool update_outputs=true)</td></tr>
 <tr class="separator:ab2f0e36184b9b529de04136c36a3a51b inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafef1707ec33a2166a69e9b646cd471b inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#aafef1707ec33a2166a69e9b646cd471b">UpdateAnalogOutputs</a> (void)</td></tr>
@@ -199,6 +206,35 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The current voltage setted on the dac register. </dd></dl>
 
 <p>Implements <a class="el" href="classDac.html#a1df39dc8c6e5b50afd07b6dd8a6b9300">Dac</a>.</p>
+
+</div>
+</div>
+<a id="a02710f0508562f2a293dd6d706c0cc3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02710f0508562f2a293dd6d706c0cc3c">&#9670;&nbsp;</a></span>InitializeMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> AD5764::InitializeMessage </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Message object to intialize <a class="el" href="classDac.html">Dac</a>. </dd></dl>
+
+<p>Implements <a class="el" href="classDac.html#aa34ddd250cf830bba220b86d462785b5">Dac</a>.</p>
 
 </div>
 </div>

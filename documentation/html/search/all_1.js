@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['begin',['Begin',['../classAdcSpi.html#aa8f8f27578dd85cfcdbc9439bbce66cb',1,'AdcSpi::Begin()'],['../classDac.html#ad88e0048e59c0633b72769ddb8337e49',1,'Dac::Begin()'],['../classDacAdc.html#adc136f0dd9872a8f10b908891a4f604b',1,'DacAdc::Begin()']]],
+  ['begin',['Begin',['../classAdcSpi.html#aa8f8f27578dd85cfcdbc9439bbce66cb',1,'AdcSpi::Begin()'],['../classDac.html#a342bb811b205d50baacb3211e89ea062',1,'Dac::Begin()'],['../classDacAdc.html#adc136f0dd9872a8f10b908891a4f604b',1,'DacAdc::Begin()']]],
   ['block_5fsize',['block_size',['../structspi__utils_1_1Message.html#a778bc7823110409e3009c773816521be',1,'spi_utils::Message']]],
   ['board',['Board',['../classBoard.html',1,'']]],
   ['bufferramp',['BufferRamp',['../classDacAdc.html#a9a6705b1fa5ecc977ef08a9189d3bf87',1,'DacAdc']]],

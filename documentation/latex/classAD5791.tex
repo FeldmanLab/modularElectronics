@@ -18,6 +18,8 @@ Inheritance diagram for A\+D5791\+:\begin{figure}[H]
 virtual double \mbox{\hyperlink{classAD5791_ab1f3eef8afe6989d9981bb29ddec9ec5}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} message)
 \item 
 virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classAD5791_af2d4276c910abe162aab867b9f86aa5f}{Set\+Voltage\+Message}} (uint8\+\_\+t channel, double voltage)
+\item 
+virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classAD5791_a770015b1cc9fd808356dab2f2598f894}{Initialize\+Message}} (void)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -77,6 +79,19 @@ The current voltage setted on the dac register.
 
 
 Implements \mbox{\hyperlink{classDac_a1df39dc8c6e5b50afd07b6dd8a6b9300}{Dac}}.
+
+\mbox{\Hypertarget{classAD5791_a770015b1cc9fd808356dab2f2598f894}\label{classAD5791_a770015b1cc9fd808356dab2f2598f894}} 
+\index{A\+D5791@{A\+D5791}!Initialize\+Message@{Initialize\+Message}}
+\index{Initialize\+Message@{Initialize\+Message}!A\+D5791@{A\+D5791}}
+\subsubsection{\texorpdfstring{Initialize\+Message()}{InitializeMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} A\+D5791\+::\+Initialize\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+Message object to intialize \mbox{\hyperlink{classDac}{Dac}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classDac_aa34ddd250cf830bba220b86d462785b5}{Dac}}.
 
 \mbox{\Hypertarget{classAD5791_af2d4276c910abe162aab867b9f86aa5f}\label{classAD5791_af2d4276c910abe162aab867b9f86aa5f}} 
 \index{A\+D5791@{A\+D5791}!Set\+Voltage\+Message@{Set\+Voltage\+Message}}
