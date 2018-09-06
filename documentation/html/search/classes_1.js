@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['dac',['Dac',['../classDac.html',1,'']]],
-  ['dacadc',['DacAdc',['../classDacAdc.html',1,'']]]
+  ['board',['Board',['../classBoard.html',1,'']]]
 ];

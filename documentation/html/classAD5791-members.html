@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Modular Electronics: Class Hierarchy</title>
+<title>Modular Electronics: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,24 +60,24 @@ $(function() {
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Class Hierarchy</div>  </div>
+<div class="title">AD5791 Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">This inheritance list is sorted roughly, but not completely, alphabetically:</div><div class="directory">
-<div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classAdcSpi.html" target="_self">AdcSpi</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classAD7734.html" target="_self">AD7734</a></td><td class="desc"></td></tr>
-<tr id="row_1_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classBoard.html" target="_self">Board</a></td><td class="desc"></td></tr>
-<tr id="row_2_"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_2_" class="arrow" onclick="toggleFolder('2_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classDac.html" target="_self">Dac</a></td><td class="desc"></td></tr>
-<tr id="row_2_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classAD5764.html" target="_self">AD5764</a></td><td class="desc"></td></tr>
-<tr id="row_2_1_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classAD5791.html" target="_self">AD5791</a></td><td class="desc"></td></tr>
-<tr id="row_3_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classDacAdc.html" target="_self">DacAdc</a></td><td class="desc"></td></tr>
-<tr id="row_4_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structspi__utils_1_1Message.html" target="_self">spi_utils::Message</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+
+<p>This is the complete list of members for <a class="el" href="classAD5791.html">AD5791</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classAD5791.html#ac7e74d16f21a12a552ecf76cf50e46d2">AD5791</a>(uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t slot_number=0, double full_scale=10.0)</td><td class="entry"><a class="el" href="classAD5791.html">AD5791</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classDac.html#ad88e0048e59c0633b72769ddb8337e49">Begin</a>(void)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classAD5791.html#ab1f3eef8afe6989d9981bb29ddec9ec5">BytesToVoltage</a>(spi_utils::Message message)</td><td class="entry"><a class="el" href="classAD5791.html">AD5791</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classDac.html#a43b0ea171bf0dfad95427e9751b6e191">Dac</a>(uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t bit_resolution, uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE1)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classDac.html#ad51bf5450f03f39a0357398af69f1705">GetVoltage</a>(uint8_t channel)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classDac.html#ab2f0e36184b9b529de04136c36a3a51b">SetVoltage</a>(uint8_t channel, double voltage, bool update_outputs=true)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classAD5791.html#af2d4276c910abe162aab867b9f86aa5f">SetVoltageMessage</a>(uint8_t channel, double voltage)</td><td class="entry"><a class="el" href="classAD5791.html">AD5791</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classDac.html#aafef1707ec33a2166a69e9b646cd471b">UpdateAnalogOutputs</a>(void)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
