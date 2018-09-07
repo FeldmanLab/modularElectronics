@@ -10,11 +10,84 @@ Inheritance diagram for Tetra\+Dac\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{classTetraDac}
 \end{center}
 \end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTetraDac_a879c8577d77c603d32a94f90114b85ef}{Tetra\+Dac}} (uint8\+\_\+t dac\+\_\+sync\+\_\+pins\mbox{[}n\+\_\+channels\+\_\+\mbox{]}, uint8\+\_\+t eeprom\+\_\+sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t ldac\+\_\+pin, double full\+\_\+scale=10.\+0, uint8\+\_\+t slot\+\_\+number=0)
+\item 
+\mbox{\Hypertarget{classTetraDac_aeee47156d6a403ccbb8183b02cca798d}\label{classTetraDac_aeee47156d6a403ccbb8183b02cca798d}} 
+uint8\+\_\+t {\bfseries Begin} (void)
+\item 
+\mbox{\Hypertarget{classTetraDac_a57fd4d8db59603efe74c0c3902c64ae9}\label{classTetraDac_a57fd4d8db59603efe74c0c3902c64ae9}} 
+uint8\+\_\+t {\bfseries Initialize} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classTetraDac_a265bed4317bb6b3b4c6962fa538631da}{Set\+Voltage}} (uint8\+\_\+t channel, double voltage, bool update\+\_\+outputs=true)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classTetraDac_a6a5206bc2e525ea820a1b3279526850c}{Get\+Voltage}} (uint8\+\_\+t channel)
+\item 
+void \mbox{\hyperlink{classTetraDac_ae7e2c1afbc64a8cc0ddd2ef4af0b25b3}{Update\+Analog\+Outputs}} (void)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\mbox{\hyperlink{classTetraDac}{Tetra\+Dac}} class 
+\mbox{\hyperlink{classTetraDac}{Tetra\+Dac}} class \begin{DoxyAuthor}{Author}
+Carlos Kometter 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License. 
+\end{DoxyCopyright}
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTetraDac_a879c8577d77c603d32a94f90114b85ef}\label{classTetraDac_a879c8577d77c603d32a94f90114b85ef}} 
+\index{Tetra\+Dac@{Tetra\+Dac}!Tetra\+Dac@{Tetra\+Dac}}
+\index{Tetra\+Dac@{Tetra\+Dac}!Tetra\+Dac@{Tetra\+Dac}}
+\subsubsection{\texorpdfstring{Tetra\+Dac()}{TetraDac()}}
+{\footnotesize\ttfamily Tetra\+Dac\+::\+Tetra\+Dac (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dac\+\_\+sync\+\_\+pins\mbox{[}n\+\_\+channels\+\_\+\mbox{]},  }\item[{uint8\+\_\+t}]{eeprom\+\_\+sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{ldac\+\_\+pin,  }\item[{double}]{full\+\_\+scale = {\ttfamily 10.0},  }\item[{uint8\+\_\+t}]{slot\+\_\+number = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sync\+\_\+pins\mbox{[}$\,$\mbox{]}} & The sync or chip select of the 4 dac chips. Different than spi\+\_\+bus\+\_\+config\+\_\+pin. \\
+\hline
+\mbox{\tt in}  & {\em spi\+\_\+bus\+\_\+config\+\_\+pin} & The pin that identifies the bus.. \\
+\hline
+\mbox{\tt in}  & {\em ldac\+\_\+pin} & The ldac pin used to update the analog outputs. \\
+\hline
+\mbox{\tt in}  & {\em slot\+\_\+number} & This number is used to identify the chip or board. (default\+: 0) \\
+\hline
+\mbox{\tt in}  & {\em full\+\_\+scale} & The full scale of the dac voltage in V units. (default\+: 10) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTetraDac_a6a5206bc2e525ea820a1b3279526850c}\label{classTetraDac_a6a5206bc2e525ea820a1b3279526850c}} 
+\index{Tetra\+Dac@{Tetra\+Dac}!Get\+Voltage@{Get\+Voltage}}
+\index{Get\+Voltage@{Get\+Voltage}!Tetra\+Dac@{Tetra\+Dac}}
+\subsubsection{\texorpdfstring{Get\+Voltage()}{GetVoltage()}}
+{\footnotesize\ttfamily uint8\+\_\+t Tetra\+Dac\+::\+Get\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+See \mbox{\hyperlink{classDac_ad51bf5450f03f39a0357398af69f1705}{Dac\+::\+Get\+Voltage}}. \mbox{\Hypertarget{classTetraDac_a265bed4317bb6b3b4c6962fa538631da}\label{classTetraDac_a265bed4317bb6b3b4c6962fa538631da}} 
+\index{Tetra\+Dac@{Tetra\+Dac}!Set\+Voltage@{Set\+Voltage}}
+\index{Set\+Voltage@{Set\+Voltage}!Tetra\+Dac@{Tetra\+Dac}}
+\subsubsection{\texorpdfstring{Set\+Voltage()}{SetVoltage()}}
+{\footnotesize\ttfamily uint8\+\_\+t Tetra\+Dac\+::\+Set\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{double}]{voltage,  }\item[{bool}]{update\+\_\+outputs = {\ttfamily true} }\end{DoxyParamCaption})}
+
+See \mbox{\hyperlink{classDac_ab2f0e36184b9b529de04136c36a3a51b}{Dac\+::\+Set\+Voltage}}. \mbox{\Hypertarget{classTetraDac_ae7e2c1afbc64a8cc0ddd2ef4af0b25b3}\label{classTetraDac_ae7e2c1afbc64a8cc0ddd2ef4af0b25b3}} 
+\index{Tetra\+Dac@{Tetra\+Dac}!Update\+Analog\+Outputs@{Update\+Analog\+Outputs}}
+\index{Update\+Analog\+Outputs@{Update\+Analog\+Outputs}!Tetra\+Dac@{Tetra\+Dac}}
+\subsubsection{\texorpdfstring{Update\+Analog\+Outputs()}{UpdateAnalogOutputs()}}
+{\footnotesize\ttfamily void Tetra\+Dac\+::\+Update\+Analog\+Outputs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+See \mbox{\hyperlink{classDac_aafef1707ec33a2166a69e9b646cd471b}{Dac\+::\+Update\+Analog\+Outputs}}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/tetra\+\_\+dac.\+h\end{DoxyCompactItemize}
+include/tetra\+\_\+dac.\+h\item 
+src/tetra\+\_\+dac.\+cpp\end{DoxyCompactItemize}

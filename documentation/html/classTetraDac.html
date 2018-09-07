@@ -62,6 +62,9 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classTetraDac-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TetraDac Class Reference</div>  </div>
 </div><!--header-->
@@ -77,10 +80,169 @@ Inheritance diagram for TetraDac:</div>
 <area href="classBoard.html" alt="Board" shape="rect" coords="0,0,64,24"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a879c8577d77c603d32a94f90114b85ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTetraDac.html#a879c8577d77c603d32a94f90114b85ef">TetraDac</a> (uint8_t dac_sync_pins[n_channels_], uint8_t eeprom_sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, double full_scale=10.0, uint8_t slot_number=0)</td></tr>
+<tr class="separator:a879c8577d77c603d32a94f90114b85ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee47156d6a403ccbb8183b02cca798d"><td class="memItemLeft" align="right" valign="top"><a id="aeee47156d6a403ccbb8183b02cca798d"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Begin</b> (void)</td></tr>
+<tr class="separator:aeee47156d6a403ccbb8183b02cca798d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57fd4d8db59603efe74c0c3902c64ae9"><td class="memItemLeft" align="right" valign="top"><a id="a57fd4d8db59603efe74c0c3902c64ae9"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (void)</td></tr>
+<tr class="separator:a57fd4d8db59603efe74c0c3902c64ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a265bed4317bb6b3b4c6962fa538631da"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTetraDac.html#a265bed4317bb6b3b4c6962fa538631da">SetVoltage</a> (uint8_t channel, double voltage, bool update_outputs=true)</td></tr>
+<tr class="separator:a265bed4317bb6b3b4c6962fa538631da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5206bc2e525ea820a1b3279526850c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTetraDac.html#a6a5206bc2e525ea820a1b3279526850c">GetVoltage</a> (uint8_t channel)</td></tr>
+<tr class="separator:a6a5206bc2e525ea820a1b3279526850c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7e2c1afbc64a8cc0ddd2ef4af0b25b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTetraDac.html#ae7e2c1afbc64a8cc0ddd2ef4af0b25b3">UpdateAnalogOutputs</a> (void)</td></tr>
+<tr class="separator:ae7e2c1afbc64a8cc0ddd2ef4af0b25b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classTetraDac.html">TetraDac</a> class </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p><a class="el" href="classTetraDac.html">TetraDac</a> class </p><dl class="section author"><dt>Author</dt><dd>Carlos Kometter </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2018 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a879c8577d77c603d32a94f90114b85ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a879c8577d77c603d32a94f90114b85ef">&#9670;&nbsp;</a></span>TetraDac()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TetraDac::TetraDac </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>dac_sync_pins</em>[n_channels_], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>eeprom_sync_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>spi_bus_config_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>ldac_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>full_scale</em> = <code>10.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slot_number</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sync_pins[]</td><td>The sync or chip select of the 4 dac chips. Different than spi_bus_config_pin. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">spi_bus_config_pin</td><td>The pin that identifies the bus.. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ldac_pin</td><td>The ldac pin used to update the analog outputs. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slot_number</td><td>This number is used to identify the chip or board. (default: 0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">full_scale</td><td>The full scale of the dac voltage in V units. (default: 10) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6a5206bc2e525ea820a1b3279526850c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a5206bc2e525ea820a1b3279526850c">&#9670;&nbsp;</a></span>GetVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TetraDac::GetVoltage </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>See <a class="el" href="classDac.html#ad51bf5450f03f39a0357398af69f1705">Dac::GetVoltage</a>. </p>
+
+</div>
+</div>
+<a id="a265bed4317bb6b3b4c6962fa538631da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a265bed4317bb6b3b4c6962fa538631da">&#9670;&nbsp;</a></span>SetVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TetraDac::SetVoltage </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>voltage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update_outputs</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>See <a class="el" href="classDac.html#ab2f0e36184b9b529de04136c36a3a51b">Dac::SetVoltage</a>. </p>
+
+</div>
+</div>
+<a id="ae7e2c1afbc64a8cc0ddd2ef4af0b25b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7e2c1afbc64a8cc0ddd2ef4af0b25b3">&#9670;&nbsp;</a></span>UpdateAnalogOutputs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TetraDac::UpdateAnalogOutputs </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>See <a class="el" href="classDac.html#aafef1707ec33a2166a69e9b646cd471b">Dac::UpdateAnalogOutputs</a>. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="tetra__dac_8h_source.html">tetra_dac.h</a></li>
+<li>src/tetra_dac.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

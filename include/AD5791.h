@@ -31,6 +31,7 @@ class AD5791: public Dac {
   uint8_t slot_number_;
   double full_scale_;
  public:
+  AD5791(void) = default;
   ///
   /// Constructor
   /// \param[in] sync_pin The sync or chip select of the dac chip. Different than spi_bus_config_pin.

@@ -42,6 +42,7 @@ class Dac {
   BitOrder bit_order_;  // MSBFIRST or LSBFIRST
   uint8_t bit_resolution_;
  public:
+  Dac(void) = default;
   ///
   /// Constructor
   /// \param[in] sync_pin The sync or chip select of the dac chip. Different than spi_bus_config_pin
