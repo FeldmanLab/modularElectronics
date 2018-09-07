@@ -28,7 +28,7 @@
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class TetraDac : public Board {
+class TetraDac : public board_types::DacBoard {
  private:
   static const uint8_t n_channels_ = 4;
   AD5791 dacs_[n_channels_];

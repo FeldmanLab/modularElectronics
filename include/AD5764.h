@@ -41,7 +41,11 @@ class AD5764: public Dac {
   ///
   AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
          uint8_t ldac_pin, uint8_t slot_number=0, double full_scale=10.0);
-  uint8_t Initialize(void) {}
+  ///
+  /// Dummy function for inhericante compatibility.
+  /// \returns 0
+  /// 
+  uint8_t Initialize(void) {return 0;}
   virtual double BytesToVoltage(spi_utils::Message message);
   virtual spi_utils::Message SetVoltageMessage(uint8_t channel, double voltage);
   virtual spi_utils::Message InitializeMessage(void) {}

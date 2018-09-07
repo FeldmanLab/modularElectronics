@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spi_5futils',['spi_utils',['../namespacespi__utils.html',1,'']]]
+  ['board_5ftypes',['board_types',['../namespaceboard__types.html',1,'']]]
 ];

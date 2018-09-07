@@ -18,6 +18,7 @@
 #define AD7734_h_
 
 #include "adc.h"
+#include "board.h"
 
 ///
 /// AD7734 class
@@ -26,7 +27,7 @@
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class AD7734: public AdcSpi {
+class AD7734: public AdcSpi, public board_types::AdcBoard {
  private:
   uint8_t slot_number_;
   const double full_scale_ = 10.0;

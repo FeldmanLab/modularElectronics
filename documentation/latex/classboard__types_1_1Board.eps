@@ -173,10 +173,11 @@
 
 boxfont setfont
 1 boundaspect scale
-(AD7734) cw
-(AdcSpi) cw
-(board_types::AdcBoard) cw
 (board_types::Board) cw
+(board_types::AdcBoard) cw
+(board_types::DacBoard) cw
+(AD7734) cw
+(TetraDac) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -188,22 +189,27 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (AD7734) 0.500000 0.000000 box
- (AdcSpi) 0.000000 1.000000 box
- (board_types::AdcBoard) 1.000000 1.000000 box
- (board_types::Board) 1.000000 2.000000 box
+ (board_types::Board) 0.500000 2.000000 box
+ (board_types::AdcBoard) 0.000000 1.000000 box
+ (board_types::DacBoard) 1.000000 1.000000 box
+ (AD7734) 0.000000 0.000000 box
+ (TetraDac) 1.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-0 0.500000 0.000000 out
+1 0.500000 1.250000 out
 solid
-0.000000 1.000000 1.000000 conn
+0.000000 1.000000 2.000000 conn
 solid
-1 0.000000 1.000000 in
+0 0.000000 1.750000 in
 solid
-1 1.000000 1.000000 in
+1 0.000000 0.250000 out
 solid
-0 1.000000 1.000000 out
+0 1.000000 1.750000 in
 solid
-1 1.000000 2.000000 in
+1 1.000000 0.250000 out
+solid
+0 0.000000 0.750000 in
+solid
+0 1.000000 0.750000 in

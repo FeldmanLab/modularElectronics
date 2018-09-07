@@ -18,7 +18,36 @@
 #define BOARD_h_
 
 ///
+/// board classes for hierarchy purposes.
+/// \author Carlos Kometter
+/// \version 0.1
+/// \date 2018
+/// \copyright GNU Public License.
+///
+namespace board_types {
+///
 /// Board class
+/// \author Carlos Kometter
+/// \version 0.1
+/// \date 2018
+/// \copyright GNU Public License.
 ///
 class Board {};
+///
+/// DacBoard class
+/// \author Carlos Kometter
+/// \version 0.1
+/// \date 2018
+/// \copyright GNU Public License.
+///
+class DacBoard : public Board {};
+///
+/// AdcBoard class
+/// \author Carlos Kometter
+/// \version 0.1
+/// \date 2018
+/// \copyright GNU Public License.
+///
+class AdcBoard : public Board {};
+}
 #endif

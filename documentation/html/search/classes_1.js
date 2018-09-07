@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['board',['Board',['../classBoard.html',1,'']]]
+  ['board',['Board',['../classboard__types_1_1Board.html',1,'board_types']]]
 ];
