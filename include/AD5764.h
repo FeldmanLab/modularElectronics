@@ -18,6 +18,7 @@
 #define AD5764_h_
 
 #include "dac.h"
+#include "board.h"
 
 ///
 /// AD5764 class
@@ -26,7 +27,7 @@
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class AD5764: public Dac {
+class AD5764: public Dac, public board_types::DacBoard {
  private:
   uint8_t slot_number_;
   double full_scale_;

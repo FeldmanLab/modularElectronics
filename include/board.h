@@ -17,6 +17,9 @@
 #ifndef BOARD_h_
 #define BOARD_h_
 
+#include "dac.h"
+#include "adc.h"
+
 ///
 /// board classes for hierarchy purposes.
 /// \author Carlos Kometter
@@ -40,7 +43,7 @@ class Board {};
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class DacBoard : public Board {};
+class DacBoard : public Board, public Dac  {};
 ///
 /// AdcBoard class
 /// \author Carlos Kometter
@@ -48,6 +51,6 @@ class DacBoard : public Board {};
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class AdcBoard : public Board {};
+class AdcBoard : public Board, public AdcSpi {};
 }
 #endif

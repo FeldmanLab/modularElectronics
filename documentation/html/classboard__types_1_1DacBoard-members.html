@@ -60,26 +60,29 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboard__types.html">board_types</a></li><li class="navelem"><a class="el" href="classboard__types_1_1DacBoard.html">DacBoard</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">TetraDac Member List</div>  </div>
+<div class="title">board_types::DacBoard Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classTetraDac.html">TetraDac</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="classboard__types_1_1DacBoard.html">board_types::DacBoard</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classTetraDac.html#aeee47156d6a403ccbb8183b02cca798d">Begin</a>(void)</td><td class="entry"><a class="el" href="classTetraDac.html">TetraDac</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classDac.html#a342bb811b205d50baacb3211e89ea062">Begin</a>(void)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classDac.html#a1df39dc8c6e5b50afd07b6dd8a6b9300">BytesToVoltage</a>(spi_utils::Message message)=0</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Dac</b>(void)=default (defined in <a class="el" href="classDac.html">Dac</a>)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classDac.html#a43b0ea171bf0dfad95427e9751b6e191">Dac</a>(uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t bit_resolution, uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE1)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classTetraDac.html#a6a5206bc2e525ea820a1b3279526850c">GetVoltage</a>(uint8_t channel)</td><td class="entry"><a class="el" href="classTetraDac.html">TetraDac</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classTetraDac.html#a57fd4d8db59603efe74c0c3902c64ae9">Initialize</a>(void)</td><td class="entry"><a class="el" href="classTetraDac.html">TetraDac</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classDac.html#ad51bf5450f03f39a0357398af69f1705">GetVoltage</a>(uint8_t channel)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classDac.html#aea1f5f36c9371ebc1527e848ce67e47a">Initialize</a>(void)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classDac.html#aa34ddd250cf830bba220b86d462785b5">InitializeMessage</a>(void)=0</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classTetraDac.html#a265bed4317bb6b3b4c6962fa538631da">SetVoltage</a>(uint8_t channel, double voltage, bool update_outputs=true)</td><td class="entry"><a class="el" href="classTetraDac.html">TetraDac</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classDac.html#ab2f0e36184b9b529de04136c36a3a51b">SetVoltage</a>(uint8_t channel, double voltage, bool update_outputs=true)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classDac.html#a87132e3c19313742d92f57d9b792e0e0">SetVoltageMessage</a>(uint8_t channel, double voltage)=0</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classTetraDac.html#a77131270e115bf47b6c582d53cddb881">TetraDac</a>(uint8_t dac_sync_pins[n_channels_], uint8_t eeprom_sync_pin, uint8_t dac_spi_bus_config_pin, uint8_t eeprom_spi_bus_config_pin, uint8_t ldac_pin, double full_scale=10.0, uint8_t slot_number=0)</td><td class="entry"><a class="el" href="classTetraDac.html">TetraDac</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classTetraDac.html#ae7e2c1afbc64a8cc0ddd2ef4af0b25b3">UpdateAnalogOutputs</a>(void)</td><td class="entry"><a class="el" href="classTetraDac.html">TetraDac</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classDac.html#aafef1707ec33a2166a69e9b646cd471b">UpdateAnalogOutputs</a>(void)</td><td class="entry"><a class="el" href="classDac.html">Dac</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

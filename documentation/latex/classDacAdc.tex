@@ -7,15 +7,15 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classDacAdc_afb5c669fd66e4ff549506a58af0916e1}{Dac\+Adc}} (\mbox{\hyperlink{classDac}{Dac}} \&dac, \mbox{\hyperlink{classAdcSpi}{Adc\+Spi}} \&adc)
+\mbox{\hyperlink{classDacAdc_a44566ccabc0c62f8e1236ab3e0d3a7d3}{Dac\+Adc}} (\mbox{\hyperlink{classboard__types_1_1DacBoard}{board\+\_\+types\+::\+Dac\+Board}} \&dac, \mbox{\hyperlink{classboard__types_1_1AdcBoard}{board\+\_\+types\+::\+Adc\+Board}} \&adc)
 \item 
-bool \mbox{\hyperlink{classDacAdc_adc136f0dd9872a8f10b908891a4f604b}{Begin}} (void)
+uint8\+\_\+t \mbox{\hyperlink{classDacAdc_a47ca1d0dbf523906fe32363599772066}{Begin}} (void)
 \item 
-float \mbox{\hyperlink{classDacAdc_a2c307a0ecebbdc35e8f365d80eb8a40a}{Set\+Voltage}} (uint8\+\_\+t channel, double voltage)
+double \mbox{\hyperlink{classDacAdc_a767f1e29f9688c1b2292fbfbef8c4622}{Set\+Voltage}} (uint8\+\_\+t channel, double voltage)
 \item 
-float \mbox{\hyperlink{classDacAdc_a98e135e1946f5fd899305b52a97f5e53}{Read\+Voltage}} (uint8\+\_\+t channel)
+double \mbox{\hyperlink{classDacAdc_a5238dc258e8312e4c28161b2fad77249}{Read\+Voltage}} (uint8\+\_\+t channel)
 \item 
-bool \mbox{\hyperlink{classDacAdc_a9a6705b1fa5ecc977ef08a9189d3bf87}{Buffer\+Ramp}} (uint8\+\_\+t dac\+\_\+channels\mbox{[}$\,$\mbox{]}, uint8\+\_\+t n\+\_\+dac\+\_\+channels, uint8\+\_\+t adc\+\_\+channels\mbox{[}$\,$\mbox{]}, uint8\+\_\+t n\+\_\+adc\+\_\+channels, double start\+\_\+voltages\mbox{[}$\,$\mbox{]}, double end\+\_\+voltages\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n\+\_\+steps, uint32\+\_\+t step\+\_\+delay)
+uint8\+\_\+t \mbox{\hyperlink{classDacAdc_a4d2b0df392722734dbac322b1d0fa08d}{Buffer\+Ramp}} (uint8\+\_\+t dac\+\_\+channels\mbox{[}$\,$\mbox{]}, uint8\+\_\+t n\+\_\+dac\+\_\+channels, uint8\+\_\+t adc\+\_\+channels\mbox{[}$\,$\mbox{]}, uint8\+\_\+t n\+\_\+adc\+\_\+channels, double start\+\_\+voltages\mbox{[}$\,$\mbox{]}, double end\+\_\+voltages\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n\+\_\+steps, uint32\+\_\+t step\+\_\+delay)
 \end{DoxyCompactItemize}
 
 
@@ -35,33 +35,33 @@ G\+NU Public License.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classDacAdc_afb5c669fd66e4ff549506a58af0916e1}\label{classDacAdc_afb5c669fd66e4ff549506a58af0916e1}} 
+\mbox{\Hypertarget{classDacAdc_a44566ccabc0c62f8e1236ab3e0d3a7d3}\label{classDacAdc_a44566ccabc0c62f8e1236ab3e0d3a7d3}} 
 \index{Dac\+Adc@{Dac\+Adc}!Dac\+Adc@{Dac\+Adc}}
 \index{Dac\+Adc@{Dac\+Adc}!Dac\+Adc@{Dac\+Adc}}
 \subsubsection{\texorpdfstring{Dac\+Adc()}{DacAdc()}}
-{\footnotesize\ttfamily Dac\+Adc\+::\+Dac\+Adc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDac}{Dac}} \&}]{dac,  }\item[{\mbox{\hyperlink{classAdcSpi}{Adc\+Spi}} \&}]{adc }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Dac\+Adc\+::\+Dac\+Adc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classboard__types_1_1DacBoard}{board\+\_\+types\+::\+Dac\+Board}} \&}]{dac,  }\item[{\mbox{\hyperlink{classboard__types_1_1AdcBoard}{board\+\_\+types\+::\+Adc\+Board}} \&}]{adc }\end{DoxyParamCaption})}
 
 Constructor 
 \begin{DoxyParams}{Parameters}
-{\em dac} & \mbox{\hyperlink{classDac}{Dac}} object part \\
+{\em dac} & Dac\+Board object part \\
 \hline
-{\em adc} & \mbox{\hyperlink{classAdcSpi}{Adc\+Spi}} object part \\
+{\em adc} & Adc\+Board object part \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classDacAdc_adc136f0dd9872a8f10b908891a4f604b}\label{classDacAdc_adc136f0dd9872a8f10b908891a4f604b}} 
+\mbox{\Hypertarget{classDacAdc_a47ca1d0dbf523906fe32363599772066}\label{classDacAdc_a47ca1d0dbf523906fe32363599772066}} 
 \index{Dac\+Adc@{Dac\+Adc}!Begin@{Begin}}
 \index{Begin@{Begin}!Dac\+Adc@{Dac\+Adc}}
 \subsubsection{\texorpdfstring{Begin()}{Begin()}}
-{\footnotesize\ttfamily bool Dac\+Adc\+::\+Begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily uint8\+\_\+t Dac\+Adc\+::\+Begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-Configures pins for S\+PI and initializes S\+PI communication for both dac and adc objects. This function must be called before calling any other function. See also \mbox{\hyperlink{classDac_a342bb811b205d50baacb3211e89ea062}{Dac\+::\+Begin}} and \mbox{\hyperlink{classAdcSpi_aa8f8f27578dd85cfcdbc9439bbce66cb}{Adc\+Spi\+::\+Begin}}. \mbox{\Hypertarget{classDacAdc_a9a6705b1fa5ecc977ef08a9189d3bf87}\label{classDacAdc_a9a6705b1fa5ecc977ef08a9189d3bf87}} 
+Configures pins for S\+PI and initializes S\+PI communication for both dac and adc objects. This function must be called before calling any other function. See also \mbox{\hyperlink{classDac_a342bb811b205d50baacb3211e89ea062}{Dac\+::\+Begin}} and \mbox{\hyperlink{classAdcSpi_aa8f8f27578dd85cfcdbc9439bbce66cb}{Adc\+Spi\+::\+Begin}}. \mbox{\Hypertarget{classDacAdc_a4d2b0df392722734dbac322b1d0fa08d}\label{classDacAdc_a4d2b0df392722734dbac322b1d0fa08d}} 
 \index{Dac\+Adc@{Dac\+Adc}!Buffer\+Ramp@{Buffer\+Ramp}}
 \index{Buffer\+Ramp@{Buffer\+Ramp}!Dac\+Adc@{Dac\+Adc}}
 \subsubsection{\texorpdfstring{Buffer\+Ramp()}{BufferRamp()}}
-{\footnotesize\ttfamily bool Dac\+Adc\+::\+Buffer\+Ramp (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dac\+\_\+channels\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{n\+\_\+dac\+\_\+channels,  }\item[{uint8\+\_\+t}]{adc\+\_\+channels\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{n\+\_\+adc\+\_\+channels,  }\item[{double}]{start\+\_\+voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{end\+\_\+voltages\mbox{[}$\,$\mbox{]},  }\item[{uint32\+\_\+t}]{n\+\_\+steps,  }\item[{uint32\+\_\+t}]{step\+\_\+delay }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily uint8\+\_\+t Dac\+Adc\+::\+Buffer\+Ramp (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dac\+\_\+channels\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{n\+\_\+dac\+\_\+channels,  }\item[{uint8\+\_\+t}]{adc\+\_\+channels\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{n\+\_\+adc\+\_\+channels,  }\item[{double}]{start\+\_\+voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{end\+\_\+voltages\mbox{[}$\,$\mbox{]},  }\item[{uint32\+\_\+t}]{n\+\_\+steps,  }\item[{uint32\+\_\+t}]{step\+\_\+delay }\end{DoxyParamCaption})}
 
 Ramps the voltage of dac\+\_\+channels\mbox{[}\mbox{]} from start\+\_\+voltages\mbox{[}\mbox{]} to end\+\_\+voltages\mbox{[}\mbox{]} in n\+\_\+steps. After each step, there is a step\+\_\+delay, and then the adc\+\_\+channels\mbox{[}\mbox{]} are read. Once the adc\+\_\+channels\mbox{[}\mbox{]} are read, a new step starts. 
 \begin{DoxyParams}{Parameters}
@@ -82,17 +82,17 @@ Ramps the voltage of dac\+\_\+channels\mbox{[}\mbox{]} from start\+\_\+voltages\
 {\em step\+\_\+delay} & The delay time between setting the dac channels and reading the adc channels. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classDacAdc_a98e135e1946f5fd899305b52a97f5e53}\label{classDacAdc_a98e135e1946f5fd899305b52a97f5e53}} 
+\mbox{\Hypertarget{classDacAdc_a5238dc258e8312e4c28161b2fad77249}\label{classDacAdc_a5238dc258e8312e4c28161b2fad77249}} 
 \index{Dac\+Adc@{Dac\+Adc}!Read\+Voltage@{Read\+Voltage}}
 \index{Read\+Voltage@{Read\+Voltage}!Dac\+Adc@{Dac\+Adc}}
 \subsubsection{\texorpdfstring{Read\+Voltage()}{ReadVoltage()}}
-{\footnotesize\ttfamily float Dac\+Adc\+::\+Read\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily double Dac\+Adc\+::\+Read\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
 
-See \mbox{\hyperlink{classAdcSpi_ace8264acfedb357986afa5f611eff3ee}{Adc\+Spi\+::\+Read\+Voltage}}. \mbox{\Hypertarget{classDacAdc_a2c307a0ecebbdc35e8f365d80eb8a40a}\label{classDacAdc_a2c307a0ecebbdc35e8f365d80eb8a40a}} 
+See \mbox{\hyperlink{classAdcSpi_ace8264acfedb357986afa5f611eff3ee}{Adc\+Spi\+::\+Read\+Voltage}}. \mbox{\Hypertarget{classDacAdc_a767f1e29f9688c1b2292fbfbef8c4622}\label{classDacAdc_a767f1e29f9688c1b2292fbfbef8c4622}} 
 \index{Dac\+Adc@{Dac\+Adc}!Set\+Voltage@{Set\+Voltage}}
 \index{Set\+Voltage@{Set\+Voltage}!Dac\+Adc@{Dac\+Adc}}
 \subsubsection{\texorpdfstring{Set\+Voltage()}{SetVoltage()}}
-{\footnotesize\ttfamily float Dac\+Adc\+::\+Set\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{double}]{voltage }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily double Dac\+Adc\+::\+Set\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{double}]{voltage }\end{DoxyParamCaption})}
 
 See \mbox{\hyperlink{classDac_ab2f0e36184b9b529de04136c36a3a51b}{Dac\+::\+Set\+Voltage}}. 
 

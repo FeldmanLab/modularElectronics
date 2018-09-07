@@ -17,6 +17,7 @@
 #ifndef DAC_ADC_h_
 #define DAC_DAC_h_
 
+#include "board.h"
 #include "dac.h"
 #include "adc.h"
 
@@ -33,30 +34,29 @@ class DacAdc {
   /// 0: Microseconds 1: Miliseconds
   ///
   uint8_t delay_unit_ = 0;
-  Dac &dac_;
-  AdcSpi &adc_;
+  board_types::DacBoard &dac_;
+  board_types::AdcBoard &adc_;
  public:
   ///
   /// Constructor
-  /// \param dac Dac object part
-  /// \param adc AdcSpi object part
+  /// \param dac DacBoard object part
+  /// \param adc AdcBoard object part
   ///
-  ///
-  DacAdc(Dac &dac, AdcSpi &adc);
+  DacAdc(board_types::DacBoard &dac, board_types::AdcBoard &adc);
   ///
   /// Configures pins for SPI and initializes SPI communication for both dac and adc objects.
   /// This function must be called before calling any other function.
   /// See also Dac::Begin and AdcSpi::Begin.
   ///
-  bool Begin(void);
+  uint8_t Begin(void);
   ///
   /// See Dac::SetVoltage.
   ///
-  float SetVoltage(uint8_t channel, double voltage);
+  double SetVoltage(uint8_t channel, double voltage);
   ///
   /// See AdcSpi::ReadVoltage.
   ///
-  float ReadVoltage(uint8_t channel);
+  double ReadVoltage(uint8_t channel);
   ///
   /// Ramps the voltage of dac_channels[] from start_voltages[] to end_voltages[] in n_steps.
   /// After each step, there is a step_delay, and then the adc_channels[] are read.
@@ -70,7 +70,7 @@ class DacAdc {
   /// \param n_steps The number of steps the ramp will be divided.
   /// \param step_delay The delay time between setting the dac channels and reading the adc channels.
   ///
-  bool BufferRamp(uint8_t dac_channels[], uint8_t n_dac_channels,
+  uint8_t BufferRamp(uint8_t dac_channels[], uint8_t n_dac_channels,
                   uint8_t adc_channels[], uint8_t n_adc_channels,
                   double start_voltages[], double end_voltages[],
                   uint32_t n_steps, uint32_t step_delay);

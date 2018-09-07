@@ -40,6 +40,7 @@ class AdcSpi {
   BitOrder bit_order_;  // MSBFIRST or LSBFIRST
   uint8_t bit_resolution_;
  public:
+  AdcSpi(void) = default;
   ///
   /// Constructor
   /// \param[in] sync_pin The sync or chip select of the adc chip. Different than spi_bus_config_pin

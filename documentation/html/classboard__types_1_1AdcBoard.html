@@ -66,6 +66,8 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="classboard__types_1_1AdcBoard-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">board_types::AdcBoard Class Reference</div>  </div>
 </div><!--header-->
@@ -79,9 +81,30 @@ Inheritance diagram for board_types::AdcBoard:</div>
   <img src="classboard__types_1_1AdcBoard.png" usemap="#board_5Ftypes::AdcBoard_map" alt=""/>
   <map id="board_5Ftypes::AdcBoard_map" name="board_5Ftypes::AdcBoard_map">
 <area href="classboard__types_1_1Board.html" alt="board_types::Board" shape="rect" coords="0,0,145,24"/>
-<area href="classAD7734.html" alt="AD7734" shape="rect" coords="0,112,145,136"/>
+<area href="classAdcSpi.html" alt="AdcSpi" shape="rect" coords="155,0,300,24"/>
+<area href="classAD7734.html" alt="AD7734" shape="rect" coords="77,112,222,136"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_classAdcSpi"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classAdcSpi')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classAdcSpi.html">AdcSpi</a></td></tr>
+<tr class="memitem:a3c66ca397c2a9d0a7c475ee551b3c388 inherit pub_methods_classAdcSpi"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a3c66ca397c2a9d0a7c475ee551b3c388">AdcSpi</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t data_ready_pin, uint8_t bit_resolution, uint8_t clock_divider=7, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE3)</td></tr>
+<tr class="separator:a3c66ca397c2a9d0a7c475ee551b3c388 inherit pub_methods_classAdcSpi"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f8f27578dd85cfcdbc9439bbce66cb inherit pub_methods_classAdcSpi"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#aa8f8f27578dd85cfcdbc9439bbce66cb">Begin</a> (void)</td></tr>
+<tr class="separator:aa8f8f27578dd85cfcdbc9439bbce66cb inherit pub_methods_classAdcSpi"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace8264acfedb357986afa5f611eff3ee inherit pub_methods_classAdcSpi"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#ace8264acfedb357986afa5f611eff3ee">ReadVoltage</a> (uint8_t channel=0)</td></tr>
+<tr class="separator:ace8264acfedb357986afa5f611eff3ee inherit pub_methods_classAdcSpi"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d2ab924ad4de5b91713a22189f2ad0 inherit pub_methods_classAdcSpi"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#ac9d2ab924ad4de5b91713a22189f2ad0">ReadVoltage</a> (uint8_t channel, byte previous_meas[], bool send)</td></tr>
+<tr class="separator:ac9d2ab924ad4de5b91713a22189f2ad0 inherit pub_methods_classAdcSpi"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classAdcSpi"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classAdcSpi')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classAdcSpi.html">AdcSpi</a></td></tr>
+<tr class="memitem:a25a1deb55a9f0e71a405ca47a41f3804 inherit pro_methods_classAdcSpi"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a25a1deb55a9f0e71a405ca47a41f3804">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)=0</td></tr>
+<tr class="separator:a25a1deb55a9f0e71a405ca47a41f3804 inherit pro_methods_classAdcSpi"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a369da36232861640a113792d2398ce44 inherit pro_methods_classAdcSpi"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a369da36232861640a113792d2398ce44">SingleConversionModeMessage</a> (uint8_t channel=0)=0</td></tr>
+<tr class="separator:a369da36232861640a113792d2398ce44 inherit pro_methods_classAdcSpi"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3578f18e1976d9e2b075a3fbdc003517 inherit pro_methods_classAdcSpi"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a3578f18e1976d9e2b075a3fbdc003517">ReadDataRegisterMessage</a> (uint8_t channel=0)=0</td></tr>
+<tr class="separator:a3578f18e1976d9e2b075a3fbdc003517 inherit pro_methods_classAdcSpi"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classboard__types_1_1AdcBoard.html">AdcBoard</a> class </p><dl class="section author"><dt>Author</dt><dd>Carlos Kometter </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>

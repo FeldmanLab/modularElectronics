@@ -16,25 +16,25 @@
 
 #include "../include/dac_adc.h"
 
-DacAdc::DacAdc(Dac &dac, AdcSpi &adc)
+DacAdc::DacAdc(board_types::DacBoard &dac, board_types::AdcBoard &adc)
     : dac_(dac), adc_(adc) {
 }
 
-bool DacAdc::Begin(void) {
+uint8_t DacAdc::Begin(void) {
   dac_.Begin();
   adc_.Begin();
-  return true;
+  return 0;
 }
 
-float DacAdc::SetVoltage(uint8_t channel, double voltage) {
+double DacAdc::SetVoltage(uint8_t channel, double voltage) {
   return dac_.SetVoltage(channel, voltage);
 }
 
-float DacAdc::ReadVoltage(uint8_t channel) {
+double DacAdc::ReadVoltage(uint8_t channel) {
   return adc_.ReadVoltage(channel);
 }
 
-bool DacAdc::BufferRamp(uint8_t dac_channels[], uint8_t n_dac_channels,
+uint8_t DacAdc::BufferRamp(uint8_t dac_channels[], uint8_t n_dac_channels,
                         uint8_t adc_channels[], uint8_t n_adc_channels,
                         double start_voltages[], double end_voltages[],
                         uint32_t n_steps, uint32_t step_delay) {
@@ -86,5 +86,5 @@ bool DacAdc::BufferRamp(uint8_t dac_channels[], uint8_t n_dac_channels,
   for (uint8_t meas_index = 0; meas_index < n_meas; meas_index++) {
     Serial.write(meas[meas_index]);
   }
-  return true;
+  return 0;
 }

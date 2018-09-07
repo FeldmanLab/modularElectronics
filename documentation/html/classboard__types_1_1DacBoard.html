@@ -66,6 +66,8 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="classboard__types_1_1DacBoard-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">board_types::DacBoard Class Reference</div>  </div>
 </div><!--header-->
@@ -79,9 +81,35 @@ Inheritance diagram for board_types::DacBoard:</div>
   <img src="classboard__types_1_1DacBoard.png" usemap="#board_5Ftypes::DacBoard_map" alt=""/>
   <map id="board_5Ftypes::DacBoard_map" name="board_5Ftypes::DacBoard_map">
 <area href="classboard__types_1_1Board.html" alt="board_types::Board" shape="rect" coords="0,0,145,24"/>
-<area href="classTetraDac.html" alt="TetraDac" shape="rect" coords="0,112,145,136"/>
+<area href="classDac.html" alt="Dac" shape="rect" coords="155,0,300,24"/>
+<area href="classAD5764.html" alt="AD5764" shape="rect" coords="0,112,145,136"/>
+<area href="classTetraDac.html" alt="TetraDac" shape="rect" coords="155,112,300,136"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_classDac"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classDac')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classDac.html">Dac</a></td></tr>
+<tr class="memitem:a43b0ea171bf0dfad95427e9751b6e191 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a43b0ea171bf0dfad95427e9751b6e191">Dac</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, uint8_t bit_resolution, uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE1)</td></tr>
+<tr class="separator:a43b0ea171bf0dfad95427e9751b6e191 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a342bb811b205d50baacb3211e89ea062 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a342bb811b205d50baacb3211e89ea062">Begin</a> (void)</td></tr>
+<tr class="separator:a342bb811b205d50baacb3211e89ea062 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea1f5f36c9371ebc1527e848ce67e47a inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#aea1f5f36c9371ebc1527e848ce67e47a">Initialize</a> (void)</td></tr>
+<tr class="separator:aea1f5f36c9371ebc1527e848ce67e47a inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f0e36184b9b529de04136c36a3a51b inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ab2f0e36184b9b529de04136c36a3a51b">SetVoltage</a> (uint8_t channel, double voltage, bool update_outputs=true)</td></tr>
+<tr class="separator:ab2f0e36184b9b529de04136c36a3a51b inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafef1707ec33a2166a69e9b646cd471b inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#aafef1707ec33a2166a69e9b646cd471b">UpdateAnalogOutputs</a> (void)</td></tr>
+<tr class="separator:aafef1707ec33a2166a69e9b646cd471b inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51bf5450f03f39a0357398af69f1705 inherit pub_methods_classDac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#ad51bf5450f03f39a0357398af69f1705">GetVoltage</a> (uint8_t channel)</td></tr>
+<tr class="separator:ad51bf5450f03f39a0357398af69f1705 inherit pub_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classDac"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classDac')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classDac.html">Dac</a></td></tr>
+<tr class="memitem:a1df39dc8c6e5b50afd07b6dd8a6b9300 inherit pro_methods_classDac"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a1df39dc8c6e5b50afd07b6dd8a6b9300">BytesToVoltage</a> (<a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a> message)=0</td></tr>
+<tr class="separator:a1df39dc8c6e5b50afd07b6dd8a6b9300 inherit pro_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87132e3c19313742d92f57d9b792e0e0 inherit pro_methods_classDac"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#a87132e3c19313742d92f57d9b792e0e0">SetVoltageMessage</a> (uint8_t channel, double voltage)=0</td></tr>
+<tr class="separator:a87132e3c19313742d92f57d9b792e0e0 inherit pro_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa34ddd250cf830bba220b86d462785b5 inherit pro_methods_classDac"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structspi__utils_1_1Message.html">spi_utils::Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDac.html#aa34ddd250cf830bba220b86d462785b5">InitializeMessage</a> (void)=0</td></tr>
+<tr class="separator:aa34ddd250cf830bba220b86d462785b5 inherit pro_methods_classDac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classboard__types_1_1DacBoard.html">DacBoard</a> class </p><dl class="section author"><dt>Author</dt><dd>Carlos Kometter </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
