@@ -1,0 +1,78 @@
+\hypertarget{classEepromSpi}{}\section{Eeprom\+Spi Class Reference}
+\label{classEepromSpi}\index{Eeprom\+Spi@{Eeprom\+Spi}}
+
+
+{\ttfamily \#include $<$eeprom.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEepromSpi_ac8220a867620c54fe4f653c67fba0ba3}{Eeprom\+Spi}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t clock\+\_\+divider=7, Bit\+Order bit\+\_\+order=M\+S\+B\+F\+I\+R\+ST, uint8\+\_\+t spi\+\_\+mode=S\+P\+I\+\_\+\+M\+O\+D\+E3)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classEepromSpi_a73b7f850103cacbcefbab5c7422a8928}{Begin}} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Eeprom class \begin{DoxyAuthor}{Author}
+Carlos Kometter 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License. 
+\end{DoxyCopyright}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEepromSpi_ac8220a867620c54fe4f653c67fba0ba3}\label{classEepromSpi_ac8220a867620c54fe4f653c67fba0ba3}} 
+\index{Eeprom\+Spi@{Eeprom\+Spi}!Eeprom\+Spi@{Eeprom\+Spi}}
+\index{Eeprom\+Spi@{Eeprom\+Spi}!Eeprom\+Spi@{Eeprom\+Spi}}
+\subsubsection{\texorpdfstring{Eeprom\+Spi()}{EepromSpi()}}
+{\footnotesize\ttfamily Eeprom\+Spi\+::\+Eeprom\+Spi (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{clock\+\_\+divider = {\ttfamily 7},  }\item[{Bit\+Order}]{bit\+\_\+order = {\ttfamily MSBFIRST},  }\item[{uint8\+\_\+t}]{spi\+\_\+mode = {\ttfamily SPI\+\_\+MODE3} }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sync\+\_\+pin} & The sync or chip select of the dac chip. Different than spi\+\_\+bus\+\_\+config\+\_\+pin \\
+\hline
+\mbox{\tt in}  & {\em spi\+\_\+bus\+\_\+config\+\_\+pin} & The pin that identifies the bus. More than one dac can share the same pin. \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+divider} & Sets the spi frequency. spi\+\_\+freq = clock\+\_\+freq (84 M\+Hz for arduino due) / clock\+\_\+divider (default\+: 4) \\
+\hline
+\mbox{\tt in}  & {\em bit\+\_\+order} & Possible values\+:
+\begin{DoxyItemize}
+\item M\+S\+B\+F\+I\+R\+ST Most significant bit first. (default)
+\item L\+S\+B\+F\+I\+R\+ST Least significant bit first.
+\end{DoxyItemize}\\
+\hline
+\mbox{\tt in}  & {\em spi\+\_\+mode} & Possible values\+:
+\begin{DoxyItemize}
+\item S\+P\+I\+\_\+\+M\+O\+D\+E0
+\item S\+P\+I\+\_\+\+M\+O\+D\+E1
+\item S\+P\+I\+\_\+\+M\+O\+D\+E2
+\item S\+P\+I\+\_\+\+M\+O\+D\+E3 (default) 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEepromSpi_a73b7f850103cacbcefbab5c7422a8928}\label{classEepromSpi_a73b7f850103cacbcefbab5c7422a8928}} 
+\index{Eeprom\+Spi@{Eeprom\+Spi}!Begin@{Begin}}
+\index{Begin@{Begin}!Eeprom\+Spi@{Eeprom\+Spi}}
+\subsubsection{\texorpdfstring{Begin()}{Begin()}}
+{\footnotesize\ttfamily uint8\+\_\+t Eeprom\+Spi\+::\+Begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Configures pins for S\+PI and initializes S\+PI communication. This function must be called before calling any other function. \begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/eeprom.\+h\item 
+src/eeprom.\+cpp\end{DoxyCompactItemize}

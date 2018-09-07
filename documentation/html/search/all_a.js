@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['tetradac',['TetraDac',['../classTetraDac.html',1,'TetraDac'],['../classTetraDac.html#a879c8577d77c603d32a94f90114b85ef',1,'TetraDac::TetraDac()']]]
+  ['setvoltage',['SetVoltage',['../classDac.html#ab2f0e36184b9b529de04136c36a3a51b',1,'Dac::SetVoltage()'],['../classDacAdc.html#a2c307a0ecebbdc35e8f365d80eb8a40a',1,'DacAdc::SetVoltage()'],['../classTetraDac.html#a265bed4317bb6b3b4c6962fa538631da',1,'TetraDac::SetVoltage()']]],
+  ['setvoltagemessage',['SetVoltageMessage',['../classAD5764.html#a62887ed89fedc4db68f2a54324e1fac0',1,'AD5764::SetVoltageMessage()'],['../classAD5791.html#af2d4276c910abe162aab867b9f86aa5f',1,'AD5791::SetVoltageMessage()'],['../classDac.html#a87132e3c19313742d92f57d9b792e0e0',1,'Dac::SetVoltageMessage()']]],
+  ['singleconversionmodemessage',['SingleConversionModeMessage',['../classAD7734.html#af677fbfbae0ec1c78b453ceb4a6736ec',1,'AD7734::SingleConversionModeMessage()'],['../classAdcSpi.html#a369da36232861640a113792d2398ce44',1,'AdcSpi::SingleConversionModeMessage()']]],
+  ['spi_5futils',['spi_utils',['../namespacespi__utils.html',1,'']]]
 ];

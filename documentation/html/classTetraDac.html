@@ -83,13 +83,11 @@ Inheritance diagram for TetraDac:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a879c8577d77c603d32a94f90114b85ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTetraDac.html#a879c8577d77c603d32a94f90114b85ef">TetraDac</a> (uint8_t dac_sync_pins[n_channels_], uint8_t eeprom_sync_pin, uint8_t spi_bus_config_pin, uint8_t ldac_pin, double full_scale=10.0, uint8_t slot_number=0)</td></tr>
-<tr class="separator:a879c8577d77c603d32a94f90114b85ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeee47156d6a403ccbb8183b02cca798d"><td class="memItemLeft" align="right" valign="top"><a id="aeee47156d6a403ccbb8183b02cca798d"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Begin</b> (void)</td></tr>
+<tr class="memitem:a77131270e115bf47b6c582d53cddb881"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTetraDac.html#a77131270e115bf47b6c582d53cddb881">TetraDac</a> (uint8_t dac_sync_pins[n_channels_], uint8_t eeprom_sync_pin, uint8_t dac_spi_bus_config_pin, uint8_t eeprom_spi_bus_config_pin, uint8_t ldac_pin, double full_scale=10.0, uint8_t slot_number=0)</td></tr>
+<tr class="separator:a77131270e115bf47b6c582d53cddb881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee47156d6a403ccbb8183b02cca798d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTetraDac.html#aeee47156d6a403ccbb8183b02cca798d">Begin</a> (void)</td></tr>
 <tr class="separator:aeee47156d6a403ccbb8183b02cca798d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57fd4d8db59603efe74c0c3902c64ae9"><td class="memItemLeft" align="right" valign="top"><a id="a57fd4d8db59603efe74c0c3902c64ae9"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (void)</td></tr>
+<tr class="memitem:a57fd4d8db59603efe74c0c3902c64ae9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTetraDac.html#a57fd4d8db59603efe74c0c3902c64ae9">Initialize</a> (void)</td></tr>
 <tr class="separator:a57fd4d8db59603efe74c0c3902c64ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a265bed4317bb6b3b4c6962fa538631da"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTetraDac.html#a265bed4317bb6b3b4c6962fa538631da">SetVoltage</a> (uint8_t channel, double voltage, bool update_outputs=true)</td></tr>
 <tr class="separator:a265bed4317bb6b3b4c6962fa538631da"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,8 +102,8 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (vo
 <dl class="section date"><dt>Date</dt><dd>2018 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a879c8577d77c603d32a94f90114b85ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a879c8577d77c603d32a94f90114b85ef">&#9670;&nbsp;</a></span>TetraDac()</h2>
+<a id="a77131270e115bf47b6c582d53cddb881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77131270e115bf47b6c582d53cddb881">&#9670;&nbsp;</a></span>TetraDac()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,7 +124,13 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (vo
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>spi_bus_config_pin</em>, </td>
+          <td class="paramname"><em>dac_spi_bus_config_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>eeprom_spi_bus_config_pin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -155,8 +159,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (vo
 </div><div class="memdoc">
 <p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sync_pins[]</td><td>The sync or chip select of the 4 dac chips. Different than spi_bus_config_pin. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">spi_bus_config_pin</td><td>The pin that identifies the bus.. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dac_sync_pins[]</td><td>The sync or chip select of the 4 dac chips. Different than spi_bus_config_pin. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eeprom_sync_pin</td><td>The sync or chip select of the on-board eeprom. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dac_spi_bus_config_pin</td><td>The pin that identifies the dac bus. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eeprom_spi_bus_config_pin</td><td>The pin that identifies the eeprom bus. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ldac_pin</td><td>The ldac pin used to update the analog outputs. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">slot_number</td><td>This number is used to identify the chip or board. (default: 0) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">full_scale</td><td>The full scale of the dac voltage in V units. (default: 10) </td></tr>
@@ -167,6 +173,25 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (vo
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aeee47156d6a403ccbb8183b02cca798d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee47156d6a403ccbb8183b02cca798d">&#9670;&nbsp;</a></span>Begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TetraDac::Begin </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>See <a class="el" href="classDac.html#a342bb811b205d50baacb3211e89ea062">Dac::Begin</a> and <a class="el" href="classEepromSpi.html#a73b7f850103cacbcefbab5c7422a8928">EepromSpi::Begin</a> </p>
+
+</div>
+</div>
 <a id="a6a5206bc2e525ea820a1b3279526850c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a5206bc2e525ea820a1b3279526850c">&#9670;&nbsp;</a></span>GetVoltage()</h2>
 
@@ -183,6 +208,25 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (vo
       </table>
 </div><div class="memdoc">
 <p>See <a class="el" href="classDac.html#ad51bf5450f03f39a0357398af69f1705">Dac::GetVoltage</a>. </p>
+
+</div>
+</div>
+<a id="a57fd4d8db59603efe74c0c3902c64ae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57fd4d8db59603efe74c0c3902c64ae9">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TetraDac::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>See <a class="el" href="classDac.html#aea1f5f36c9371ebc1527e848ce67e47a">Dac::Initialize</a> </p>
 
 </div>
 </div>

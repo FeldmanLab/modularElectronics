@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['n_5fblocks',['n_blocks',['../structspi__utils_1_1Message.html#a00d125aa721450f39c7ae0310090af65',1,'spi_utils::Message']]]
+  ['message',['Message',['../structspi__utils_1_1Message.html',1,'spi_utils']]],
+  ['msg',['msg',['../structspi__utils_1_1Message.html#aef999e9fd6fe0d4ab21aa2a6bf740f55',1,'spi_utils::Message']]]
 ];

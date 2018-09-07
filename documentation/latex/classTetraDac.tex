@@ -13,13 +13,11 @@ Inheritance diagram for Tetra\+Dac\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classTetraDac_a879c8577d77c603d32a94f90114b85ef}{Tetra\+Dac}} (uint8\+\_\+t dac\+\_\+sync\+\_\+pins\mbox{[}n\+\_\+channels\+\_\+\mbox{]}, uint8\+\_\+t eeprom\+\_\+sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t ldac\+\_\+pin, double full\+\_\+scale=10.\+0, uint8\+\_\+t slot\+\_\+number=0)
+\mbox{\hyperlink{classTetraDac_a77131270e115bf47b6c582d53cddb881}{Tetra\+Dac}} (uint8\+\_\+t dac\+\_\+sync\+\_\+pins\mbox{[}n\+\_\+channels\+\_\+\mbox{]}, uint8\+\_\+t eeprom\+\_\+sync\+\_\+pin, uint8\+\_\+t dac\+\_\+spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t eeprom\+\_\+spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t ldac\+\_\+pin, double full\+\_\+scale=10.\+0, uint8\+\_\+t slot\+\_\+number=0)
 \item 
-\mbox{\Hypertarget{classTetraDac_aeee47156d6a403ccbb8183b02cca798d}\label{classTetraDac_aeee47156d6a403ccbb8183b02cca798d}} 
-uint8\+\_\+t {\bfseries Begin} (void)
+uint8\+\_\+t \mbox{\hyperlink{classTetraDac_aeee47156d6a403ccbb8183b02cca798d}{Begin}} (void)
 \item 
-\mbox{\Hypertarget{classTetraDac_a57fd4d8db59603efe74c0c3902c64ae9}\label{classTetraDac_a57fd4d8db59603efe74c0c3902c64ae9}} 
-uint8\+\_\+t {\bfseries Initialize} (void)
+uint8\+\_\+t \mbox{\hyperlink{classTetraDac_a57fd4d8db59603efe74c0c3902c64ae9}{Initialize}} (void)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{classTetraDac_a265bed4317bb6b3b4c6962fa538631da}{Set\+Voltage}} (uint8\+\_\+t channel, double voltage, bool update\+\_\+outputs=true)
 \item 
@@ -45,17 +43,21 @@ G\+NU Public License.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classTetraDac_a879c8577d77c603d32a94f90114b85ef}\label{classTetraDac_a879c8577d77c603d32a94f90114b85ef}} 
+\mbox{\Hypertarget{classTetraDac_a77131270e115bf47b6c582d53cddb881}\label{classTetraDac_a77131270e115bf47b6c582d53cddb881}} 
 \index{Tetra\+Dac@{Tetra\+Dac}!Tetra\+Dac@{Tetra\+Dac}}
 \index{Tetra\+Dac@{Tetra\+Dac}!Tetra\+Dac@{Tetra\+Dac}}
 \subsubsection{\texorpdfstring{Tetra\+Dac()}{TetraDac()}}
-{\footnotesize\ttfamily Tetra\+Dac\+::\+Tetra\+Dac (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dac\+\_\+sync\+\_\+pins\mbox{[}n\+\_\+channels\+\_\+\mbox{]},  }\item[{uint8\+\_\+t}]{eeprom\+\_\+sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{ldac\+\_\+pin,  }\item[{double}]{full\+\_\+scale = {\ttfamily 10.0},  }\item[{uint8\+\_\+t}]{slot\+\_\+number = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Tetra\+Dac\+::\+Tetra\+Dac (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dac\+\_\+sync\+\_\+pins\mbox{[}n\+\_\+channels\+\_\+\mbox{]},  }\item[{uint8\+\_\+t}]{eeprom\+\_\+sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{dac\+\_\+spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{eeprom\+\_\+spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{ldac\+\_\+pin,  }\item[{double}]{full\+\_\+scale = {\ttfamily 10.0},  }\item[{uint8\+\_\+t}]{slot\+\_\+number = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 Constructor 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em sync\+\_\+pins\mbox{[}$\,$\mbox{]}} & The sync or chip select of the 4 dac chips. Different than spi\+\_\+bus\+\_\+config\+\_\+pin. \\
+\mbox{\tt in}  & {\em dac\+\_\+sync\+\_\+pins\mbox{[}$\,$\mbox{]}} & The sync or chip select of the 4 dac chips. Different than spi\+\_\+bus\+\_\+config\+\_\+pin. \\
 \hline
-\mbox{\tt in}  & {\em spi\+\_\+bus\+\_\+config\+\_\+pin} & The pin that identifies the bus.. \\
+\mbox{\tt in}  & {\em eeprom\+\_\+sync\+\_\+pin} & The sync or chip select of the on-\/board eeprom. \\
+\hline
+\mbox{\tt in}  & {\em dac\+\_\+spi\+\_\+bus\+\_\+config\+\_\+pin} & The pin that identifies the dac bus. \\
+\hline
+\mbox{\tt in}  & {\em eeprom\+\_\+spi\+\_\+bus\+\_\+config\+\_\+pin} & The pin that identifies the eeprom bus. \\
 \hline
 \mbox{\tt in}  & {\em ldac\+\_\+pin} & The ldac pin used to update the analog outputs. \\
 \hline
@@ -67,13 +69,25 @@ Constructor
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classTetraDac_a6a5206bc2e525ea820a1b3279526850c}\label{classTetraDac_a6a5206bc2e525ea820a1b3279526850c}} 
+\mbox{\Hypertarget{classTetraDac_aeee47156d6a403ccbb8183b02cca798d}\label{classTetraDac_aeee47156d6a403ccbb8183b02cca798d}} 
+\index{Tetra\+Dac@{Tetra\+Dac}!Begin@{Begin}}
+\index{Begin@{Begin}!Tetra\+Dac@{Tetra\+Dac}}
+\subsubsection{\texorpdfstring{Begin()}{Begin()}}
+{\footnotesize\ttfamily uint8\+\_\+t Tetra\+Dac\+::\+Begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+See \mbox{\hyperlink{classDac_a342bb811b205d50baacb3211e89ea062}{Dac\+::\+Begin}} and \mbox{\hyperlink{classEepromSpi_a73b7f850103cacbcefbab5c7422a8928}{Eeprom\+Spi\+::\+Begin}} \mbox{\Hypertarget{classTetraDac_a6a5206bc2e525ea820a1b3279526850c}\label{classTetraDac_a6a5206bc2e525ea820a1b3279526850c}} 
 \index{Tetra\+Dac@{Tetra\+Dac}!Get\+Voltage@{Get\+Voltage}}
 \index{Get\+Voltage@{Get\+Voltage}!Tetra\+Dac@{Tetra\+Dac}}
 \subsubsection{\texorpdfstring{Get\+Voltage()}{GetVoltage()}}
 {\footnotesize\ttfamily uint8\+\_\+t Tetra\+Dac\+::\+Get\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
 
-See \mbox{\hyperlink{classDac_ad51bf5450f03f39a0357398af69f1705}{Dac\+::\+Get\+Voltage}}. \mbox{\Hypertarget{classTetraDac_a265bed4317bb6b3b4c6962fa538631da}\label{classTetraDac_a265bed4317bb6b3b4c6962fa538631da}} 
+See \mbox{\hyperlink{classDac_ad51bf5450f03f39a0357398af69f1705}{Dac\+::\+Get\+Voltage}}. \mbox{\Hypertarget{classTetraDac_a57fd4d8db59603efe74c0c3902c64ae9}\label{classTetraDac_a57fd4d8db59603efe74c0c3902c64ae9}} 
+\index{Tetra\+Dac@{Tetra\+Dac}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Tetra\+Dac@{Tetra\+Dac}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily uint8\+\_\+t Tetra\+Dac\+::\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+See \mbox{\hyperlink{classDac_aea1f5f36c9371ebc1527e848ce67e47a}{Dac\+::\+Initialize}} \mbox{\Hypertarget{classTetraDac_a265bed4317bb6b3b4c6962fa538631da}\label{classTetraDac_a265bed4317bb6b3b4c6962fa538631da}} 
 \index{Tetra\+Dac@{Tetra\+Dac}!Set\+Voltage@{Set\+Voltage}}
 \index{Set\+Voltage@{Set\+Voltage}!Tetra\+Dac@{Tetra\+Dac}}
 \subsubsection{\texorpdfstring{Set\+Voltage()}{SetVoltage()}}
