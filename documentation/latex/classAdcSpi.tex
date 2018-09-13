@@ -13,7 +13,7 @@ Inheritance diagram for Adc\+Spi\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAdcSpi_a3c66ca397c2a9d0a7c475ee551b3c388}{Adc\+Spi}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t data\+\_\+ready\+\_\+pin, uint8\+\_\+t bit\+\_\+resolution, uint8\+\_\+t clock\+\_\+divider=7, Bit\+Order bit\+\_\+order=M\+S\+B\+F\+I\+R\+ST, uint8\+\_\+t spi\+\_\+mode=S\+P\+I\+\_\+\+M\+O\+D\+E3)
+\mbox{\hyperlink{classAdcSpi_a78b3bf970d85febda92dd343cca687a1}{Adc\+Spi}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t data\+\_\+ready\+\_\+pin, uint8\+\_\+t bit\+\_\+resolution, uint8\+\_\+t reset\+\_\+pin=0, uint8\+\_\+t clock\+\_\+divider=7, Bit\+Order bit\+\_\+order=M\+S\+B\+F\+I\+R\+ST, uint8\+\_\+t spi\+\_\+mode=S\+P\+I\+\_\+\+M\+O\+D\+E3)
 \item 
 bool \mbox{\hyperlink{classAdcSpi_aa8f8f27578dd85cfcdbc9439bbce66cb}{Begin}} (void)
 \item 
@@ -48,11 +48,11 @@ G\+NU Public License.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAdcSpi_a3c66ca397c2a9d0a7c475ee551b3c388}\label{classAdcSpi_a3c66ca397c2a9d0a7c475ee551b3c388}} 
+\mbox{\Hypertarget{classAdcSpi_a78b3bf970d85febda92dd343cca687a1}\label{classAdcSpi_a78b3bf970d85febda92dd343cca687a1}} 
 \index{Adc\+Spi@{Adc\+Spi}!Adc\+Spi@{Adc\+Spi}}
 \index{Adc\+Spi@{Adc\+Spi}!Adc\+Spi@{Adc\+Spi}}
 \subsubsection{\texorpdfstring{Adc\+Spi()}{AdcSpi()}}
-{\footnotesize\ttfamily Adc\+Spi\+::\+Adc\+Spi (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{data\+\_\+ready\+\_\+pin,  }\item[{uint8\+\_\+t}]{bit\+\_\+resolution,  }\item[{uint8\+\_\+t}]{clock\+\_\+divider = {\ttfamily 7},  }\item[{Bit\+Order}]{bit\+\_\+order = {\ttfamily MSBFIRST},  }\item[{uint8\+\_\+t}]{spi\+\_\+mode = {\ttfamily SPI\+\_\+MODE3} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Adc\+Spi\+::\+Adc\+Spi (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{data\+\_\+ready\+\_\+pin,  }\item[{uint8\+\_\+t}]{bit\+\_\+resolution,  }\item[{uint8\+\_\+t}]{reset\+\_\+pin = {\ttfamily 0},  }\item[{uint8\+\_\+t}]{clock\+\_\+divider = {\ttfamily 7},  }\item[{Bit\+Order}]{bit\+\_\+order = {\ttfamily MSBFIRST},  }\item[{uint8\+\_\+t}]{spi\+\_\+mode = {\ttfamily SPI\+\_\+MODE3} }\end{DoxyParamCaption})}
 
 Constructor 
 \begin{DoxyParams}[1]{Parameters}
@@ -77,8 +77,10 @@ Constructor
 \item S\+P\+I\+\_\+\+M\+O\+D\+E0
 \item S\+P\+I\+\_\+\+M\+O\+D\+E1
 \item S\+P\+I\+\_\+\+M\+O\+D\+E2
-\item S\+P\+I\+\_\+\+M\+O\+D\+E3 (default) 
+\item S\+P\+I\+\_\+\+M\+O\+D\+E3 (default)
 \end{DoxyItemize}\\
+\hline
+\mbox{\tt in}  & {\em reset\+\_\+pin} & The reset pin for the dac pin. Set to 0 if not used. (default\+: 0) \\
 \hline
 \end{DoxyParams}
 

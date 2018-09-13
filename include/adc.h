@@ -39,6 +39,7 @@ class AdcSpi {
   uint8_t clock_divider_;  // For due frequency = 84 MHz / clock_divider_
   BitOrder bit_order_;  // MSBFIRST or LSBFIRST
   uint8_t bit_resolution_;
+  uint8_t reset_pin_;
  public:
   AdcSpi(void) = default;
   ///
@@ -58,10 +59,12 @@ class AdcSpi {
   ///   - SPI_MODE2
   ///   - SPI_MODE3 (default)
   ///
+  /// \param[in] reset_pin The reset pin for the dac pin. Set to 0 if not used. (default: 0)
+  ///
   AdcSpi(uint8_t sync_pin, uint8_t spi_bus_config_pin,
 	 uint8_t data_ready_pin, uint8_t bit_resolution,
-	 uint8_t clock_divider=7, BitOrder bit_order=MSBFIRST,
-	 uint8_t spi_mode=SPI_MODE3);
+	 uint8_t reset_pin=0, uint8_t clock_divider=7,
+	 BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE3);
   ///
   /// Configures pins for SPI and initializes SPI communication.
   /// This function must be called before calling any other function.

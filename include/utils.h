@@ -109,7 +109,7 @@ namespace interface_utils {
   /// \param[in] n_shift The number of places to shift.
   ///
   inline void shift_array_left(String array_in[], uint8_t array_in_size,
-			String array_out[], uint8_t n_shift) {
+			       String array_out[], uint8_t n_shift) {
     for (uint8_t index = 0; index < array_in_size; ++index) {
       array_out[index] = array_in[index + n_shift];
     }

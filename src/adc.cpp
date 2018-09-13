@@ -18,12 +18,12 @@
 
 AdcSpi::AdcSpi(uint8_t sync_pin, uint8_t spi_bus_config_pin,
 	       uint8_t data_ready_pin, uint8_t bit_resolution,
-	       uint8_t clock_divider, BitOrder bit_order,
-	       uint8_t spi_mode)
+	       uint8_t reset_pin, uint8_t clock_divider,
+	       BitOrder bit_order, uint8_t spi_mode)
   : sync_pin_(sync_pin), spi_bus_config_pin_(spi_bus_config_pin),
     data_ready_pin_(data_ready_pin), bit_resolution_(bit_resolution),
-    clock_divider_(clock_divider), bit_order_(bit_order),
-    spi_mode_(spi_mode) {
+    reset_pin_(reset_pin), clock_divider_(clock_divider),
+    bit_order_(bit_order), spi_mode_(spi_mode) {
 }
 
 //Configures pins for SPI and initializes SPI
@@ -33,6 +33,10 @@ bool AdcSpi::Begin(void) {
   pinMode(data_ready_pin_, INPUT);
   // Setting pin values
   digitalWrite(sync_pin_, HIGH);
+  if (reset_pin_ != 0) {
+    pinMode(reset_pin_, OUTPUT);
+    digitalWrite(reset_pin_, HIGH);
+  }
   // Initializing and configuring SPI
   SPI.begin(spi_bus_config_pin_);
   SPI.setBitOrder(spi_bus_config_pin_, bit_order_);

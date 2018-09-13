@@ -17,9 +17,11 @@
 #include "../include/AD7734.h"
 
 AD7734::AD7734(uint8_t sync_pin, uint8_t spi_bus_config_pin,
-	       uint8_t data_ready_pin, uint8_t slot_number)
-  :AdcSpi(sync_pin, spi_bus_config_pin, data_ready_pin, 16),
-   slot_number_(slot_number) {
+	       uint8_t data_ready_pin, uint8_t slot_number,
+	       uint8_t reset_pin)
+  : AdcSpi(sync_pin, spi_bus_config_pin,
+	   data_ready_pin, 16, reset_pin),
+    slot_number_(slot_number) {
 }
 
 double AD7734::BytesToVoltage(spi_utils::Message message) {

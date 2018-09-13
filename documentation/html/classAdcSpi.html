@@ -86,8 +86,8 @@ Inheritance diagram for AdcSpi:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c66ca397c2a9d0a7c475ee551b3c388"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a3c66ca397c2a9d0a7c475ee551b3c388">AdcSpi</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t data_ready_pin, uint8_t bit_resolution, uint8_t clock_divider=7, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE3)</td></tr>
-<tr class="separator:a3c66ca397c2a9d0a7c475ee551b3c388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78b3bf970d85febda92dd343cca687a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a78b3bf970d85febda92dd343cca687a1">AdcSpi</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t data_ready_pin, uint8_t bit_resolution, uint8_t reset_pin=0, uint8_t clock_divider=7, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE3)</td></tr>
+<tr class="separator:a78b3bf970d85febda92dd343cca687a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8f8f27578dd85cfcdbc9439bbce66cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#aa8f8f27578dd85cfcdbc9439bbce66cb">Begin</a> (void)</td></tr>
 <tr class="separator:aa8f8f27578dd85cfcdbc9439bbce66cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace8264acfedb357986afa5f611eff3ee"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#ace8264acfedb357986afa5f611eff3ee">ReadVoltage</a> (uint8_t channel=0)</td></tr>
@@ -110,8 +110,8 @@ Protected Member Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2018 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3c66ca397c2a9d0a7c475ee551b3c388"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c66ca397c2a9d0a7c475ee551b3c388">&#9670;&nbsp;</a></span>AdcSpi()</h2>
+<a id="a78b3bf970d85febda92dd343cca687a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78b3bf970d85febda92dd343cca687a1">&#9670;&nbsp;</a></span>AdcSpi()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,6 +139,12 @@ Protected Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>bit_resolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reset_pin</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -181,9 +187,10 @@ Protected Member Functions</h2></td></tr>
 <li>SPI_MODE0</li>
 <li>SPI_MODE1</li>
 <li>SPI_MODE2</li>
-<li>SPI_MODE3 (default) </li>
+<li>SPI_MODE3 (default)</li>
 </ul>
 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">reset_pin</td><td>The reset pin for the dac pin. Set to 0 if not used. (default: 0) </td></tr>
   </table>
   </dd>
 </dl>

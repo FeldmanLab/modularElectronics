@@ -20,7 +20,7 @@
 #include "include/utils.h"
 
 AD5764 dac1(4, 52, 6, 1);
-AD7734 adc1(52, 10, 48, 1);
+AD7734 adc1(52, 10, 48, 1, 44);
 DacAdc dac_adc(dac1, adc1);
 //include "src/dac.h"
 //Dac dac1(4, 4, 6);
@@ -30,8 +30,6 @@ void setup() {
   //dac1.Begin();
   //adc1.Begin();
   dac_adc.Begin();
-  pinMode(44, OUTPUT);
-  digitalWrite(44, HIGH);
 }
 
 void loop() {
@@ -58,9 +56,8 @@ void loop() {
   /* 		       n_steps, step_delay); */
   /* } */
   if (Serial.available()) {
-    String cmd[30] = "";
-    uint8_t cmd_size;
-    cmd_size = interface_utils::query_serial(cmd);
+    String cmd[30];
+    uint8_t cmd_size = interface_utils::query_serial(cmd);
     dac_adc.Router(cmd, cmd_size);
   }
 }

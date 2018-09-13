@@ -40,7 +40,8 @@ class AD7734: public virtual AdcSpi, public board_types::AdcBoard {
   /// \param[in] slot_number This number is used to identify the chip or board. (default: 0)
   ///
   AD7734(uint8_t sync_pin, uint8_t spi_bus_config_pin,
-         uint8_t data_ready_pin, uint8_t slot_number);
+         uint8_t data_ready_pin, uint8_t slot_number,
+	 uint8_t reset_pin=0);
  protected:
   virtual double BytesToVoltage(spi_utils::Message message);
   virtual spi_utils::Message SingleConversionModeMessage(uint8_t channel);
