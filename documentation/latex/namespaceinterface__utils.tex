@@ -1,0 +1,73 @@
+\hypertarget{namespaceinterface__utils}{}\section{interface\+\_\+utils Namespace Reference}
+\label{namespaceinterface__utils}\index{interface\+\_\+utils@{interface\+\_\+utils}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespaceinterface__utils_a3ba730867d788c0abb2a7b684d35f0cc}{query\+\_\+serial}} (String cmd\mbox{[}$\,$\mbox{]})
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespaceinterface__utils_a9c948fd33bfb82219b983e55ef78d867}{string\+\_\+to\+\_\+int\+\_\+array}} (String string\+\_\+in, uint8\+\_\+t array\+\_\+out\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{namespaceinterface__utils_ae7b158c5f5d6597c9e38164fb88fefd3}{shift\+\_\+array\+\_\+left}} (String array\+\_\+in\mbox{[}$\,$\mbox{]}, uint8\+\_\+t array\+\_\+in\+\_\+size, String array\+\_\+out\mbox{[}$\,$\mbox{]}, uint8\+\_\+t n\+\_\+shift)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utilites for interface \begin{DoxyAuthor}{Author}
+Carlos Kometter 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License. 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceinterface__utils_a3ba730867d788c0abb2a7b684d35f0cc}\label{namespaceinterface__utils_a3ba730867d788c0abb2a7b684d35f0cc}} 
+\index{interface\+\_\+utils@{interface\+\_\+utils}!query\+\_\+serial@{query\+\_\+serial}}
+\index{query\+\_\+serial@{query\+\_\+serial}!interface\+\_\+utils@{interface\+\_\+utils}}
+\subsubsection{\texorpdfstring{query\+\_\+serial()}{query\_serial()}}
+{\footnotesize\ttfamily uint8\+\_\+t interface\+\_\+utils\+::query\+\_\+serial (\begin{DoxyParamCaption}\item[{String}]{cmd\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reads and parses a serial message until the until \textquotesingle{}\textbackslash{}r\textquotesingle{} and stores the command to cmd\mbox{[}\mbox{]}. A \textquotesingle{},\textquotesingle{} or \textquotesingle{}\+:\textquotesingle{} indicates a new element. For example, the message \char`\"{}\+D\+A\+C\+:\+S\+E\+T,0,1.\+3\textbackslash{}r\char`\"{}, will be parsed as \{\char`\"{}\+D\+A\+C\char`\"{}, \char`\"{}\+S\+E\+T\char`\"{}, \char`\"{}0\char`\"{}, \char`\"{}1.\+3\char`\"{}\}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em cmd\mbox{[}$\,$\mbox{]}} & The array to store the message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceinterface__utils_ae7b158c5f5d6597c9e38164fb88fefd3}\label{namespaceinterface__utils_ae7b158c5f5d6597c9e38164fb88fefd3}} 
+\index{interface\+\_\+utils@{interface\+\_\+utils}!shift\+\_\+array\+\_\+left@{shift\+\_\+array\+\_\+left}}
+\index{shift\+\_\+array\+\_\+left@{shift\+\_\+array\+\_\+left}!interface\+\_\+utils@{interface\+\_\+utils}}
+\subsubsection{\texorpdfstring{shift\+\_\+array\+\_\+left()}{shift\_array\_left()}}
+{\footnotesize\ttfamily void interface\+\_\+utils\+::shift\+\_\+array\+\_\+left (\begin{DoxyParamCaption}\item[{String}]{array\+\_\+in\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{array\+\_\+in\+\_\+size,  }\item[{String}]{array\+\_\+out\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{n\+\_\+shift }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shifts array to the left. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em array\+\_\+in\mbox{[}$\,$\mbox{]}} & The array to be shifted. \\
+\hline
+\mbox{\tt in}  & {\em array\+\_\+in\+\_\+size} & The size of array\+\_\+in\mbox{[}\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em array\+\_\+out\mbox{[}$\,$\mbox{]}} & Array to store shifted array. \\
+\hline
+\mbox{\tt in}  & {\em n\+\_\+shift} & The number of places to shift. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceinterface__utils_a9c948fd33bfb82219b983e55ef78d867}\label{namespaceinterface__utils_a9c948fd33bfb82219b983e55ef78d867}} 
+\index{interface\+\_\+utils@{interface\+\_\+utils}!string\+\_\+to\+\_\+int\+\_\+array@{string\+\_\+to\+\_\+int\+\_\+array}}
+\index{string\+\_\+to\+\_\+int\+\_\+array@{string\+\_\+to\+\_\+int\+\_\+array}!interface\+\_\+utils@{interface\+\_\+utils}}
+\subsubsection{\texorpdfstring{string\+\_\+to\+\_\+int\+\_\+array()}{string\_to\_int\_array()}}
+{\footnotesize\ttfamily uint8\+\_\+t interface\+\_\+utils\+::string\+\_\+to\+\_\+int\+\_\+array (\begin{DoxyParamCaption}\item[{String}]{string\+\_\+in,  }\item[{uint8\+\_\+t}]{array\+\_\+out\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Separates String characters into an array of unsigned intergers. The String characters must be numbers. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string\+\_\+in} & The String to be separate. \\
+\hline
+\mbox{\tt out}  & {\em array\+\_\+out} & The array to store the String characters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of string\+\_\+in. 
+\end{DoxyReturn}

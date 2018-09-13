@@ -84,6 +84,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5238dc258e8312e4c28161b2fad77249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d2b0df392722734dbac322b1d0fa08d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDacAdc.html#a4d2b0df392722734dbac322b1d0fa08d">BufferRamp</a> (uint8_t dac_channels[], uint8_t n_dac_channels, uint8_t adc_channels[], uint8_t n_adc_channels, double start_voltages[], double end_voltages[], uint32_t n_steps, uint32_t step_delay)</td></tr>
 <tr class="separator:a4d2b0df392722734dbac322b1d0fa08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88ff87151dd01c8aa2646a84e26e7aa"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDacAdc.html#af88ff87151dd01c8aa2646a84e26e7aa">Router</a> (String cmd[], uint8_t cmd_size)</td></tr>
+<tr class="separator:af88ff87151dd01c8aa2646a84e26e7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classDacAdc.html">DacAdc</a> class </p><dl class="section author"><dt>Author</dt><dd>Carlos Kometter </dd></dl>
@@ -239,6 +241,51 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>See <a class="el" href="classAdcSpi.html#ace8264acfedb357986afa5f611eff3ee">AdcSpi::ReadVoltage</a>. </p>
+
+</div>
+</div>
+<a id="af88ff87151dd01c8aa2646a84e26e7aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88ff87151dd01c8aa2646a84e26e7aa">&#9670;&nbsp;</a></span>Router()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t DacAdc::Router </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>cmd</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>cmd_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Router for serial communication. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmd[]</td><td>The String array storing the command (cmd[0]) and parameters.<ul>
+<li>{"BUFFER_RAMP", "dac_channels", "adc_channels", "start_voltage1", ..., "start_voltagen", "end_voltage1",..., "end_voltagen", "n_steps", "step_delay"}: Calls <a class="el" href="classDacAdc.html#a4d2b0df392722734dbac322b1d0fa08d">DacAdc::BufferRamp</a> with the proper parameters. For example, cmd[] = {"BUFFER_RAMP", "03", "023", "-4.5", "3", "2", "6.8", "1000", "40"} will call <a class="el" href="classDacAdc.html#a4d2b0df392722734dbac322b1d0fa08d">DacAdc::BufferRamp</a> ([0, 3], [1, 2], 2, [0, 2, 3], 3, [-4.5, 3], [2, 6.8], 1000, 40).</li>
+<li>{"DAC", "dac_command", "parameter1", ..., "parametern"}: Calls Dac::Router ({"dac_command", "parameter1", ..., "parametern"}).</li>
+<li>{"ADC", "adc command", "parameters1", ..., "parametern"}: Calls AdcSpi::Router ({"adc_command", "parameter1", ..., "parametern"}). </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmd_size</td><td>The size of cmd. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>0: Success</li>
+<li>1: Command not found </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>

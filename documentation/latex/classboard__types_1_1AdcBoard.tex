@@ -10,6 +10,11 @@ Inheritance diagram for board\+\_\+types\+:\+:Adc\+Board\+:\begin{figure}[H]
 \includegraphics[height=3.000000cm]{classboard__types_1_1AdcBoard}
 \end{center}
 \end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classboard__types_1_1AdcBoard_aa695e0499e18263c9bf64331375a37b4}{Router}} (String cmd\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -26,6 +31,26 @@ Carlos Kometter
 \begin{DoxyCopyright}{Copyright}
 G\+NU Public License. 
 \end{DoxyCopyright}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classboard__types_1_1AdcBoard_aa695e0499e18263c9bf64331375a37b4}\label{classboard__types_1_1AdcBoard_aa695e0499e18263c9bf64331375a37b4}} 
+\index{board\+\_\+types\+::\+Adc\+Board@{board\+\_\+types\+::\+Adc\+Board}!Router@{Router}}
+\index{Router@{Router}!board\+\_\+types\+::\+Adc\+Board@{board\+\_\+types\+::\+Adc\+Board}}
+\subsubsection{\texorpdfstring{Router()}{Router()}}
+{\footnotesize\ttfamily uint8\+\_\+t board\+\_\+types\+::\+Adc\+Board\+::\+Router (\begin{DoxyParamCaption}\item[{String}]{cmd\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Router for serial communication. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cmd\mbox{[}$\,$\mbox{]}} & The String array storing the command (cmd\mbox{[}0\mbox{]}) and parameters.
+\begin{DoxyItemize}
+\item \{\char`\"{}\+R\+E\+A\+D\char`\"{}, \char`\"{}channel\char`\"{}\}\+: Calls \mbox{\hyperlink{classAdcSpi_ace8264acfedb357986afa5f611eff3ee}{Adc\+Spi\+::\+Read\+Voltage}} (channel) and prints its result to serial with A\+S\+C\+II encoding.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+If command cmd\mbox{[}0\mbox{]} is not found, it calls \mbox{\hyperlink{classboard__types_1_1Board_acd50f8de221d5b3fd978484efbf5198e}{Board\+::\+Router}} (cmd). \begin{DoxyReturn}{Returns}
+0\+: success 1\+: command not found 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

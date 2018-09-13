@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['setvoltage',['SetVoltage',['../classDac.html#ab2f0e36184b9b529de04136c36a3a51b',1,'Dac::SetVoltage()'],['../classDacAdc.html#a767f1e29f9688c1b2292fbfbef8c4622',1,'DacAdc::SetVoltage()'],['../classTetraDac.html#a265bed4317bb6b3b4c6962fa538631da',1,'TetraDac::SetVoltage()']]],
-  ['setvoltagemessage',['SetVoltageMessage',['../classAD5764.html#a62887ed89fedc4db68f2a54324e1fac0',1,'AD5764::SetVoltageMessage()'],['../classAD5791.html#af2d4276c910abe162aab867b9f86aa5f',1,'AD5791::SetVoltageMessage()'],['../classDac.html#a87132e3c19313742d92f57d9b792e0e0',1,'Dac::SetVoltageMessage()']]],
-  ['singleconversionmodemessage',['SingleConversionModeMessage',['../classAD7734.html#af677fbfbae0ec1c78b453ceb4a6736ec',1,'AD7734::SingleConversionModeMessage()'],['../classAdcSpi.html#a369da36232861640a113792d2398ce44',1,'AdcSpi::SingleConversionModeMessage()']]]
+  ['readdataregistermessage',['ReadDataRegisterMessage',['../classAD7734.html#a6fa5e7c2bd8cde50dccb328d36f12516',1,'AD7734::ReadDataRegisterMessage()'],['../classAdcSpi.html#a3578f18e1976d9e2b075a3fbdc003517',1,'AdcSpi::ReadDataRegisterMessage()']]],
+  ['readvoltage',['ReadVoltage',['../classAdcSpi.html#ace8264acfedb357986afa5f611eff3ee',1,'AdcSpi::ReadVoltage(uint8_t channel=0)'],['../classAdcSpi.html#ac9d2ab924ad4de5b91713a22189f2ad0',1,'AdcSpi::ReadVoltage(uint8_t channel, byte previous_meas[], bool send)'],['../classDacAdc.html#a5238dc258e8312e4c28161b2fad77249',1,'DacAdc::ReadVoltage()']]],
+  ['router',['Router',['../classboard__types_1_1Board.html#acd50f8de221d5b3fd978484efbf5198e',1,'board_types::Board::Router()'],['../classboard__types_1_1DacBoard.html#aead21571ec1138db3836de77850439f9',1,'board_types::DacBoard::Router()'],['../classboard__types_1_1AdcBoard.html#aa695e0499e18263c9bf64331375a37b4',1,'board_types::AdcBoard::Router()'],['../classDacAdc.html#af88ff87151dd01c8aa2646a84e26e7aa',1,'DacAdc::Router()']]]
 ];

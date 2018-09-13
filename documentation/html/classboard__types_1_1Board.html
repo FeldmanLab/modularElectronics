@@ -66,6 +66,10 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="classboard__types_1_1Board-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">board_types::Board Class Reference</div>  </div>
 </div><!--header-->
@@ -85,12 +89,85 @@ Inheritance diagram for board_types::Board:</div>
 <area href="classTetraDac.html" alt="TetraDac" shape="rect" coords="310,112,455,136"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:acd50f8de221d5b3fd978484efbf5198e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard__types_1_1Board.html#acd50f8de221d5b3fd978484efbf5198e">Router</a> (String cmd[])</td></tr>
+<tr class="separator:acd50f8de221d5b3fd978484efbf5198e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:affe2fb94dacf42e9707eedce2ab1f955"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard__types_1_1Board.html#affe2fb94dacf42e9707eedce2ab1f955">name_</a> = &quot;&quot;</td></tr>
+<tr class="separator:affe2fb94dacf42e9707eedce2ab1f955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classboard__types_1_1Board.html">Board</a> class </p><dl class="section author"><dt>Author</dt><dd>Carlos Kometter </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2018 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License. </dd></dl>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="acd50f8de221d5b3fd978484efbf5198e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd50f8de221d5b3fd978484efbf5198e">&#9670;&nbsp;</a></span>Router()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t board_types::Board::Router </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>cmd</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Router for serial communication. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmd[]</td><td>The String array storing the command (cmd[0]) and parameters.<ul>
+<li>{"*IDN?"}: Prints name_ to serial with ASCII encoding.</li>
+<li>{"*RDY?"}: Prints "READY" to serial with ASCII encoding. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0: success 1: command not found </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="affe2fb94dacf42e9707eedce2ab1f955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affe2fb94dacf42e9707eedce2ab1f955">&#9670;&nbsp;</a></span>name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String board_types::Board::name_ = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="classboard__types_1_1Board.html">Board</a> name. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="board_8h_source.html">board.h</a></li>
 </ul>
 </div><!-- contents -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updateanalogoutputs',['UpdateAnalogOutputs',['../classDac.html#aafef1707ec33a2166a69e9b646cd471b',1,'Dac::UpdateAnalogOutputs()'],['../classTetraDac.html#ae7e2c1afbc64a8cc0ddd2ef4af0b25b3',1,'TetraDac::UpdateAnalogOutputs()']]]
+  ['tetradac',['TetraDac',['../classTetraDac.html',1,'TetraDac'],['../classTetraDac.html#a77131270e115bf47b6c582d53cddb881',1,'TetraDac::TetraDac()']]]
 ];

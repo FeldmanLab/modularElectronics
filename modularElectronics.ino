@@ -17,6 +17,7 @@
 #include "include/AD5764.h"
 #include "include/AD7734.h"
 #include "include/dac_adc.h"
+#include "include/utils.h"
 
 AD5764 dac1(4, 52, 6, 1);
 AD7734 adc1(52, 10, 48, 1);
@@ -34,26 +35,32 @@ void setup() {
 }
 
 void loop() {
-  Serial.flush();
-  if(Serial.available()) {
-    String inbyte = "";
-    char resp;
-    uint8_t dac_channels[] = {0,1};
-    uint8_t adc_channels[] = {0,1};
-    double start_voltages[] = {0, -5};
-    double end_voltages[] = {5, 0};
-    uint32_t n_steps = 5;
-    uint32_t step_delay = 30;
+  /* Serial.flush(); */
+  /* if(Serial.available()) { */
+  /*   String inbyte = ""; */
+  /*   char resp; */
+  /*   uint8_t dac_channels[] = {0,1}; */
+  /*   uint8_t adc_channels[] = {0,1}; */
+  /*   double start_voltages[] = {0, -5}; */
+  /*   double end_voltages[] = {5, 0}; */
+  /*   uint32_t n_steps = 5; */
+  /*   uint32_t step_delay = 30; */
 
-    //float v;
-    //float v2;
-    resp = Serial.read();
-    inbyte += resp;
-    //v = dac1.SetVoltage(0,inbyte.toFloat());
-    //v = adc1.ReadVoltage(inbyte.toInt());
-    dac_adc.BufferRamp(dac_channels, 2,
-		       adc_channels, 2,
-		       start_voltages, end_voltages,
-		       n_steps, step_delay);
+  /*   //float v; */
+  /*   //float v2; */
+  /*   resp = Serial.read(); */
+  /*   inbyte += resp; */
+  /*   //v = dac1.SetVoltage(0,inbyte.toFloat()); */
+  /*   //v = adc1.ReadVoltage(inbyte.toInt()); */
+  /*   dac_adc.BufferRamp(dac_channels, 2, */
+  /* 		       adc_channels, 2, */
+  /* 		       start_voltages, end_voltages, */
+  /* 		       n_steps, step_delay); */
+  /* } */
+  if (Serial.available()) {
+    String cmd[30] = "";
+    uint8_t cmd_size;
+    cmd_size = interface_utils::query_serial(cmd);
+    dac_adc.Router(cmd, cmd_size);
   }
 }

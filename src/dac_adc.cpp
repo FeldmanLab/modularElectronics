@@ -41,7 +41,7 @@ uint8_t DacAdc::BufferRamp(uint8_t dac_channels[], uint8_t n_dac_channels,
   byte meas[10];  // Storage for measurements
   uint8_t n_meas;  // # of bytes of meas[] used by the adc to store a measurement
   // Buffer ramp starts here
-  for (uint8_t step = 0; step < n_steps; step++) {
+  for (uint32_t step = 0; step < n_steps; step++) {
     // Writes the dac register of each channel in dac_channels[]
     for (uint8_t dac_channel_index = 0;
          dac_channel_index < n_dac_channels;
@@ -87,4 +87,36 @@ uint8_t DacAdc::BufferRamp(uint8_t dac_channels[], uint8_t n_dac_channels,
     Serial.write(meas[meas_index]);
   }
   return 0;
+}
+
+uint8_t DacAdc::Router(String cmd[], uint8_t cmd_size) {
+  String command = cmd[0];
+  if (command == "BUFFER_RAMP") {
+    uint8_t dac_channels[10];
+    uint8_t n_dac_channels = interface_utils::string_to_int_array(cmd[1], dac_channels);
+    uint8_t adc_channels[10];
+    uint8_t n_adc_channels = interface_utils::string_to_int_array(cmd[2], adc_channels);
+    double start_voltages[10];
+    double end_voltages[10];
+    for (uint8_t index = 0; index  < n_dac_channels; ++index) {
+      start_voltages[index] = cmd[index +3].toFloat();
+      end_voltages[index] = cmd[index + n_dac_channels + 3].toFloat();
+    }
+    uint32_t n_steps = cmd[n_dac_channels*2 + 3].toInt();
+    uint32_t step_delay = cmd[n_dac_channels*2 + 4].toInt();
+    BufferRamp(dac_channels, n_dac_channels,
+	       adc_channels, n_adc_channels,
+	       start_voltages, end_voltages,
+	       n_steps, step_delay);
+    return 0;
+  } else if (command == "DAC") {
+    interface_utils::shift_array_left(cmd, cmd_size, cmd, 1);
+    uint8_t result = dac_.Router(cmd);
+    return result;
+  } else if (command == "ADC") {
+    interface_utils::shift_array_left(cmd, cmd_size, cmd, 1);
+    uint8_t result = adc_.Router(cmd);
+    return result;
+  }
+  return 1;
 }

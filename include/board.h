@@ -1,4 +1,4 @@
-// Class for a Board
+// Namespace for Board types.
 // Copyright (C) 2018 Carlos Kometter 
 //
 // This program is free software: you can redistribute it and/or modify
@@ -35,7 +35,37 @@ namespace board_types {
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class Board {};
+class Board {
+ protected:
+  ///
+  /// Board name.
+  ///
+  String name_ = "";
+
+ public:
+  Board(void) = default;
+  ///
+  /// Router for serial communication.
+  /// \param[in] cmd[] The String array storing the command (cmd[0]) and parameters.
+  ///   - {"*IDN?"}: Prints name_ to serial with ASCII encoding.
+  ///   - {"*RDY?"}: Prints "READY" to serial with ASCII encoding.
+  /// \returns 0: success 1: command not found
+  ///
+  uint8_t Router(String cmd[]) {
+    String command = cmd[0];
+    if (command == "NOP") {
+      Serial.println("NOP");
+      return 0;
+    } else if (command == "*IDN?") {
+      Serial.println(name_);
+      return 0;
+    } else if (command == "*RDY?") {
+      Serial.println("READY");
+      return 0;
+    }
+    return 1; // Not found
+  }
+};
 ///
 /// DacBoard class
 /// \author Carlos Kometter
@@ -43,7 +73,38 @@ class Board {};
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class DacBoard : public Board, public Dac  {};
+class DacBoard : public Board, public virtual Dac  {
+ public:
+  ///
+  /// Router for serial communication.
+  /// \param[in] cmd[] The String array storing the command (cmd[0]) and parameters.
+  ///   - {"INITIALIZE"}: Calls  Dac::Initialize ().
+  ///   - {"SET", "channel", "voltage"}: Calls Dac::SetVoltage (channel, voltage) and prints its result to serial with ASCII encoding.
+  ///   - {"GET", "channel"}: Calls Dac::GetVoltage (channel) and prints its result to serial with ASCII encoding.
+  ///
+  /// If command cmd[0] is not found, it calls Board::Router with parameter cmd.
+  /// \returns 0: success 1: command not found
+  ///
+  uint8_t Router(String cmd[]) {
+    String command = cmd[0];
+    if (command == "INITIALIZE") {
+      Initialize();
+      return 0;
+    } else if (command == "SET") {
+      double voltage;
+      voltage = SetVoltage(cmd[1].toInt(), cmd[2].toFloat());
+      Serial.println(voltage);
+      return 0;
+    } else if (command == "GET") {
+      double voltage;
+      voltage = GetVoltage(cmd[1].toInt());
+      Serial.println(voltage);
+      return 0;
+    }
+    uint8_t result = Board::Router(cmd);
+    return result;
+  }
+};
 ///
 /// AdcBoard class
 /// \author Carlos Kometter
@@ -51,6 +112,27 @@ class DacBoard : public Board, public Dac  {};
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class AdcBoard : public Board, public AdcSpi {};
+class AdcBoard : public Board, public virtual AdcSpi {
+ public:
+  ///
+  /// Router for serial communication.
+  /// \param[in] cmd[] The String array storing the command (cmd[0]) and parameters.
+  ///   - {"READ", "channel"}: Calls AdcSpi::ReadVoltage (channel) and prints its result to serial with ASCII encoding.
+  ///
+  /// If command cmd[0] is not found, it calls Board::Router (cmd).
+  /// \returns 0: success 1: command not found
+  ///
+  uint8_t Router(String cmd[]) {
+    String command = cmd[0];
+    if (command == "READ") {
+      double voltage;
+      voltage = ReadVoltage(cmd[1].toInt());
+      Serial.println(voltage);
+      return 0;
+    }
+    uint8_t result = Board::Router(cmd);
+    return result;
+  }
+};
 }
 #endif

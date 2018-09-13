@@ -1,0 +1,52 @@
+\hypertarget{namespaceserial__interface}{}\section{serial\+\_\+interface Namespace Reference}
+\label{namespaceserial__interface}\index{serial\+\_\+interface@{serial\+\_\+interface}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceserial__interface_a0651bd2556fe2b10eb198ebc326e5df6}\label{namespaceserial__interface_a0651bd2556fe2b10eb198ebc326e5df6}} 
+void {\bfseries query\+\_\+serial} (String cmd\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{namespaceserial__interface_ab94c5e9ba7baafc049338ac71bd15dfb}\label{namespaceserial__interface_ab94c5e9ba7baafc049338ac71bd15dfb}} 
+uint8\+\_\+t {\bfseries find\+\_\+index} (String val, String arr\mbox{[}$\,$\mbox{]}, uint8\+\_\+t arr\+\_\+size)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+String {\bfseries commands} \mbox{[}Noperations\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Seral interface namespace \begin{DoxyAuthor}{Author}
+Carlos Kometter 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License. 
+\end{DoxyCopyright}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceserial__interface_a66e5350a4af824437ebba5a1d96a012c}\label{namespaceserial__interface_a66e5350a4af824437ebba5a1d96a012c}} 
+\index{serial\+\_\+interface@{serial\+\_\+interface}!commands@{commands}}
+\index{commands@{commands}!serial\+\_\+interface@{serial\+\_\+interface}}
+\subsubsection{\texorpdfstring{commands}{commands}}
+{\footnotesize\ttfamily String serial\+\_\+interface\+::commands\mbox{[}Noperations\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{\textcolor{stringliteral}{"NOP"},
+                                \textcolor{stringliteral}{"*IDN?"},
+                                \textcolor{stringliteral}{"*RDY?"},
+                                \textcolor{stringliteral}{"INITIALIZE"},
+                                \textcolor{stringliteral}{"SET"},
+                                \textcolor{stringliteral}{"GET\_DAC"},
+                                \textcolor{stringliteral}{"GET\_ADC"},
+                                \textcolor{stringliteral}{"BUFFER\_RAMP"},
+                                \textcolor{stringliteral}{"FULL\_SCALE"}\}
+\end{DoxyCode}

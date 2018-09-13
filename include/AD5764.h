@@ -27,7 +27,7 @@
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class AD5764: public Dac, public board_types::DacBoard {
+class AD5764: public virtual Dac, public board_types::DacBoard {
  private:
   uint8_t slot_number_;
   double full_scale_;
@@ -43,7 +43,7 @@ class AD5764: public Dac, public board_types::DacBoard {
   AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
          uint8_t ldac_pin, uint8_t slot_number=0, double full_scale=10.0);
   ///
-  /// Dummy function for inhericante compatibility.
+  /// Dummy function for inheritance compatibility.
   /// \returns 0
   /// 
   uint8_t Initialize(void) {return 0;}

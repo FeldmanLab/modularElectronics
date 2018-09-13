@@ -55,4 +55,64 @@ namespace spi_utils {
     uint8_t n_blocks;
   };
 }
+
+///
+/// Utilites for interface
+/// \author Carlos Kometter
+/// \version 0.1
+/// \date 2018
+/// \copyright GNU Public License.
+///
+namespace interface_utils {
+  ///
+  /// Reads and parses a serial message until the until '\\r' and stores the command to cmd[].
+  /// A ',' or ':' indicates a new element. For example, the message "DAC:SET,0,1.3\r", will be
+  /// parsed as {"DAC", "SET", "0", "1.3"}.
+  /// \param[out] cmd[] The array to store the message.
+  ///
+  inline uint8_t query_serial(String cmd[]) {
+    char received;
+    String cmd_element = "";
+    uint8_t cmd_size = 0;
+    while (received != '\r') {
+      if(Serial.available()) {
+	received = Serial.read();
+	if (received == '\n' || received == ' ') {
+	} else if (received == ',' || received == '\r' || received == ':') {
+	  cmd[cmd_size] = cmd_element;
+	  cmd_element = "";
+	  ++cmd_size;
+	} else {
+	  cmd_element += received;
+	}
+      }
+    }
+    return cmd_size;
+  }
+  ///
+  /// Separates String characters into an array of unsigned intergers. The String characters must be numbers. 
+  /// \param[in] string_in The String to be separate.
+  /// \param[out] array_out The array to store the String characters.
+  /// \returns The size of string_in.
+  ///
+  inline uint8_t string_to_int_array(String string_in, uint8_t array_out[]) {
+    for (uint8_t index = 0; index < string_in.length(); ++index) {
+      array_out[index] = String(string_in[index]).toInt();
+    }
+    return string_in.length();
+  }
+  ///
+  /// Shifts array to the left.
+  /// \param[in] array_in[] The array to be shifted.
+  /// \param[in] array_in_size The size of array_in[].
+  /// \param[out] array_out[] Array to store shifted array.
+  /// \param[in] n_shift The number of places to shift.
+  ///
+  inline void shift_array_left(String array_in[], uint8_t array_in_size,
+			String array_out[], uint8_t n_shift) {
+    for (uint8_t index = 0; index < array_in_size; ++index) {
+      array_out[index] = array_in[index + n_shift];
+    }
+  }
+}
 #endif

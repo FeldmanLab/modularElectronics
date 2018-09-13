@@ -10,6 +10,16 @@ Inheritance diagram for board\+\_\+types\+:\+:Board\+:\begin{figure}[H]
 \includegraphics[height=3.000000cm]{classboard__types_1_1Board}
 \end{center}
 \end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classboard__types_1_1Board_acd50f8de221d5b3fd978484efbf5198e}{Router}} (String cmd\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classboard__types_1_1Board_affe2fb94dacf42e9707eedce2ab1f955}{name\+\_\+}} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -26,6 +36,36 @@ Carlos Kometter
 G\+NU Public License. 
 \end{DoxyCopyright}
 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classboard__types_1_1Board_acd50f8de221d5b3fd978484efbf5198e}\label{classboard__types_1_1Board_acd50f8de221d5b3fd978484efbf5198e}} 
+\index{board\+\_\+types\+::\+Board@{board\+\_\+types\+::\+Board}!Router@{Router}}
+\index{Router@{Router}!board\+\_\+types\+::\+Board@{board\+\_\+types\+::\+Board}}
+\subsubsection{\texorpdfstring{Router()}{Router()}}
+{\footnotesize\ttfamily uint8\+\_\+t board\+\_\+types\+::\+Board\+::\+Router (\begin{DoxyParamCaption}\item[{String}]{cmd\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Router for serial communication. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cmd\mbox{[}$\,$\mbox{]}} & The String array storing the command (cmd\mbox{[}0\mbox{]}) and parameters.
+\begin{DoxyItemize}
+\item \{\char`\"{}$\ast$\+I\+D\+N?\char`\"{}\}\+: Prints name\+\_\+ to serial with A\+S\+C\+II encoding.
+\item \{\char`\"{}$\ast$\+R\+D\+Y?\char`\"{}\}\+: Prints \char`\"{}\+R\+E\+A\+D\+Y\char`\"{} to serial with A\+S\+C\+II encoding. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0\+: success 1\+: command not found 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classboard__types_1_1Board_affe2fb94dacf42e9707eedce2ab1f955}\label{classboard__types_1_1Board_affe2fb94dacf42e9707eedce2ab1f955}} 
+\index{board\+\_\+types\+::\+Board@{board\+\_\+types\+::\+Board}!name\+\_\+@{name\+\_\+}}
+\index{name\+\_\+@{name\+\_\+}!board\+\_\+types\+::\+Board@{board\+\_\+types\+::\+Board}}
+\subsubsection{\texorpdfstring{name\+\_\+}{name\_}}
+{\footnotesize\ttfamily String board\+\_\+types\+::\+Board\+::name\+\_\+ = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\hyperlink{classboard__types_1_1Board}{Board}} name. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

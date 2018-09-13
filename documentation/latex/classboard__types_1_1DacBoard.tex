@@ -10,6 +10,11 @@ Inheritance diagram for board\+\_\+types\+:\+:Dac\+Board\+:\begin{figure}[H]
 \includegraphics[height=3.000000cm]{classboard__types_1_1DacBoard}
 \end{center}
 \end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classboard__types_1_1DacBoard_aead21571ec1138db3836de77850439f9}{Router}} (String cmd\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -26,6 +31,28 @@ Carlos Kometter
 \begin{DoxyCopyright}{Copyright}
 G\+NU Public License. 
 \end{DoxyCopyright}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classboard__types_1_1DacBoard_aead21571ec1138db3836de77850439f9}\label{classboard__types_1_1DacBoard_aead21571ec1138db3836de77850439f9}} 
+\index{board\+\_\+types\+::\+Dac\+Board@{board\+\_\+types\+::\+Dac\+Board}!Router@{Router}}
+\index{Router@{Router}!board\+\_\+types\+::\+Dac\+Board@{board\+\_\+types\+::\+Dac\+Board}}
+\subsubsection{\texorpdfstring{Router()}{Router()}}
+{\footnotesize\ttfamily uint8\+\_\+t board\+\_\+types\+::\+Dac\+Board\+::\+Router (\begin{DoxyParamCaption}\item[{String}]{cmd\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Router for serial communication. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cmd\mbox{[}$\,$\mbox{]}} & The String array storing the command (cmd\mbox{[}0\mbox{]}) and parameters.
+\begin{DoxyItemize}
+\item \{\char`\"{}\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\char`\"{}\}\+: Calls \mbox{\hyperlink{classDac_aea1f5f36c9371ebc1527e848ce67e47a}{Dac\+::\+Initialize}} ().
+\item \{\char`\"{}\+S\+E\+T\char`\"{}, \char`\"{}channel\char`\"{}, \char`\"{}voltage\char`\"{}\}\+: Calls \mbox{\hyperlink{classDac_ab2f0e36184b9b529de04136c36a3a51b}{Dac\+::\+Set\+Voltage}} (channel, voltage) and prints its result to serial with A\+S\+C\+II encoding.
+\item \{\char`\"{}\+G\+E\+T\char`\"{}, \char`\"{}channel\char`\"{}\}\+: Calls \mbox{\hyperlink{classDac_ad51bf5450f03f39a0357398af69f1705}{Dac\+::\+Get\+Voltage}} (channel) and prints its result to serial with A\+S\+C\+II encoding.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+If command cmd\mbox{[}0\mbox{]} is not found, it calls \mbox{\hyperlink{classboard__types_1_1Board_acd50f8de221d5b3fd978484efbf5198e}{Board\+::\+Router}} with parameter cmd. \begin{DoxyReturn}{Returns}
+0\+: success 1\+: command not found 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -20,6 +20,7 @@
 #include "board.h"
 #include "dac.h"
 #include "adc.h"
+#include "utils.h"
 
 ///
 /// DacAdc class
@@ -74,5 +75,17 @@ class DacAdc {
                   uint8_t adc_channels[], uint8_t n_adc_channels,
                   double start_voltages[], double end_voltages[],
                   uint32_t n_steps, uint32_t step_delay);
+  ///
+  /// Router for serial communication.
+  /// \param[in] cmd[] The String array storing the command (cmd[0]) and parameters.
+  ///   - {"BUFFER_RAMP", "dac_channels", "adc_channels", "start_voltage1", ..., "start_voltagen", "end_voltage1",..., "end_voltagen", "n_steps", "step_delay"}: Calls DacAdc::BufferRamp with the proper parameters. For example, cmd[] = {"BUFFER_RAMP", "03", "023", "-4.5", "3", "2", "6.8", "1000", "40"} will call DacAdc::BufferRamp ([0, 3], [1, 2], 2, [0, 2, 3], 3, [-4.5, 3], [2, 6.8], 1000, 40).
+  ///   - {"DAC", "dac_command", "parameter1", ..., "parametern"}: Calls Dac::Router ({"dac_command", "parameter1", ..., "parametern"}). 
+  ///   - {"ADC", "adc command", "parameters1", ..., "parametern"}: Calls AdcSpi::Router ({"adc_command", "parameter1", ..., "parametern"}). 
+  /// \param[in] cmd_size The size of cmd.
+  /// \returns
+  ///   - 0: Success
+  ///   - 1: Command not found
+  ///
+  uint8_t Router(String cmd[], uint8_t cmd_size);
 };
 #endif

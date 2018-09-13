@@ -16,6 +16,8 @@ double \mbox{\hyperlink{classDacAdc_a767f1e29f9688c1b2292fbfbef8c4622}{Set\+Volt
 double \mbox{\hyperlink{classDacAdc_a5238dc258e8312e4c28161b2fad77249}{Read\+Voltage}} (uint8\+\_\+t channel)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{classDacAdc_a4d2b0df392722734dbac322b1d0fa08d}{Buffer\+Ramp}} (uint8\+\_\+t dac\+\_\+channels\mbox{[}$\,$\mbox{]}, uint8\+\_\+t n\+\_\+dac\+\_\+channels, uint8\+\_\+t adc\+\_\+channels\mbox{[}$\,$\mbox{]}, uint8\+\_\+t n\+\_\+adc\+\_\+channels, double start\+\_\+voltages\mbox{[}$\,$\mbox{]}, double end\+\_\+voltages\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n\+\_\+steps, uint32\+\_\+t step\+\_\+delay)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classDacAdc_af88ff87151dd01c8aa2646a84e26e7aa}{Router}} (String cmd\mbox{[}$\,$\mbox{]}, uint8\+\_\+t cmd\+\_\+size)
 \end{DoxyCompactItemize}
 
 
@@ -88,7 +90,32 @@ Ramps the voltage of dac\+\_\+channels\mbox{[}\mbox{]} from start\+\_\+voltages\
 \subsubsection{\texorpdfstring{Read\+Voltage()}{ReadVoltage()}}
 {\footnotesize\ttfamily double Dac\+Adc\+::\+Read\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
 
-See \mbox{\hyperlink{classAdcSpi_ace8264acfedb357986afa5f611eff3ee}{Adc\+Spi\+::\+Read\+Voltage}}. \mbox{\Hypertarget{classDacAdc_a767f1e29f9688c1b2292fbfbef8c4622}\label{classDacAdc_a767f1e29f9688c1b2292fbfbef8c4622}} 
+See \mbox{\hyperlink{classAdcSpi_ace8264acfedb357986afa5f611eff3ee}{Adc\+Spi\+::\+Read\+Voltage}}. \mbox{\Hypertarget{classDacAdc_af88ff87151dd01c8aa2646a84e26e7aa}\label{classDacAdc_af88ff87151dd01c8aa2646a84e26e7aa}} 
+\index{Dac\+Adc@{Dac\+Adc}!Router@{Router}}
+\index{Router@{Router}!Dac\+Adc@{Dac\+Adc}}
+\subsubsection{\texorpdfstring{Router()}{Router()}}
+{\footnotesize\ttfamily uint8\+\_\+t Dac\+Adc\+::\+Router (\begin{DoxyParamCaption}\item[{String}]{cmd\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{cmd\+\_\+size }\end{DoxyParamCaption})}
+
+Router for serial communication. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cmd\mbox{[}$\,$\mbox{]}} & The String array storing the command (cmd\mbox{[}0\mbox{]}) and parameters.
+\begin{DoxyItemize}
+\item \{\char`\"{}\+B\+U\+F\+F\+E\+R\+\_\+\+R\+A\+M\+P\char`\"{}, \char`\"{}dac\+\_\+channels\char`\"{}, \char`\"{}adc\+\_\+channels\char`\"{}, \char`\"{}start\+\_\+voltage1\char`\"{}, ..., \char`\"{}start\+\_\+voltagen\char`\"{}, \char`\"{}end\+\_\+voltage1\char`\"{},..., \char`\"{}end\+\_\+voltagen\char`\"{}, \char`\"{}n\+\_\+steps\char`\"{}, \char`\"{}step\+\_\+delay\char`\"{}\}\+: Calls \mbox{\hyperlink{classDacAdc_a4d2b0df392722734dbac322b1d0fa08d}{Dac\+Adc\+::\+Buffer\+Ramp}} with the proper parameters. For example, cmd\mbox{[}\mbox{]} = \{\char`\"{}\+B\+U\+F\+F\+E\+R\+\_\+\+R\+A\+M\+P\char`\"{}, \char`\"{}03\char`\"{}, \char`\"{}023\char`\"{}, \char`\"{}-\/4.\+5\char`\"{}, \char`\"{}3\char`\"{}, \char`\"{}2\char`\"{}, \char`\"{}6.\+8\char`\"{}, \char`\"{}1000\char`\"{}, \char`\"{}40\char`\"{}\} will call \mbox{\hyperlink{classDacAdc_a4d2b0df392722734dbac322b1d0fa08d}{Dac\+Adc\+::\+Buffer\+Ramp}} (\mbox{[}0, 3\mbox{]}, \mbox{[}1, 2\mbox{]}, 2, \mbox{[}0, 2, 3\mbox{]}, 3, \mbox{[}-\/4.\+5, 3\mbox{]}, \mbox{[}2, 6.\+8\mbox{]}, 1000, 40).
+\item \{\char`\"{}\+D\+A\+C\char`\"{}, \char`\"{}dac\+\_\+command\char`\"{}, \char`\"{}parameter1\char`\"{}, ..., \char`\"{}parametern\char`\"{}\}\+: Calls Dac\+::\+Router (\{\char`\"{}dac\+\_\+command\char`\"{}, \char`\"{}parameter1\char`\"{}, ..., \char`\"{}parametern\char`\"{}\}).
+\item \{\char`\"{}\+A\+D\+C\char`\"{}, \char`\"{}adc command\char`\"{}, \char`\"{}parameters1\char`\"{}, ..., \char`\"{}parametern\char`\"{}\}\+: Calls Adc\+Spi\+::\+Router (\{\char`\"{}adc\+\_\+command\char`\"{}, \char`\"{}parameter1\char`\"{}, ..., \char`\"{}parametern\char`\"{}\}). 
+\end{DoxyItemize}\\
+\hline
+\mbox{\tt in}  & {\em cmd\+\_\+size} & The size of cmd. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0\+: Success
+\item 1\+: Command not found 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDacAdc_a767f1e29f9688c1b2292fbfbef8c4622}\label{classDacAdc_a767f1e29f9688c1b2292fbfbef8c4622}} 
 \index{Dac\+Adc@{Dac\+Adc}!Set\+Voltage@{Set\+Voltage}}
 \index{Set\+Voltage@{Set\+Voltage}!Dac\+Adc@{Dac\+Adc}}
 \subsubsection{\texorpdfstring{Set\+Voltage()}{SetVoltage()}}

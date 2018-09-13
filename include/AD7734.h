@@ -27,7 +27,7 @@
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class AD7734: public AdcSpi, public board_types::AdcBoard {
+class AD7734: public virtual AdcSpi, public board_types::AdcBoard {
  private:
   uint8_t slot_number_;
   const double full_scale_ = 10.0;
