@@ -32,6 +32,7 @@ class AD7734: public virtual AdcSpi, public board_types::AdcBoard {
   uint8_t slot_number_;
   const double full_scale_ = 10.0;
  public:
+  AD7734(void) = default;
   ///
   /// Constructor
   /// \param[in] sync_pin The sync or chip select of the adc chip. Different than spi_bus_config_pin

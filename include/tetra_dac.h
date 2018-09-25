@@ -34,6 +34,7 @@ class TetraDac : public board_types::DacBoard {
   AD5791 dacs_[n_channels_];
   EepromSpi eeprom;
  public:
+  TetraDac(void) = default;
   ///
   /// Constructor
   /// \param[in] dac_sync_pins[] The sync or chip select of the 4 dac chips. Different than spi_bus_config_pin.

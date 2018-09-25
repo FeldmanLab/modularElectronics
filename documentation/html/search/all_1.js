@@ -5,5 +5,5 @@ var searchData=
   ['board',['Board',['../classboard__types_1_1Board.html',1,'board_types']]],
   ['board_5ftypes',['board_types',['../namespaceboard__types.html',1,'']]],
   ['bufferramp',['BufferRamp',['../classDacAdc.html#a4d2b0df392722734dbac322b1d0fa08d',1,'DacAdc']]],
-  ['bytestovoltage',['BytesToVoltage',['../classAD5764.html#a729015992eda059ae615373d1db53823',1,'AD5764::BytesToVoltage()'],['../classAD5791.html#ab1f3eef8afe6989d9981bb29ddec9ec5',1,'AD5791::BytesToVoltage()'],['../classAD7734.html#aa13b49141e69a45508998004a208afdc',1,'AD7734::BytesToVoltage()'],['../classAdcSpi.html#a25a1deb55a9f0e71a405ca47a41f3804',1,'AdcSpi::BytesToVoltage()'],['../classDac.html#a1df39dc8c6e5b50afd07b6dd8a6b9300',1,'Dac::BytesToVoltage()']]]
+  ['bytestovoltage',['BytesToVoltage',['../classAD5764.html#a729015992eda059ae615373d1db53823',1,'AD5764::BytesToVoltage()'],['../classAD5791.html#ab1f3eef8afe6989d9981bb29ddec9ec5',1,'AD5791::BytesToVoltage()'],['../classAD7734.html#aa13b49141e69a45508998004a208afdc',1,'AD7734::BytesToVoltage()'],['../classAdcSpi.html#a25a1deb55a9f0e71a405ca47a41f3804',1,'AdcSpi::BytesToVoltage()'],['../classDac.html#a2dc7bd90fddf1e38af8f18a0191ce840',1,'Dac::BytesToVoltage()']]]
 ];

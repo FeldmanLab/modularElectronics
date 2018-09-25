@@ -105,16 +105,16 @@ class Dac {
   /// \param[in] message Message object which stores the bytes for conversion.
   /// \returns The current voltage setted on the dac register.
   ///
-  virtual double BytesToVoltage(spi_utils::Message message) = 0;
+  virtual double BytesToVoltage(spi_utils::Message message) {};
   ///
   /// \param[in] channel Specifies the channel the Message will set the voltage to.
   /// \param[in] voltage Specifies the voltage.
   /// \returns Message object to write data register.
   ///
-  virtual spi_utils::Message SetVoltageMessage(uint8_t channel, double voltage) = 0;
+  virtual spi_utils::Message SetVoltageMessage(uint8_t channel, double voltage) {};
   ///
   /// \returns Message object to intialize Dac.
   ///
-  virtual spi_utils::Message InitializeMessage(void) = 0;
+  virtual spi_utils::Message InitializeMessage(void) {};
 };
 #endif

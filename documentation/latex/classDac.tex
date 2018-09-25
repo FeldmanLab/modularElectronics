@@ -28,11 +28,11 @@ double \mbox{\hyperlink{classDac_ad51bf5450f03f39a0357398af69f1705}{Get\+Voltage
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual double \mbox{\hyperlink{classDac_a1df39dc8c6e5b50afd07b6dd8a6b9300}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} message)=0
+virtual double \mbox{\hyperlink{classDac_a2dc7bd90fddf1e38af8f18a0191ce840}{Bytes\+To\+Voltage}} (\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} message)
 \item 
-virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classDac_a87132e3c19313742d92f57d9b792e0e0}{Set\+Voltage\+Message}} (uint8\+\_\+t channel, double voltage)=0
+virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classDac_a35805ada711f0803a2efba938a9f8b28}{Set\+Voltage\+Message}} (uint8\+\_\+t channel, double voltage)
 \item 
-virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classDac_aa34ddd250cf830bba220b86d462785b5}{Initialize\+Message}} (void)=0
+virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} \mbox{\hyperlink{classDac_a03364933179f8c104a5be6581bde0246}{Initialize\+Message}} (void)
 \end{DoxyCompactItemize}
 
 
@@ -99,11 +99,11 @@ Constructor
 Configures pins for S\+PI and initializes S\+PI communication. This function must be called before calling any other function. \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classDac_a1df39dc8c6e5b50afd07b6dd8a6b9300}\label{classDac_a1df39dc8c6e5b50afd07b6dd8a6b9300}} 
+\mbox{\Hypertarget{classDac_a2dc7bd90fddf1e38af8f18a0191ce840}\label{classDac_a2dc7bd90fddf1e38af8f18a0191ce840}} 
 \index{Dac@{Dac}!Bytes\+To\+Voltage@{Bytes\+To\+Voltage}}
 \index{Bytes\+To\+Voltage@{Bytes\+To\+Voltage}!Dac@{Dac}}
 \subsubsection{\texorpdfstring{Bytes\+To\+Voltage()}{BytesToVoltage()}}
-{\footnotesize\ttfamily virtual double Dac\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual double Dac\+::\+Bytes\+To\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 Uses chip specifications (e.\+g. bit resolution, registers, range) to convert a set of bytes stored in a Message object to voltage. Each D\+AC has its own convertion function. Check the datasheet of each chip and override the function below accordingly. 
 \begin{DoxyParams}[1]{Parameters}
@@ -115,7 +115,7 @@ The current voltage setted on the dac register.
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classAD5764_a729015992eda059ae615373d1db53823}{A\+D5764}}, and \mbox{\hyperlink{classAD5791_ab1f3eef8afe6989d9981bb29ddec9ec5}{A\+D5791}}.
+Reimplemented in \mbox{\hyperlink{classAD5764_a729015992eda059ae615373d1db53823}{A\+D5764}}, and \mbox{\hyperlink{classAD5791_ab1f3eef8afe6989d9981bb29ddec9ec5}{A\+D5791}}.
 
 \mbox{\Hypertarget{classDac_ad51bf5450f03f39a0357398af69f1705}\label{classDac_ad51bf5450f03f39a0357398af69f1705}} 
 \index{Dac@{Dac}!Get\+Voltage@{Get\+Voltage}}
@@ -140,18 +140,18 @@ The voltage setted to dac register.
 Initializes \mbox{\hyperlink{classDac}{Dac}} from tristate mode to normal mode. \begin{DoxyReturn}{Returns}
 0 if successful. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classDac_aa34ddd250cf830bba220b86d462785b5}\label{classDac_aa34ddd250cf830bba220b86d462785b5}} 
+\mbox{\Hypertarget{classDac_a03364933179f8c104a5be6581bde0246}\label{classDac_a03364933179f8c104a5be6581bde0246}} 
 \index{Dac@{Dac}!Initialize\+Message@{Initialize\+Message}}
 \index{Initialize\+Message@{Initialize\+Message}!Dac@{Dac}}
 \subsubsection{\texorpdfstring{Initialize\+Message()}{InitializeMessage()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} Dac\+::\+Initialize\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} Dac\+::\+Initialize\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 \begin{DoxyReturn}{Returns}
 Message object to intialize \mbox{\hyperlink{classDac}{Dac}}. 
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classAD5764_a02710f0508562f2a293dd6d706c0cc3c}{A\+D5764}}, and \mbox{\hyperlink{classAD5791_a770015b1cc9fd808356dab2f2598f894}{A\+D5791}}.
+Reimplemented in \mbox{\hyperlink{classAD5764_a02710f0508562f2a293dd6d706c0cc3c}{A\+D5764}}, and \mbox{\hyperlink{classAD5791_a770015b1cc9fd808356dab2f2598f894}{A\+D5791}}.
 
 \mbox{\Hypertarget{classDac_ab2f0e36184b9b529de04136c36a3a51b}\label{classDac_ab2f0e36184b9b529de04136c36a3a51b}} 
 \index{Dac@{Dac}!Set\+Voltage@{Set\+Voltage}}
@@ -175,11 +175,11 @@ Sets a voltage to \mbox{\hyperlink{classDac}{Dac}} register via S\+PI.
 \begin{DoxyReturn}{Returns}
 The voltage setted. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classDac_a87132e3c19313742d92f57d9b792e0e0}\label{classDac_a87132e3c19313742d92f57d9b792e0e0}} 
+\mbox{\Hypertarget{classDac_a35805ada711f0803a2efba938a9f8b28}\label{classDac_a35805ada711f0803a2efba938a9f8b28}} 
 \index{Dac@{Dac}!Set\+Voltage\+Message@{Set\+Voltage\+Message}}
 \index{Set\+Voltage\+Message@{Set\+Voltage\+Message}!Dac@{Dac}}
 \subsubsection{\texorpdfstring{Set\+Voltage\+Message()}{SetVoltageMessage()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} Dac\+::\+Set\+Voltage\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{double}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structspi__utils_1_1Message}{spi\+\_\+utils\+::\+Message}} Dac\+::\+Set\+Voltage\+Message (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{double}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -193,7 +193,7 @@ Message object to write data register.
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}{A\+D5764}}, and \mbox{\hyperlink{classAD5791_af2d4276c910abe162aab867b9f86aa5f}{A\+D5791}}.
+Reimplemented in \mbox{\hyperlink{classAD5764_a62887ed89fedc4db68f2a54324e1fac0}{A\+D5764}}, and \mbox{\hyperlink{classAD5791_af2d4276c910abe162aab867b9f86aa5f}{A\+D5791}}.
 
 \mbox{\Hypertarget{classDac_aafef1707ec33a2166a69e9b646cd471b}\label{classDac_aafef1707ec33a2166a69e9b646cd471b}} 
 \index{Dac@{Dac}!Update\+Analog\+Outputs@{Update\+Analog\+Outputs}}

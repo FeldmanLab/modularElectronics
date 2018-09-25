@@ -23,6 +23,7 @@ DacAdc::DacAdc(board_types::DacBoard &dac, board_types::AdcBoard &adc)
 uint8_t DacAdc::Begin(void) {
   dac_.Begin();
   adc_.Begin();
+  dac_.Initialize();
   return 0;
 }
 
