@@ -1,0 +1,57 @@
+\hypertarget{namespacemeas__utils}{}\section{meas\+\_\+utils Namespace Reference}
+\label{namespacemeas__utils}\index{meas\+\_\+utils@{meas\+\_\+utils}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\uint8\+\_\+t \mbox{\hyperlink{namespacemeas__utils_a48d308b4fa70e6477beb8c095f9aafb1}{Buffer\+Ramp}} (T1 dac, T2 adc, uint8\+\_\+t dac\+\_\+channels\mbox{[}$\,$\mbox{]}, uint8\+\_\+t n\+\_\+dac\+\_\+channels, uint8\+\_\+t adc\+\_\+channels\mbox{[}$\,$\mbox{]}, uint8\+\_\+t n\+\_\+adc\+\_\+channels, double start\+\_\+voltages\mbox{[}$\,$\mbox{]}, double end\+\_\+voltages\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n\+\_\+steps, uint32\+\_\+t step\+\_\+delay, uint8\+\_\+t delay\+\_\+unit=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utilities for measurements \begin{DoxyAuthor}{Author}
+Carlos Kometter 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License. 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacemeas__utils_a48d308b4fa70e6477beb8c095f9aafb1}\label{namespacemeas__utils_a48d308b4fa70e6477beb8c095f9aafb1}} 
+\index{meas\+\_\+utils@{meas\+\_\+utils}!Buffer\+Ramp@{Buffer\+Ramp}}
+\index{Buffer\+Ramp@{Buffer\+Ramp}!meas\+\_\+utils@{meas\+\_\+utils}}
+\subsubsection{\texorpdfstring{Buffer\+Ramp()}{BufferRamp()}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+uint8\+\_\+t meas\+\_\+utils\+::\+Buffer\+Ramp (\begin{DoxyParamCaption}\item[{T1}]{dac,  }\item[{T2}]{adc,  }\item[{uint8\+\_\+t}]{dac\+\_\+channels\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{n\+\_\+dac\+\_\+channels,  }\item[{uint8\+\_\+t}]{adc\+\_\+channels\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{n\+\_\+adc\+\_\+channels,  }\item[{double}]{start\+\_\+voltages\mbox{[}$\,$\mbox{]},  }\item[{double}]{end\+\_\+voltages\mbox{[}$\,$\mbox{]},  }\item[{uint32\+\_\+t}]{n\+\_\+steps,  }\item[{uint32\+\_\+t}]{step\+\_\+delay,  }\item[{uint8\+\_\+t}]{delay\+\_\+unit = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Ramps the voltage of dac\+\_\+channels\mbox{[}\mbox{]} from start\+\_\+voltages\mbox{[}\mbox{]} to end\+\_\+voltages\mbox{[}\mbox{]} in n\+\_\+steps. After each step, there is a step\+\_\+delay, and then the adc\+\_\+channels\mbox{[}\mbox{]} are read. Once the adc\+\_\+channels\mbox{[}\mbox{]} are read, a new step starts. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dac} & \mbox{\hyperlink{classDac}{Dac}} \\
+\hline
+\mbox{\tt in}  & {\em adc} & Adc \\
+\hline
+\mbox{\tt in}  & {\em dac\+\_\+channels\mbox{[}$\,$\mbox{]}} & The dac channels to be ramped. \\
+\hline
+\mbox{\tt in}  & {\em n\+\_\+dac\+\_\+channels} & The number of dac channels to be ramped. \\
+\hline
+\mbox{\tt in}  & {\em adc\+\_\+channels\mbox{[}$\,$\mbox{]}} & The adc channels to be read. \\
+\hline
+\mbox{\tt in}  & {\em n\+\_\+adc\+\_\+channels} & The number of adc channels to be read. \\
+\hline
+\mbox{\tt in}  & {\em start\+\_\+voltages\mbox{[}$\,$\mbox{]}} & The start voltages of the ramp. It must be the same size as dac\+\_\+channels\mbox{[}\mbox{]} and the element index corresponds to same index on dac\+\_\+channels\mbox{[}\mbox{]} (eg. start\+\_\+voltage\mbox{[}2\mbox{]} is the start voltage of dac\+\_\+channels\mbox{[}2\mbox{]}). \\
+\hline
+\mbox{\tt in}  & {\em end\+\_\+voltages\mbox{[}$\,$\mbox{]}} & The end voltages of the ramp. It must be the same size as dac\+\_\+channels\mbox{[}\mbox{]} and the element index corresponds to same index on dac\+\_\+channels\mbox{[}\mbox{]} (eg. end\+\_\+voltage\mbox{[}2\mbox{]} is the end voltage of dac\+\_\+channels\mbox{[}2\mbox{]}). \\
+\hline
+\mbox{\tt in}  & {\em n\+\_\+steps} & The number of steps the ramp will be divided. \\
+\hline
+\mbox{\tt in}  & {\em step\+\_\+delay} & The delay time between setting the dac channels and reading the adc channels. \\
+\hline
+\mbox{\tt in}  & {\em delay\+\_\+unit} & Specifies step\+\_\+delay unit in us (0\+: default) or ms (1); \\
+\hline
+\end{DoxyParams}

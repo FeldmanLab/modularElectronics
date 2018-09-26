@@ -115,4 +115,87 @@ namespace interface_utils {
     }
   }
 }
+
+///
+/// Utilities for measurements
+/// \author Carlos Kometter
+/// \version 0.1
+/// \date 2018
+/// \copyright GNU Public License.
+///
+namespace meas_utils {
+  ///
+  /// Ramps the voltage of dac_channels[] from start_voltages[] to end_voltages[] in n_steps.
+  /// After each step, there is a step_delay, and then the adc_channels[] are read.
+  /// Once the adc_channels[] are read, a new step starts.
+  /// \param[in] dac Dac
+  /// \param[in] adc Adc
+  /// \param[in] dac_channels[] The dac channels to be ramped.
+  /// \param[in] n_dac_channels The number of dac channels to be ramped.
+  /// \param[in] adc_channels[] The adc channels to be read.
+  /// \param[in] n_adc_channels The number of adc channels to be read.
+  /// \param[in] start_voltages[] The start voltages of the ramp. It must be the same size as dac_channels[] and the element index corresponds to same index on dac_channels[] (eg. start_voltage[2] is the start voltage of dac_channels[2]). 
+  /// \param[in] end_voltages[] The end voltages of the ramp. It must be the same size as dac_channels[] and the element index corresponds to same index on dac_channels[] (eg. end_voltage[2] is the end voltage of dac_channels[2]). 
+  /// \param[in] n_steps The number of steps the ramp will be divided.
+  /// \param[in] step_delay The delay time between setting the dac channels and reading the adc channels.
+  /// \param[in] delay_unit Specifies step_delay unit in us (0: default) or ms (1); 
+  ///
+  template <typename T1, typename T2>
+  uint8_t BufferRamp(T1 dac, T2 adc,
+		     uint8_t dac_channels[], uint8_t n_dac_channels,
+		     uint8_t adc_channels[], uint8_t n_adc_channels,
+		     double start_voltages[], double end_voltages[],
+		     uint32_t n_steps, uint32_t step_delay,
+		     uint8_t delay_unit=0) {
+    byte meas[10];  // Storage for measurements
+    uint8_t n_meas;  // # of bytes of meas[] used by the adc to store a measurement
+    // Buffer ramp starts here
+    for (uint32_t step = 0; step < n_steps; step++) {
+      // Writes the dac register of each channel in dac_channels[]
+      for (uint8_t dac_channel_index = 0;
+           dac_channel_index < n_dac_channels;
+           dac_channel_index++) {
+        uint8_t channel = dac_channels[dac_channel_index];
+        double start_voltage = start_voltages[dac_channel_index];
+        double end_voltage = end_voltages[dac_channel_index];
+        // Linear ramp from start_voltage to end_voltage in n_steps
+        double next_voltage = start_voltage +
+                              (end_voltage - start_voltage) * step / (n_steps - 1);
+        // false: Writes the dac register but does not update the analog output.
+        dac.SetVoltage(channel, next_voltage, false);
+      }
+      // Updates the analog outputs of all channels at the same time
+      dac.UpdateAnalogOutputs();
+      // Waits for system to settle
+      if (delay_unit == 0) {
+        delayMicroseconds(step_delay);
+      }
+      else {
+        delay(step_delay);
+      }
+      // Read the adc voltage 
+      for (uint8_t adc_channel_index = 0;
+           adc_channel_index < n_adc_channels;
+           adc_channel_index++) {
+        uint8_t channel = adc_channels[adc_channel_index];
+        // The adc takes some time to convert the voltage to bytes.
+        // While the adc is converting we send the previous measurement
+        // to take advantage of the dead time.
+        if (step > 0 || adc_channel_index > 0) {
+	  // Sends the previous measurement stored in meas.
+          n_meas = adc.ReadVoltage(channel, meas, true);
+        }
+        else {
+	  // First measurement, nothing to send so false
+          n_meas = adc.ReadVoltage(channel, meas, false);
+        }
+      }
+    }
+    // Sends the last measurement
+    for (uint8_t meas_index = 0; meas_index < n_meas; meas_index++) {
+      Serial.write(meas[meas_index]);
+    }
+    return 0;
+  }  
+}
 #endif

@@ -13,7 +13,7 @@ Inheritance diagram for A\+D7734\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAD7734_afd200ee71660ecdad75dfe2ed558be68}{A\+D7734}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t data\+\_\+ready\+\_\+pin, uint8\+\_\+t slot\+\_\+number, uint8\+\_\+t reset\+\_\+pin=0)
+\mbox{\hyperlink{classAD7734_ad3c7f97a46b2224e8ff81556c5ee14fe}{A\+D7734}} (uint8\+\_\+t sync\+\_\+pin, uint8\+\_\+t spi\+\_\+bus\+\_\+config\+\_\+pin, uint8\+\_\+t data\+\_\+ready\+\_\+pin, uint8\+\_\+t slot\+\_\+number=0, uint8\+\_\+t reset\+\_\+pin=0)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -43,11 +43,11 @@ G\+NU Public License.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAD7734_afd200ee71660ecdad75dfe2ed558be68}\label{classAD7734_afd200ee71660ecdad75dfe2ed558be68}} 
+\mbox{\Hypertarget{classAD7734_ad3c7f97a46b2224e8ff81556c5ee14fe}\label{classAD7734_ad3c7f97a46b2224e8ff81556c5ee14fe}} 
 \index{A\+D7734@{A\+D7734}!A\+D7734@{A\+D7734}}
 \index{A\+D7734@{A\+D7734}!A\+D7734@{A\+D7734}}
 \subsubsection{\texorpdfstring{A\+D7734()}{AD7734()}}
-{\footnotesize\ttfamily A\+D7734\+::\+A\+D7734 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{data\+\_\+ready\+\_\+pin,  }\item[{uint8\+\_\+t}]{slot\+\_\+number,  }\item[{uint8\+\_\+t}]{reset\+\_\+pin = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily A\+D7734\+::\+A\+D7734 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sync\+\_\+pin,  }\item[{uint8\+\_\+t}]{spi\+\_\+bus\+\_\+config\+\_\+pin,  }\item[{uint8\+\_\+t}]{data\+\_\+ready\+\_\+pin,  }\item[{uint8\+\_\+t}]{slot\+\_\+number = {\ttfamily 0},  }\item[{uint8\+\_\+t}]{reset\+\_\+pin = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 Constructor 
 \begin{DoxyParams}[1]{Parameters}
@@ -58,6 +58,8 @@ Constructor
 \mbox{\tt in}  & {\em data\+\_\+ready\+\_\+pin} & This pin tells whether the adc has finished measuring a voltage. \\
 \hline
 \mbox{\tt in}  & {\em slot\+\_\+number} & This number is used to identify the chip or board. (default\+: 0) \\
+\hline
+\mbox{\tt in}  & {\em reset\+\_\+pin} & The reset pin \\
 \hline
 \end{DoxyParams}
 

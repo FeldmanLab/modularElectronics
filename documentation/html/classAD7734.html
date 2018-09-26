@@ -87,8 +87,8 @@ Inheritance diagram for AD7734:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afd200ee71660ecdad75dfe2ed558be68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD7734.html#afd200ee71660ecdad75dfe2ed558be68">AD7734</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t data_ready_pin, uint8_t slot_number, uint8_t reset_pin=0)</td></tr>
-<tr class="separator:afd200ee71660ecdad75dfe2ed558be68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c7f97a46b2224e8ff81556c5ee14fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAD7734.html#ad3c7f97a46b2224e8ff81556c5ee14fe">AD7734</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t data_ready_pin, uint8_t slot_number=0, uint8_t reset_pin=0)</td></tr>
+<tr class="separator:ad3c7f97a46b2224e8ff81556c5ee14fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classAdcSpi"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classAdcSpi')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classAdcSpi.html">AdcSpi</a></td></tr>
 <tr class="memitem:a78b3bf970d85febda92dd343cca687a1 inherit pub_methods_classAdcSpi"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdcSpi.html#a78b3bf970d85febda92dd343cca687a1">AdcSpi</a> (uint8_t sync_pin, uint8_t spi_bus_config_pin, uint8_t data_ready_pin, uint8_t bit_resolution, uint8_t reset_pin=0, uint8_t clock_divider=7, BitOrder bit_order=MSBFIRST, uint8_t spi_mode=SPI_MODE3)</td></tr>
 <tr class="separator:a78b3bf970d85febda92dd343cca687a1 inherit pub_methods_classAdcSpi"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,8 +126,8 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2018 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afd200ee71660ecdad75dfe2ed558be68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd200ee71660ecdad75dfe2ed558be68">&#9670;&nbsp;</a></span>AD7734()</h2>
+<a id="ad3c7f97a46b2224e8ff81556c5ee14fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3c7f97a46b2224e8ff81556c5ee14fe">&#9670;&nbsp;</a></span>AD7734()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +154,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot_number</em>, </td>
+          <td class="paramname"><em>slot_number</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -175,6 +175,7 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">spi_bus_config_pin</td><td>The pin that identifies the bus. More than one adc can share the same pin. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data_ready_pin</td><td>This pin tells whether the adc has finished measuring a voltage. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">slot_number</td><td>This number is used to identify the chip or board. (default: 0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">reset_pin</td><td>The reset pin </td></tr>
   </table>
   </dd>
 </dl>
