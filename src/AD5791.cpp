@@ -18,7 +18,7 @@
 
 AD5791::AD5791(uint8_t sync_pin, uint8_t spi_bus_config_pin,
 	       uint8_t ldac_pin, uint8_t slot_number, double full_scale)
-  :Dac(sync_pin, spi_bus_config_pin, ldac_pin, 20),
+  :DacSpi(sync_pin, spi_bus_config_pin, ldac_pin, 20),
    slot_number_(slot_number), full_scale_(full_scale) {
 }
 
@@ -27,7 +27,7 @@ double AD5791::BytesToVoltage(spi_utils::Message message) {
   byte byte2 = message.msg[1];
   byte byte3 = message.msg[2];
   // The conversion below is for two's complement
-  uint16_t decimal = ((uint16_t)(((((byte1 & 0x15) << 0x8) | byte2) << 0x8) | byte3));
+  int32_t decimal = ((int32_t)(((((byte1 & 0x15) << 0x8) | byte2) << 0x8) | byte3));
   double voltage;
   if (decimal > 524287) {
     voltage = -(1048576-decimal)*full_scale_/524288;
@@ -38,7 +38,7 @@ double AD5791::BytesToVoltage(spi_utils::Message message) {
 }
 
 spi_utils::Message AD5791::SetVoltageMessage(uint8_t channel, double voltage) {
-  uint16_t decimal;
+  uint32_t decimal;
   spi_utils::Message msg;
   msg.block_size = 3;
   msg.n_blocks = 1;

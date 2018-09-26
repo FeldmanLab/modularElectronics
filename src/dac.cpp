@@ -17,7 +17,7 @@
 
 #include "../include/dac.h"
 
-Dac::Dac(uint8_t sync_pin, uint8_t spi_bus_config_pin,
+DacSpi::DacSpi(uint8_t sync_pin, uint8_t spi_bus_config_pin,
 	 uint8_t ldac_pin, uint8_t bit_resolution,
 	 uint8_t clock_divider, BitOrder bit_order,
 	 uint8_t spi_mode)
@@ -28,7 +28,7 @@ Dac::Dac(uint8_t sync_pin, uint8_t spi_bus_config_pin,
 }
 
 //Configures pins for SPI and initializes SPI
-uint8_t Dac::Begin(void) {
+uint8_t DacSpi::Begin(void) {
   // Setting pin modes
   pinMode(sync_pin_, OUTPUT);
   pinMode(ldac_pin_, OUTPUT);
@@ -43,7 +43,7 @@ uint8_t Dac::Begin(void) {
   return 0;
 }
 
-uint8_t Dac::Initialize(void) {
+uint8_t DacSpi::Initialize(void) {
   spi_utils::Message msg;
   msg = InitializeMessage();
   // SPI data transfer
@@ -59,11 +59,11 @@ uint8_t Dac::Initialize(void) {
 }
 
 // Toogles LDAC to update analog outputs.
-void Dac::UpdateAnalogOutputs(void) {
+void DacSpi::UpdateAnalogOutputs(void) {
   digitalWrite(ldac_pin_, LOW);
   digitalWrite(ldac_pin_, HIGH);}
 
-double Dac::SetVoltage(uint8_t channel, double voltage,
+double DacSpi::SetVoltage(uint8_t channel, double voltage,
 		       bool update_outputs) {
   spi_utils::Message msg;
   msg = SetVoltageMessage(channel, voltage);
@@ -84,7 +84,7 @@ double Dac::SetVoltage(uint8_t channel, double voltage,
   return BytesToVoltage(msg);
 }
 
-double Dac::GetVoltage(uint8_t channel) {
+double DacSpi::GetVoltage(uint8_t channel) {
   spi_utils::Message msg;
   msg = SetVoltageMessage(channel, 0);
   msg.msg[0] = msg.msg[0] | 0x80;  // Set MSB to 1, which reads the register
@@ -105,5 +105,6 @@ double Dac::GetVoltage(uint8_t channel) {
     }
     digitalWrite(sync_pin_, HIGH);
   }
+  Serial.println("dacwrite");
   return BytesToVoltage(msg);
 }

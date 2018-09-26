@@ -17,7 +17,7 @@
 #ifndef TETRADAC_h_
 #define TETRADAC_h_
 
-#include "board.h"
+// #include "board.h"
 #include "AD5791.h"
 #include "eeprom.h"
 
@@ -28,7 +28,7 @@
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class TetraDac : public board_types::DacBoard {
+class TetraDac : public DacSpi {
  private:
   static const uint8_t n_channels_ = 4;
   AD5791 dacs_[n_channels_];

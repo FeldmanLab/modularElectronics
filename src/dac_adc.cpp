@@ -29,6 +29,7 @@ uint8_t DacAdc::Begin(void) {
 
 double DacAdc::SetVoltage(uint8_t channel, double voltage) {
   return dac_.SetVoltage(channel, voltage);
+  Serial.println("dacadc");
 }
 
 double DacAdc::ReadVoltage(uint8_t channel) {

@@ -28,8 +28,8 @@ double AD7734::BytesToVoltage(spi_utils::Message message) {
   byte byte1 = message.msg[2];
   byte byte2 = message.msg[3];
 
-  uint16_t decimal = ((uint16_t)((byte1<<8)| byte2));
-
+  uint16_t decimal = ((uint16_t)((byte1<<0x8)| byte2));
+  Serial.println(decimal);
   return decimal * 20.0 / 65536 - 10.0;
 }
 

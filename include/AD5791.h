@@ -26,7 +26,7 @@
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class AD5791: public Dac {
+class AD5791: public DacSpi {
  private:
   uint8_t slot_number_;
   double full_scale_;

@@ -73,7 +73,7 @@ class Board {
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class DacBoard : public Board, public virtual Dac  {
+class DacBoard : public Board, public virtual DacSpi  {
  public:
   ///
   /// Router for serial communication.
