@@ -39,9 +39,10 @@ class AD7734: public virtual AdcSpi, public board_types::AdcBoard {
   /// \param[in] spi_bus_config_pin The pin that identifies the bus. More than one adc can share the same pin.
   /// \param[in] data_ready_pin This pin tells whether the adc has finished measuring a voltage.
   /// \param[in] slot_number This number is used to identify the chip or board. (default: 0)
+  /// \param[in] reset_pin The reset pin
   ///
   AD7734(uint8_t sync_pin, uint8_t spi_bus_config_pin,
-         uint8_t data_ready_pin, uint8_t slot_number,
+         uint8_t data_ready_pin, uint8_t slot_number=0,
 	 uint8_t reset_pin=0);
  protected:
   virtual double BytesToVoltage(spi_utils::Message message);
