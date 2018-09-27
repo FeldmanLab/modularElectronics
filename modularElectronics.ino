@@ -64,6 +64,23 @@ uint8_t Router(String cmd[], uint8_t cmd_size) {
     double voltage;
     voltage = dac.SetVoltage(cmd[1].toInt(), cmd[2].toFloat());
     Serial.println(voltage);
+  } else if (command == "BUFFERRAMP"){
+    uint8_t dac_channels[10];
+    uint8_t n_dac_channels = interface_utils::string_to_int_array(cmd[1], dac_channels);
+    uint8_t adc_channels[10];
+    uint8_t n_adc_channels = interface_utils::string_to_int_array(cmd[2], adc_channels);
+    double start_voltages[10];
+    double end_voltages[10];
+    for (uint8_t index = 0; index  < n_dac_channels; ++index) {
+      start_voltages[index] = cmd[index +3].toFloat();
+      end_voltages[index] = cmd[index + n_dac_channels + 3].toFloat();
+    }
+    uint32_t n_steps = cmd[n_dac_channels*2 + 3].toInt();
+    uint32_t step_delay = cmd[n_dac_channels*2 + 4].toInt();
+    meas_utils::BufferRamp<TetraDac, AD7734>(dac, adc, dac_channels, n_dac_channels,
+         adc_channels, n_adc_channels,
+         start_voltages, end_voltages,
+         n_steps, step_delay);
   }
   return 1; // Not found
 }
