@@ -27,7 +27,7 @@ double AD5791::BytesToVoltage(spi_utils::Message message) {
   byte byte2 = message.msg[1];
   byte byte3 = message.msg[2];
   // The conversion below is for two's complement
-  int32_t decimal = ((int32_t)(((((byte1 & 0x15) << 0x8) | byte2) << 0x8) | byte3));
+  uint32_t decimal = ((uint32_t)(((((byte1 & 0x15) << 0x8) | byte2) << 0x8) | byte3));
   double voltage;
   if (decimal > 524287) {
     voltage = -(1048576-decimal)*full_scale_/524288;

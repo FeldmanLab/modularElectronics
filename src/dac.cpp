@@ -105,6 +105,5 @@ double DacSpi::GetVoltage(uint8_t channel) {
     }
     digitalWrite(sync_pin_, HIGH);
   }
-  Serial.println("dacwrite");
   return BytesToVoltage(msg);
 }
