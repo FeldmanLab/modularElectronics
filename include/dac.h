@@ -32,7 +32,7 @@ typedef unsigned char byte;
 /// \date 2018
 /// \copyright GNU Public License.
 ///
-class Dac {
+class DacSpi {
  private:
   // sync_pin_ identifies the dac chip; each chip has a unique sync_pin_.
   // spi_bus_config_pin_ identifies the bus configurations.
@@ -42,7 +42,7 @@ class Dac {
   BitOrder bit_order_;  // MSBFIRST or LSBFIRST
   uint8_t bit_resolution_;
  public:
-  Dac(void) = default;
+  DacSpi(void) = default;
   ///
   /// Constructor
   /// \param[in] sync_pin The sync or chip select of the dac chip. Different than spi_bus_config_pin
@@ -60,7 +60,7 @@ class Dac {
   ///   - SPI_MODE2
   ///   - SPI_MODE3
   ///
-  Dac(uint8_t sync_pin, uint8_t spi_bus_config_pin,
+  DacSpi(uint8_t sync_pin, uint8_t spi_bus_config_pin,
       uint8_t ldac_pin, uint8_t bit_resolution,
       uint8_t clock_divider=4, BitOrder bit_order=MSBFIRST,
       uint8_t spi_mode=SPI_MODE1);

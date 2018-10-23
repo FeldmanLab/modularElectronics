@@ -18,7 +18,7 @@
 
 AD5764::AD5764(uint8_t sync_pin, uint8_t spi_bus_config_pin,
 	       uint8_t ldac_pin, uint8_t slot_number, double full_scale)
-  :Dac(sync_pin, spi_bus_config_pin, ldac_pin, 16),
+  :DacSpi(sync_pin, spi_bus_config_pin, ldac_pin, 16),
    slot_number_(slot_number), full_scale_(full_scale) {
 }
 

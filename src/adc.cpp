@@ -46,6 +46,7 @@ bool AdcSpi::Begin(void) {
 }
 
 double AdcSpi::ReadVoltage(uint8_t channel) {
+  Serial.println("in adcspi::readvoltage");
   spi_utils::Message msg;  // Stores the message to send via spi
   msg = SingleConversionModeMessage(channel);  // Gets the message to start single conversion
   SPI.transfer(spi_bus_config_pin_, 0); // Sets CLK and MOSI to proper level
